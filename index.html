@@ -2,15 +2,16 @@
 <html>
   
 <head>
-  <!-- Title and meta tags -->
+  <!-- Title, Meta Tags and Favicon -->
   <title>Mrprocom</title>
   <meta charset="UTF-8">
   <meta name="description" content="Mrprocom's personal website">
   <meta name="keywords" content="Mrprocom">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
     
   <!-- CSS Files -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
   
   <!-- jQuery -->
@@ -20,9 +21,67 @@
 </head>
 
 <body>
-  <!-- Content -->
-  Hello world!
-  
+
+  <main class="container" role="main">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="http://mrprocom.github.io">Site</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="http://mrprocom.github.io/index">Home <span class="sr-only">(current)</span></a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Hi</a></li>
+                <li><a href="#">There is nothing to see here at the moment</a></li>
+                <li><a href="#">These links don't even work</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contents -->
+    <div class="page-content">
+      <div class="page-section">
+        <h1>Mrprocom</h1>
+        <p>
+          Welcome to Mrprocom's personal website!<br>
+          I usually work on some projects from time to time. I know a lot about <a href="https://en.wikipedia.org/wiki/Web_development">Web Development</a>, but obviously not everything.<br>
+          I also know the basics of <a href="https://www.python.org/">Python</a> and a few things about <a href="http://www.lua.org/">Lua</a> too.
+        </p>
+      </div>
+
+      <div class="page-section">
+        <h2>Contact</h2>
+        <p>
+          If you are interested, you can can check out some of my projects, but there isn't much to see here, it's all work in progress.<br>
+          If you want, you can find me on <a href="https://en.wikipedia.org/wiki/Internet_Relay_Chat">IRC</a>, just connect to <a href="https://freenode.net/">Freenode</a>, you can find me on <a href="http://webchat.freenode.net?channels=%23powder">#powder</a> and on other channels related to it.
+        </p>
+      </div>
+
+      <div class="page-section">
+        <h2>Websites</h2>
+        <ul>
+          <li><a href="https://github.com/Mrprocom">Github</a></li>
+          <li><a href="http://powdertoy.co.uk/@Mrprocom">The Powdertoy</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
   <!-- JS Files -->
   <script src="script.js"></script>
   
