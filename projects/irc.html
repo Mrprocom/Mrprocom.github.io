@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <!-- Title, Meta Tags and Favicon -->
+  <title>Mrprocom</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Mrprocom's personal website">
+  <meta name="keywords" content="Mrprocom">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="../img/favicon.png">
+    
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+  <link rel="stylesheet" href="../style.css">
+  
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+
+  <main class="container" role="main">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="http://mrprocom.github.io">Site</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li><a href="http://mrprocom.github.io/index">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="active"><a href="#">IRC</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <!-- Contents -->
+    <div class="page-content">
+      <div class="page-section">
+        <h1>IRC Web Client</h1>
+        <div id="iframe-wrapper">
+          <iframe id="irc-client" src="https://kiwiirc.com/client/irc.freenode.net/?&amp;theme=cli" ></iframe>
+        </div>
+        <div class="btn-group btn-group-justified">
+          <a class="btn btn-default switch-qwebirc">Switch to QwebIRC</a>
+          <a id="client-website" class="btn btn-default" href="https://kiwiirc.com" target="_blank">Original website</a>
+        </div>
+      </div>
+  </main>
+
+
+  <!-- JS Files -->
+  <script src="../script.js"></script>
+  
+</body>
+
+</html>
