@@ -29,7 +29,7 @@ $(document).ready(function(){
     // This block exits the fullscreen mode
     $(document).on("click", ".exit-full-screen", function(){
       $("#iframe-menu-wrapper").removeClass("full-screen");
-      $(this).html("Enter large screen mode");
+      $(this).html("Enter fullscreen mode");
       $(this).removeClass("exit-full-screen");
       $(this).addClass("enter-full-screen");
     });
