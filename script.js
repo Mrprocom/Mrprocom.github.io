@@ -18,18 +18,20 @@ $(document).ready(function(){
       $(this).addClass("switch-qwebirc");
     });
 
-    $(document).on("click", ".make-iframe-larger", function(){
-      $("#iframe-menu-wrapper").addClass("large-screen");
-      $(this).html("Exit large screen mode");
-      $(this).removeClass("make-iframe-larger");
-      $(this).addClass("make-iframe-smaller");
+    // This block sets the IRC client and the buttons to fullscreen mode
+    $(document).on("click", ".enter-full-screen", function(){
+      $("#iframe-menu-wrapper").addClass("full-screen");
+      $(this).html("Exit fullscreen mode");
+      $(this).removeClass("enter-full-screen");
+      $(this).addClass("exit-full-screen");
     });
 
-    $(document).on("click", ".make-iframe-smaller", function(){
-      $("#iframe-menu-wrapper").removeClass("large-screen");
+    // This block exits the fullscreen mode
+    $(document).on("click", ".exit-full-screen", function(){
+      $("#iframe-menu-wrapper").removeClass("full-screen");
       $(this).html("Enter large screen mode");
-      $(this).removeClass("make-iframe-smaller");
-      $(this).addClass("make-iframe-larger");
+      $(this).removeClass("exit-full-screen");
+      $(this).addClass("enter-full-screen");
     });
 
 });
