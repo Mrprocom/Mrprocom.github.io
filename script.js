@@ -21,6 +21,7 @@ $(document).ready(function(){
     // This block sets the IRC client and the buttons to fullscreen mode
     $(document).on("click", ".enter-full-screen", function(){
       $("#iframe-menu-wrapper").addClass("full-screen");
+      $("body").css("overflow", "hidden")
       $(this).html("Exit fullscreen mode");
       $(this).removeClass("enter-full-screen");
       $(this).addClass("exit-full-screen");
@@ -29,6 +30,7 @@ $(document).ready(function(){
     // This block exits the fullscreen mode
     $(document).on("click", ".exit-full-screen", function(){
       $("#iframe-menu-wrapper").removeClass("full-screen");
+      $("body").css("overflow", "visible")
       $(this).html("Enter fullscreen mode");
       $(this).removeClass("exit-full-screen");
       $(this).addClass("enter-full-screen");

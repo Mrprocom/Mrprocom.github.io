@@ -15,8 +15,8 @@ body, html {
 }
 
 
-#iframe-menu-wrapper[class=full-screen] {
-  position: absolute;
+#iframe-menu-wrapper.full-screen {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -39,12 +39,10 @@ body, html {
   border: none;
 }
 
-/*
-.large-screen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 10000;
+.carousel-space {
+  padding: 25px 150px 50px 150px
 }
-*/
+
+#irc-tutorial {
+  min-height: 775px;
+}
