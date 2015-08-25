@@ -62,175 +62,11 @@
           </div>
         </div>
       </div>
-<!--
-      <div id="irc-tutorial" class="page-section">
-        <div class="panel panel-default">
-          <div class="panel-heading">IRC Tutorial</div>
-          <div class="panel-body">
-            <div id="irc-tutorial-1">
-            <p>
-              IRC stands for Internet Relay Chat. You can think of it as a chatting system where you have so many chatting rooms to choose from.
-            </p>
-            <p>
-              An IRC client is a program that lets users connect to IRC. There are some IRC web clients like QwebIRC and KiwiIRC as well as some clients that you can be installed like HexChat, mIRC and irssi.
-            </p>
-            <p>
-              There are many IRC servers that you can connect to like Freenode which is the most popular one and the one you should always connect to. The server has so many IRC channels, think of them as chat rooms that you can join and chat on.
-            </p>
-            <p>
-              In this tutorial, you will learn the basics of using IRC. You will be using QwebIRC for now and if you feel like you want to switch to KiwiIRC or install a software, you can do that.
-            </p>
-            <ul>
-              <li><a href="#irc-tutorial-2">How to Connect to the Server</a></li>
-              <li><a href="#irc-tutorial-2">Simple Concepts</a></li>
-              <li><a href="#irc-tutorial-3">Useful Commands</a></li>
-              <li><a href="#irc-tutorial-4">Tips and Advices</a></li>
-            </ul>
-          </div>
-          <hr>
-          <div id="irc-tutorial-2">
-            <a href="#irc-tutorial-2"><b>How to Connect to the Server</b></a>
-            <ul>
-              <li>Type in the nickname that you want to be known as in the Nickname text field. Your nickname should represent yourself so that users can recognise you.</li>
-              <li>Type in the channel names that you want to join after connecting to the server in the Channels text field. This is optional, meaning that you can leave it empty if you do not want to join any channel after connecting. If you want to join multiple channels at once, just separate the channel names with a comma. Channels have to start with at least 1 hashtag.</li>
-              <li>If you do not have a Freenode account, then skip this step, otherwise check the "Auth to services" checkbox and type in your username and your password.</li>
-              <li>The reCAPTCHA is only used to make sure that the user is a human and not a robot. This is useful to prevent spam and abuse. Just do what the it says, it will only take a few seconds.</li>
-              <li>Click on the "Connect" button to connect to the server and if you see an error message, you might want to fix something and try again.</li>
-            </ul>
-          </div>
-          <hr>
-          <div id="irc-tutorial-3">
-            <a href="#irc-tutorial-3"><b>Simple Concepts</b></a>
-            <p>
-              Take a look at <a href="../img/irc-interface.png">this image</a>, it names and describes some of the parts of the client.<br>
-              Here are some useful things that you should know about:
-              <ul>
-                <li>If you want to get someone's attention, just mention their nickname, they will receive a notification and be able to read your message.</li>
-                <li>You should not add a "+" or an "@" at the beginning of their nickname (if the person your are highlighting is an operator or voiced).</li>
-                <li>There is a simple, but a very useful keyboard shortcut that you can use to auto complete nicknames, just type in the first few letters of their nickname then press tab to auto complete that nickname.</li>
-                  The moderation system is not the same for every channel:
-                  <ul>
-                    <li>Some channels have their moderators voiced, but they can still OP themselves whenever they want to.</li>
-                    <li>Some channels have their moderators as operators and have their trusted users or volunteers voiced.</li>
-                    <li>Some channels have their moderators as normal users, but they can OP themselves whenever they want to.</li>
-                    <li>Some channels have their moderators as normal users and have their players voiced (mostly used by gaming channels).</li>
-                  </ul>
-                </li>
-                <li>Channel names and nicknames are case-insensitive. If you join a channel with the wrong letter casing, then it will still work. Same for nicknames, users will receive a notification when you mention their nickname even if you use the wrong letter casing.</li>
-              </ul>
-            </p>
-          </div>
-          <hr>
-          <div class="irc-tutorial-4">
-            <a href="#irc-tutorial-4"><b>Useful Commands</b></a>
-            <p>
-              Commands are given to the server to make it do different things. Commands start with one "/" followed by the command name.<br>
-              Commands are case-insensitive, you can use whatever letter casing you want.<br>
-              You do not have to memorise all of them, but this is a list of some useful commands that you should be aware of:
-            </p>
-            <table class="table table-striped table-hover">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Syntax</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>/AWAY &lt;Reason&gt;</td>
-                  <td>Marks you as being away (better than disconnecting)</td>
-                  <td>/AWAY Going to the store</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>/BACK</td>
-                  <td>Marks you as being back (the opposite of /AWAY)</td>
-                  <td>/BACK</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td>/HELP [&lt;Command&gt;]</td>
-                  <td>Gives you a list of commands or information about the command you gave it</td>
-                  <td>/HELP AWAY</td>
-                </tr>
-                <tr>
-                  <td>4</td>
-                  <td>/JOIN &lt;Channel&gt;</td>
-                  <td>Joins that channel</td>
-                  <td>/JOIN #freenode</td>
-                </tr>
-                <tr>
-                  <td>5</td>
-                  <td>/ME &lt;Action&gt;</td>
-                  <td>sends the action in third person</td>
-                  <td>/ME jumps around</td>
-                </tr>
-                <tr>
-                  <td>6</td>
-                  <td>/MSG &lt;Nickname&gt; &lt;Message&gt;</td>
-                  <td>Sends a private message to that user</td>
-                  <td>/MSG Jone Hello!</td>
-                </tr>
-                <tr>
-                  <td>7</td>
-                  <td>/NICK &lt;Nickname&gt;</td>
-                  <td>Changes your nickname</td>
-                  <td>/NICK Jone</td>
-                </tr>
-                <tr>
-                  <td>8</td>
-                  <td>/PART [&lt;Channel&gt;] [&lt;Reason&gt;]</td>
-                  <td>Leaves that channel (the current one by default)</td>
-                  <td>/PART #freenode I have got to go</td>
-                </tr>
-                <tr>
-                  <td>9</td>
-                  <td>/QUERY &lt;Nickname&gt; [&lt;Message&gt;]</td>
-                  <td>Opens up a new private message window to that user</td>
-                  <td>/QUERY Jone Hello!</td>
-                </tr>
-                <tr>
-                  <td>10</td>
-                  <td>/QUIT [&lt;Reason&gt;]</td>
-                  <td>Quits from the server</td>
-                  <td>/QUIT I have got to go</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <hr>
-          <div class="irc-tutorial-5">
-            <a href="#irc-tutorial-5"><b>Tips and Advices</b></a>
-            <p>
-              Congratulations! you have reached this section which is the most important one.<br>
-              This is a list of things that you should follow and keep in mind:
-            </p>
-            <ul>
-              <li>Follow the rules of the channel that you are visiting (read the topic of the channel).</li>
-              <li>Do not spam or flood (including changing the nickname rapidly and rejoining the same channel rapidly), spamming annoys a lot of users and might cause you to get kicked or maybe even banned. If you want to, you can open up a new query with yourself and spam there, spam in a random and abandoned channel that does not have any users or spam in your testing channel.</li>
-              <li>Do not highlight users for no reason or mass-highlight the entire channel.</li>
-              <li>Do not abuse caps lock or formated characters.</li>
-              <li>Do not be annoying.</li>
-              <li>Do not worry if users are not talking, they just talk whenever they have anything to say.</li>
-              <li>Do not be really rude to people, be friendly to them and to new comers instead.</li>
-              <li>Do not troll.</li>
-              <li>Do not impersonate other users.</li>
-              <li>If you get banned, do not join the same channel under a different identity (ban evasion).</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
--->
 
     <div class="panel panel-default">
       <div class="panel-heading">IRC Tutorial</div>
       <div class="panel-body">
         <div id="irc-tutorial-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-          <!-- Indicators -->
           <ol class="carousel-indicators">
             <li data-target="#irc-tutorial-1" data-slide-to="0" class="active"></li>
             <li data-target="#irc-tutorial-2" data-slide-to="1"></li>
@@ -239,28 +75,19 @@
             <li data-target="#irc-tutorial-5" data-slide-to="4"></li>
           </ol>
 
-          <!-- Wrapper for slides -->
           <div id="irc-tutorial" class="carousel-inner" role="listbox">
             <div class="item active carousel-space">
               <h1>Introduction</h1>
-              <p>
-                IRC stands for Internet Relay Chat. You can think of it as a chatting system where you have so many chatting rooms to choose from.
-              </p>
-              <p>
-                An IRC client is a program that lets users connect to IRC. There are some IRC web clients like QwebIRC and KiwiIRC as well as some clients that you can be installed like HexChat, mIRC and irssi.
-              </p>
-              <p>
-                There are many IRC servers that you can connect to like Freenode which is the most popular one and the one you should always connect to. The server has so many IRC channels, think of them as chat rooms that you can join and chat on.
-              </p>
-              <p>
-                In this tutorial, you will learn the basics of using IRC. You will be using QwebIRC for now and if you feel like you want to switch to KiwiIRC or install a software, you can do that.
-              </p>
+              <p>IRC stands for Internet Relay Chat. You can think of it as a chatting system where you have so many chatting rooms to choose from.</p>
+              <p>An IRC client is a program that lets users connect to IRC. There are some IRC web clients like QwebIRC and KiwiIRC as well as some clients that you can install like HexChat, mIRC and irssi.</p>
+              <p>There are many IRC servers that you can connect to like Freenode, which is the most popular one and the one you should always connect to. Each server has its own IRC channels (some servers have the same channels).</p>
+              <p>In this tutorial, you will learn the basics of using the IRC. You will be using QwebIRC for now and if you feel like you want to switch to KiwiIRC or install an IRC client, you can do that.</p>
               <p>Content:</p>
               <ul>
                 <li>How to Connect to the Server</li>
                 <li>Simple Concepts</li>
                 <li>Useful Commands</li>
-                <li>Tips and Advices</li>
+                <li>Tips and Advice</li>
               </ul>
             </div>
 
@@ -269,7 +96,7 @@
               <ul>
                 <li>Type in the nickname that you want to be known as in the Nickname text field. Your nickname should represent yourself so that users can recognise you.</li>
                 <li>Type in the channel names that you want to join after connecting to the server in the Channels text field. This is optional, meaning that you can leave it empty if you do not want to join any channel after connecting. If you want to join multiple channels at once, just separate the channel names with a comma. Channels have to start with at least 1 hashtag.</li>
-                <li>If you do not have a Freenode account, then skip this step, otherwise check the "Auth to services" checkbox and type in your username and your password.</li>
+                <li>If you do not have a NickServ account, then skip this step, otherwise check the "Auth to services" checkbox and type in your username and your password.</li>
                 <li>The reCAPTCHA is only used to make sure that the user is a human and not a robot. This is useful to prevent spam and abuse. Just do what the it says, it will only take a few seconds.</li>
                 <li>Click on the "Connect" button to connect to the server and if you see an error message, you might want to fix something and try again.</li>
               </ul>
@@ -277,58 +104,77 @@
 
             <div class="item carousel-space">
               <h1>Simple Concepts</h1>
-              <p>
-                Take a look at <a href="../img/irc-interface.png">this image</a>, it names and describes some of the parts of the client.<br>
-                Here are some useful things that you should know about:
-                <ul>
-                  <li>If you want to get someone's attention, just mention their nickname, they will receive a notification and be able to read your message.</li>
-                  <li>You should not add a "+" or an "@" at the beginning of their nickname (if the person your are highlighting is an operator or voiced).</li>
-                  <li>There is a simple, but a very useful keyboard shortcut that you can use to auto complete nicknames, just type in the first few letters of their nickname then press tab to auto complete that nickname.</li>
-                    The moderation system is not the same for every channel:
-                    <ul>
-                      <li>Some channels have their moderators voiced, but they can still OP themselves whenever they want to.</li>
-                      <li>Some channels have their moderators as operators and have their trusted users or volunteers voiced.</li>
-                      <li>Some channels have their moderators as normal users, but they can OP themselves whenever they want to.</li>
-                      <li>Some channels have their moderators as normal users and have their players voiced (mostly used by gaming channels).</li>
-                    </ul>
-                  </li>
-                  <li>Channel names and nicknames are case-insensitive. If you join a channel with the wrong letter casing, then it will still work. Same for nicknames, users will receive a notification when you mention their nickname even if you use the wrong letter casing.</li>
-                </ul>
-              </p>
-            </div>
-
-            <div class="item carousel-space">
-              <h1>Useful Commands</h1>
-              <p>
-                Commands are given to the server to make it do different things. Commands start with one "/" followed by the command name.<br>
-                Commands are case-insensitive, you can use whatever letter casing you want.<br>
-                You do not have to memorise all of them, but this is a list of some useful commands that you should be aware of:
-              </p>
+              <p>Take a look at <a href="../img/irc-interface.png">this image</a>, it names and describes some of the parts of the client.<br>Here are some useful things that you should know about:</p>
               <ul>
-                <li><b>/AWAY &lt;Reason&gt;:</b><br>Marks you as being away (better than disconnecting).</li>
-                <li><b>/BACK:</b><br>Marks you as being back (the opposite of /AWAY).</li>
-                <li><b>/HELP [&lt;Command&gt;]:</b><br>Gives you a list of commands or information about a command.</li>
-                <li><b>/JOIN &lt;Channel&gt;:</b><br>Joins that channel.</li>
-                <li><b>/ME &lt;Action&gt;:</b><br>Sends the action in thirt person.</li>
-                <li><b>/MSG &lt;Nickname&gt; &lt;Message&gt;:</b><br>Sends that user a private message.</li>
-                <li><b>/NICK &lt;Nickname&gt;:</b><br>Changes your nickname.</li>
-                <li><b>/PART [&lt;Channel&gt;] [&lt;Reason&gt;]:</b><br>Leaves a channel.</li>
-                <li><b>/QUERY &lt;Nickname&gt; [&lt;Reason&gt;]:</b><br>Opens up a new private message window to that user and optionally sends a message.</li>
-                <li><b>/QUIT [&lt;Reason&gt;]:</b><br>Quits from the server.</li>
-                <li><b>/WHOIS &lt;Nickname&gt;:</b><br>Gives information about that user.</li>
-                <li><b>/WHOWAS &lt;Nickname&gt;:</b><br>Gives information about that user who have quit.</li>
+                <li>If you want to get someone's attention, just mention their nickname, they will receive a notification and be able to read your message.</li>
+                <li>Do not add a "+" or an "@" at the beginning of the operator or the voiced user that you want to highlight.</li>
+                <li>The best way to mention someone's nickname is by typing the first few letters of their nickname and pressing the tab key to auto-complete it.</li>
+                <li>Not all channels have their moderators operated and the trusted users voiced.</li>
+                <li>Channel names and nicknames are case-insensitive.</li>
               </ul>
             </div>
 
             <div class="item carousel-space">
-              <h1>Tips and Advices</h1>
-              <p>
-                Congratulations! you have reached this section which is the most important one.<br>
-                This is a list of things that you should follow and keep in mind:
-              </p>
+              <h1>Useful Commands</h1>
+              <p>Commands start with a "/" and are case-insensitive. You do not have to memorise all of them, but you should know these:</p>
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>Syntax</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>/AWAY &lt;Reason&gt;</td>
+                    <td>Marks you as being away (better than disconnecting)</td>
+                  </tr>
+                  <tr>
+                    <td>/BACK</td>
+                    <td>Marks you as being back (the opposite of /AWAY)</td>
+                  </tr>
+                  <tr>
+                    <td>/HELP [&lt;Command&gt;]</td>
+                    <td>Gives you a list of commands or information about the command you gave it</td>
+                  </tr>
+                  <tr>
+                    <td>/JOIN &lt;Channel&gt;</td>
+                    <td>Joins that channel</td>
+                  </tr>
+                  <tr>
+                    <td>/ME &lt;Action&gt;</td>
+                    <td>Sends the action in third person</td>
+                  </tr>
+                  <tr>
+                    <td>/MSG &lt;Nick&gt; &lt;Message&gt;</td>
+                    <td>Sends a private message to that user</td>
+                  </tr>
+                  <tr>
+                    <td>/NICK &lt;Nick&gt;</td>
+                    <td>Changes your nickname</td>
+                  </tr>
+                  <tr>
+                    <td>/PART [&lt;Channel&gt;] [&lt;Reason&gt;]</td>
+                    <td>Leaves that channel (the current one by default)</td>
+                  </tr>
+                  <tr>
+                    <td>/QUERY &lt;Nick&gt; [&lt;Message&gt;]</td>
+                    <td>Opens up a new private message window to that user and optionally sends a message</td>
+                  </tr>
+                  <tr>
+                    <td>/QUIT [&lt;Reason&gt;]</td>
+                    <td>Quits from the server</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="item carousel-space">
+              <h1>Tips and Advice</h1>
+              <p>Congratulations! you have reached this section which is the most important one.<br>This is a list of things that you should follow and keep in mind:</p>
               <ul>
                 <li class="text-danger"><b>Follow the rules of the channel that you are visiting (read the topic of the channel).</b></li>
-                <li class="text-danger"><b>Do not spam or flood (including changing the nickname rapidly and rejoining the same channel rapidly), spamming annoys a lot of users and might cause you to get kicked or maybe even banned. If you want to, you can open up a new query with yourself and spam there, spam in a random and abandoned channel that does not have any users or spam in your testing channel.</b></li>
+                <li class="text-danger"><b>Do not spam or flood (including rejoining the same channel and changing the nickname rapidly). If you want to, you can open up a new query with yourself and spam there or spam in a random and abandoned channel that does not have any users.</b></li>
                 <li class="text-danger"><b>Do not highlight users for no reason or mass-highlight the channel.</b></li>
                 <li class="text-danger"><b>Do not troll.</b></li>
                 <li class="text-danger"><b>Do not ban evade.</b></li>
