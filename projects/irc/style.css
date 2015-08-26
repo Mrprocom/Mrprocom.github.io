@@ -1,0 +1,33 @@
+#iframe-menu-wrapper {
+  width: 100%;
+  height: 600px;
+}
+
+
+#iframe-menu-wrapper.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+
+
+#iframe-wrapper {
+  width: 100%;
+  height: calc(100% - 45px);
+  background: #FFF;
+  border: 2px solid #FFF;
+}
+
+
+#iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.carousel-space {
+  padding: 25px 150px 50px 150px
+}
