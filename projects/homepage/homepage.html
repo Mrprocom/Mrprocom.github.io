@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  
+<head>
+  <!-- Title, Meta Tags and Favicon -->
+  <title>Mrprocom | Homepage</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Mrprocom's personal website">
+  <meta name="keywords" content="Mrprocom">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="../../favicon.png">
+    
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  
+</head>
+
+<body>
+
+  <main class="container full-height" role="main">
+    <div id="iframe-menu-wrapper">
+      <nav class="navbar navbar-default navbar-modified">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Navigate</a>
+          </div>
+          <div>
+            <ul class="nav navbar-nav">
+              <li><a id="switch-main" href="#">Main Page</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <form class="navbar-form navbar-left" role="search">
+                  <div class="form-group">
+                    <input type="text" id="input-text" class="form-control">
+                  </div>
+                  <div id="btn-search" class="btn-group">
+                    <button type="button" id="search" class="btn btn-default">Google</button>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Google</a></li>
+                      <li><a href="#">Images</a></li>
+                      <li><a href="#">Maps</a></li>
+                      <li><a href="#">YouTube</a></li>
+                      <li><a href="#">URL</a></li>
+                    </ul>
+                  </div>
+                </form>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <iframe id="iframe-screen" src="main-page.html"></iframe>
+    </div>
+  </main>
+
+  <!-- JS Files -->
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
