@@ -109,3 +109,9 @@
 .tab-blue {
   background: #37617F;
 }
+
+
+#page-settings {
+  position: absolute;
+  bottom: 0;
+}
