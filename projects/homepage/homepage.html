@@ -12,7 +12,6 @@
     
   <!-- CSS Files -->
   <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
-  <link rel="stylesheet" href="../../style.css">
   <link rel="stylesheet" href="style.css">
   
   <!-- jQuery -->
@@ -37,24 +36,22 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <form class="navbar-form navbar-left" role="search">
-                  <div class="form-group">
-                    <input type="text" id="input-text" class="form-control">
+                <div class="navbar-form navbar-left">
+                  <div class="input-group">
+                    <input type="text" class="form-control" id="search-input">
+                    <span class="input-group-btn">
+                      <a href="#" class="btn btn-default google">Google</a>
+                      <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#" class="google">Google</a></li>
+                        <li><a href="#" class="youtube">YouTube</a></li>
+                        <li><a href="#" class="images">Images</a></li>
+                        <li><a href="#" class="maps">Maps</a></li>
+                        <li><a href="#" class="url">URL</a></li>
+                      </ul>
+                    </span>
                   </div>
-                  <div id="btn-search" class="btn-group">
-                    <button type="button" id="search" class="btn btn-default">Google</button>
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                      <li><a href="#">Google</a></li>
-                      <li><a href="#">Images</a></li>
-                      <li><a href="#">Maps</a></li>
-                      <li><a href="#">YouTube</a></li>
-                      <li><a href="#">URL</a></li>
-                    </ul>
-                  </div>
-                </form>
+                </div>
               </li>
             </ul>
           </div>

@@ -1,42 +1,94 @@
 $(document).ready(function(){
 
 
+  // Global variables
+  storage = $.localStorage;
+  sPages = storage.get("pages");
 
-  storage = $.localStorage
-
+  // Default pages
   if(storage.isEmpty()){
-    storage.set("pages", [["Google", "https://google.com"], ["YouTube", "https://youtube.com"], ["Powder Toy", "http://powdertoy.co.uk"]]);
+    storage.set("pages", []);
   }
 
-  for (var page in storage.get("pages")){
-    newColumn =
-      "<tr><td>" + page.toString() + "</td><td><a href='" + storage.get("pages")[page][1] + "'>" + storage.get("pages")[page][0] + "</a></td><td><a href='#' class='btn btn-danger btn-xs remove-page' name='" + page.toString() + "'>Remove</a></td></tr>";
+  // Add rows to the table using sPages
+  for(var page in sPages){
+
+    var newColumn =
+      "<tr name='" + page + "'>" +
+        "<td>" + (parseInt(page, 10) + 1) + "</td>" +
+        "<td><a href='" + sPages[page][1] + "'>" + sPages[page][0] + "</a></td>" +
+        "<td><a class='btn btn-danger btn-xs remove' name='" + page + "'>Remove</a></td>" +
+      "</tr>";
+
     $("#page-container").append(newColumn);
   }
 
 
-
-  $(document).on("click", ".remove-page", function(){
-    pages = storage.get("pages");
-    pages.splice($(this).attr("name"), 1);
+  // Remove function
+  $(document).on("click", ".remove", function(){
+    var pages = sPages;
+    var pageNum = $(this).attr("name");
+    pages.splice(pageNum, 1);
     storage.set("pages", pages);
     location.reload();
   });
 
 
-
+  // Add a new page function
   $("#create").on("click", function(){
-    name = prompt("Name:");
-    url = prompt("URL:");
-    pages = storage.get("pages");
-    pages.push([name, url]);
+    var name = prompt("Name:");
+    var url = prompt("URL:");
+    sPages.push([name, url]);
     storage.set("pages", pages);
     location.reload();
   });
 
+
+  // Clear function
   $("#clear").on("click", function(){
     storage.set("pages", []);
     location.reload();
+  });
+
+
+  // Edit function
+  $("#edit").on("click", function(){
+
+    // Prepare an array of nested arrays of sPages
+    pagesToStr = [];
+    // Add a nested array
+    for(var nested in sPages){
+      pagesToStr.push("[\"" + sPages[nested][0] + "\", \"" + sPages[nested][1] + "\"]");
+    }
+    // Convert array to string with brackets
+    pagesToStr = "[" + pagesToStr.join(", ") + "]";
+    // Prompt the user to edit the current setup and use the current setup as the default prompt value
+    var newPages = prompt("New array:", pagesToStr);
+    // Check if the new array is safe to use
+    try {
+      // Convert the string to an array
+      newPages = JSON.parse(newPages);
+      allowed = true;
+      for(var nested in newPages){
+        // Check if all nested arrays contain two strings
+        if(typeof newPages[nested][0] !== "string" && typeof newPages[nested][1] !== "string" && newPages[nested].length != 2){
+          allowed = false;
+          break;
+        }
+
+      }
+
+      if(allowed){
+        storage.set("pages", newPages);
+        location.reload();
+      } else {
+        alert("Error: The array you have entered it invalid.")
+      }
+    }
+    catch(err){
+      alert(err);
+    }
+    
   });
   
 });
