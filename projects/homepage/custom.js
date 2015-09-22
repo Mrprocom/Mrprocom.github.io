@@ -1,5 +1,5 @@
-$(document).ready(function(){
 
+$(document).ready(function(){
 
   // Global variables
   storage = $.localStorage;
@@ -7,7 +7,7 @@ $(document).ready(function(){
 
   // Default pages
   if(storage.isEmpty()){
-    storage.set("pages", []);
+    storage.set("pages", [["Example", "http://www.example.com"]]);
   }
 
   // Add rows to the table using sPages
