@@ -26,10 +26,9 @@ $(document).ready(function(){
 
   // Remove function
   $(document).on("click", ".remove", function(){
-    var pages = sPages;
     var pageNum = $(this).attr("name");
-    pages.splice(pageNum, 1);
-    storage.set("pages", pages);
+    sPages.splice(pageNum, 1);
+    storage.set("pages", sPages);
     location.reload();
   });
 
@@ -39,7 +38,7 @@ $(document).ready(function(){
     var name = prompt("Name:");
     var url = prompt("URL:");
     sPages.push([name, url]);
-    storage.set("pages", pages);
+    storage.set("pages", sPages);
     location.reload();
   });
 
