@@ -16,7 +16,7 @@ $(document).ready(function(){
     var newColumn =
       "<tr name='" + page + "'>" +
         "<td>" + (parseInt(page, 10) + 1) + "</td>" +
-        "<td><a href='" + sPages[page][1] + "'>" + sPages[page][0] + "</a></td>" +
+        "<td><a href='" + sPages[page][1] + "' target='_parent'>" + sPages[page][0] + "</a></td>" +
         "<td><a class='btn btn-danger btn-xs remove' name='" + page + "'>Remove</a></td>" +
       "</tr>";
 
