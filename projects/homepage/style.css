@@ -80,6 +80,11 @@ body, html {
 }
 
 
+.no-underline {
+  text-decoration: none !important;
+}
+
+
 .tab-red {
   background: #7F3737;
 }
