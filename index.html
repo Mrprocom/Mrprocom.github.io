@@ -1,42 +1,35 @@
+
 <!DOCTYPE html>
-<html>
-  
-<head>
-  <!-- Title, Meta Tags and Favicon -->
-  <title>Mrprocom</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="Mrprocom's personal website">
-  <meta name="keywords" content="Mrprocom">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/png" href="favicon.png">
-    
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mrprocom's personal website">
+    <meta name="author" content="Mrprocom">
+    <link rel="icon" href="favicon.ico">
 
-<body>
+    <title>Mrprocom</title>
 
-  <main class="container" role="main">
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+  </head>
+
+  <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="http://mrprocom.github.io">Site</a>
         </div>
-        <div>
+
+        <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
+            <li class="active"><a href="index.html">Main</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
                 <li><a href="projects/irc/irc.html">IRC</a></li>
               </ul>
             </li>
@@ -45,31 +38,38 @@
       </div>
     </nav>
 
-
-
-    <!-- Contents -->
-    <div class="page-content">
-      <div class="jumbotron">
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <div class="container">
         <h1>Mrprocom</h1>
-        <p>Welcome to Mrprocom's personal website!<br>I usually work on some projects from time to time. I will start sharing some of them on this website from now on.<br>You can check out my projects if you want, they are listed on the dropdown list in the navigation bar.</p>
-      </div>
-
-      <div class="page-section">
-        <h1>About</h1>
-        <p>I know a lot about web development (HTML, CSS and JS). I also know a few programming languages like Python, Lua and C++.<br>Sadly, I am an expert at none of them, I just know the basics and the important stuff.</p>
-      </div>
-
-      <div class="page-section">
-        <h1>Places to be Found</h1>
-        <ul>
-          <li><a href="http://webchat.freenode.net?channels=%23%23Mrprocom">Freenode</li>
-          <li><a href="https://github.com/Mrprocom">GitHub</a></li>
-          <li><a href="http://tpt.io/@Mrprocom">The Powder Toy</a></li>
-        </ul>
+        <p>Welcome to my personal website! it might look empty at the moment, but it will hopefully be filled with useful content.</p>
       </div>
     </div>
-  </main>
-  
-</body>
 
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h2>About</h2>
+          <p>I am Mrprocom. Sadly I do not know so many programming languages, I am only "good" at one of them which is Python. I am also willing to get better at coding in Lua and C++ because I only know their basics. Also if you have not guessed already, I know a bit about web development.</p>
+          <p>I have made this website to fill it up with tools, projects and other stuff I want to publish. If you would like to check them out, just click on the Projects dropdown menu and you will find them there.</p>
+        </div>
+        <div class="col-md-6">
+          <h2>Places to be found</h2>
+          <p>Not so many:</p>
+          <ul>
+            <li><a href="http://webchat.freenode.net/">Freenode</li>
+            <li><a href="https://github.com/Mrprocom/">GitHub</a></li>
+            <li><a href="http://tpt.io/@Mrprocom">The Powder Toy</a></li>
+          </ul>
+       </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <!-- JavaScripts -->
+    <script src="jquery-2.1.4.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+  </body>
 </html>
