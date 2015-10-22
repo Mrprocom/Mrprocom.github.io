@@ -1,66 +1,61 @@
 <!DOCTYPE html>
-<html>
-  
-<head>
-  <!-- Title, Meta Tags and Favicon -->
-  <title>Mrprocom | Homepage</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="Mrprocom's personal website">
-  <meta name="keywords" content="Mrprocom">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/png" href="../../favicon.png">
-    
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mrprocom's personal website">
+    <meta name="author" content="Mrprocom">
+    <link rel="icon" href="favicon.ico">
 
-<body>
+    <title>Mrprocom</title>
 
-  <main class="container full-height" role="main">
-    <div id="iframe-menu-wrapper">
-      <nav class="navbar navbar-default navbar-modified">
-        <div class="container-fluid">
-          <div>
-            <ul class="nav navbar-nav">
-              <li><a id="switch-main" href="#">Main Page</a></li>
-              <li><a id="switch-custom" href="#">Custom Pages</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <div class="navbar-form navbar-left">
-                  <div class="input-group">
-                    <input type="text" class="form-control" id="search-input">
-                    <span class="input-group-btn">
-                      <a href="#" class="btn btn-default google">Google</a>
-                      <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#" class="google">Google</a></li>
-                        <li><a href="#" class="youtube">YouTube</a></li>
-                        <li><a href="#" class="images">Images</a></li>
-                        <li><a href="#" class="maps">Maps</a></li>
-                        <li><a href="#" class="url">URL</a></li>
-                      </ul>
-                    </span>
+    <!-- Bootstrap and CSS -->
+    <link href="../../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container full-height">
+      <div id="iframe-menu-wrapper">
+        <nav class="navbar navbar-default navbar-modified">
+          <div class="container-fluid">
+            <div>
+              <ul class="nav navbar-nav">
+                <li><a id="switch-main" href="#">Main Page</a></li>
+                <li><a id="switch-custom" href="#">Custom Pages</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <div class="navbar-form navbar-left">
+                    <div class="input-group">
+                      <input type="text" class="form-control" id="search-input">
+                      <span class="input-group-btn">
+                        <a href="#" class="btn btn-default google">Google</a>
+                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#" class="google">Google</a></li>
+                          <li><a href="#" class="youtube">YouTube</a></li>
+                          <li><a href="#" class="images">Images</a></li>
+                          <li><a href="#" class="maps">Maps</a></li>
+                          <li><a href="#" class="url">URL</a></li>
+                        </ul>
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </li>
-            </ul>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-      <iframe id="iframe-screen" src="main-page.html"></iframe>
+        </nav>
+        <iframe id="iframe-screen" src="main-page.html"></iframe>
+      </div>
     </div>
-  </main>
 
-  <!-- JS Files -->
-  <script src="script.js"></script>
-  
-</body>
-
+    <!-- JavaScripts -->
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
