@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html>
-  
-<head>
-  <!-- Title, Meta Tags and Favicon -->
-  <title>Mrprocom | IRC</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="Mrprocom's personal website">
-  <meta name="keywords" content="Mrprocom">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/png" href="../../favicon.png">
-    
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="https://bootswatch.com/darkly/bootstrap.min.css">
-  <link rel="stylesheet" href="../../style.css">
-  <link rel="stylesheet" href="style.css">
-  
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  
-</head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mrprocom's personal website">
+    <meta name="author" content="Mrprocom">
+    <link rel="icon" href="../../favicon.ico">
 
-<body>
+    <title>Mrprocom</title>
 
-  <main class="container" role="main">
+    <!-- Bootstrap and CSS -->
+    <link href="../../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="http://mrprocom.github.io">Site</a>
         </div>
-        <div>
+
+        <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../../index.html">Main</a></li>
             <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
-              <span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
                 <li class="active"><a href="irc.html">IRC</a></li>
               </ul>
             </li>
@@ -46,168 +38,282 @@
       </div>
     </nav>
 
-
-
     <!-- IRC Client -->
-    <div class="page-content">
-      <div class="page-section">
-        <h1>IRC Web Client</h1>
-        <div id="iframe-menu-wrapper">
-          <div id="iframe-wrapper">
-            <iframe id="irc-client" src="https://webchat.freenode.net"></iframe>
-          </div>
-          <div class="btn-group btn-group-justified">
-            <a class="btn btn-default switch-kiwiirc">Switch to KiwiIRC</a>
-            <a id="client-website" class="btn btn-default" href="https://webchat.freenode.net" target="_blank">Original website</a>
-            <a class="btn btn-default enter-full-screen">Enter fullscreen mode</a>
-          </div>
-        </div>
+    <div class="container">
+      <h2>IRC Web Client</h2>
+      <div id="client-menu">
+        <iframe src="https://webchat.freenode.net/" id="irc-client"></iframe>
+        <a href="https://webchat.freenode.net/" target="_blank" class="btn btn-default btn-block" id="btn-newtab">Open client in a new tab</a>
       </div>
+    </div>
 
-    <!-- IRC Tutorial -->
-    <div class="panel panel-default">
-      <div class="panel-heading">IRC Tutorial</div>
-      <div class="panel-body">
-        <div id="irc-tutorial-carousel" class="carousel slide" data-ride="carousel" data-interval="false">
-          <ol class="carousel-indicators">
-            <li data-target="#irc-tutorial-1" data-slide-to="0" class="active"></li>
-            <li data-target="#irc-tutorial-2" data-slide-to="1"></li>
-            <li data-target="#irc-tutorial-3" data-slide-to="2"></li>
-            <li data-target="#irc-tutorial-4" data-slide-to="3"></li>
-            <li data-target="#irc-tutorial-5" data-slide-to="4"></li>
+    <hr>
+
+    <!-- Qwebirc Tutorial -->
+    <div class="container">
+      <div class="row">
+        <h2 id="connect">How to Connect</h2>
+        <div class="col-md-6">
+          <ol>
+            <li>Enter a valid nickname that is not currently being used in the Nickname text field.</li>
+            <li>Enter the channel name you want to join after connecting. All channels start with at least on hashtag. Separate your channel names with a comma if you want to join multiple channels. This field can be left empty.</li>
+            <li>If you have a NickServ account and want to identify to your account, ckeck the Auth to services checkbox and enter your username and your password in the username and the password text fields. You can ignore it if you do not want to identify.</li>
+            <li>Complete the reCAPTCHA by following the instructions. This is only used to prevent abuse.</li>
+            <li>Click on the connect button.</li>
           </ol>
-
-          <div id="irc-tutorial" class="carousel-inner" role="listbox">
-            <div class="item active carousel-space">
-              <h1>Introduction</h1>
-              <p>IRC stands for Internet Relay Chat. You can think of it as a chatting system where you have so many chatting rooms to choose from.</p>
-              <p>An IRC client is a program that lets users connect to IRC. There are some IRC web clients like QwebIRC and KiwiIRC as well as some clients that you can install like HexChat, mIRC and irssi.</p>
-              <p>There are many IRC servers that you can connect to like Freenode, which is the most popular one and the one you should always connect to. Each server has its own IRC channels (some servers have the same channels).</p>
-              <p>In this tutorial, you will learn the basics of using the IRC. You will be using QwebIRC for now and if you feel like you want to switch to KiwiIRC or install an IRC client, you can do that.</p>
-              <p>Content:</p>
-              <ul>
-                <li>How to Connect to the Server</li>
-                <li>Simple Concepts</li>
-                <li>Useful Commands</li>
-                <li>Tips and Advice</li>
-              </ul>
-            </div>
-
-            <div class="item carousel-space">
-              <h1>How to Connect to the Server</h1>
-              <ul>
-                <li>Type in the nickname that you want to be known as in the Nickname text field. Your nickname should represent yourself so that users can recognise you.</li>
-                <li>Type in the channel names that you want to join after connecting to the server in the Channels text field. This is optional, meaning that you can leave it empty if you do not want to join any channel after connecting. If you want to join multiple channels at once, just separate the channel names with a comma. Channels have to start with at least 1 hashtag.</li>
-                <li>If you do not have a NickServ account, then skip this step, otherwise check the "Auth to services" checkbox and type in your username and your password.</li>
-                <li>The reCAPTCHA is only used to make sure that the user is a human and not a robot. This is useful to prevent spam and abuse. Just do what the it says, it will only take a few seconds.</li>
-                <li>Click on the "Connect" button to connect to the server and if you see an error message, you might want to fix something and try again.</li>
-              </ul>
-            </div>
-
-            <div class="item carousel-space">
-              <h1>Simple Concepts</h1>
-              <p>Take a look at <a href="irc-interface.png">this image</a>, it names and describes some of the parts of the client.<br>Here are some useful things that you should know about:</p>
-              <ul>
-                <li>If you want to get someone's attention, just mention their nickname, they will receive a notification and be able to read your message.</li>
-                <li>Do not add a "+" or an "@" at the beginning of the operator or the voiced user that you want to highlight.</li>
-                <li>The best way to mention someone's nickname is by typing the first few letters of their nickname and pressing the tab key to auto-complete it.</li>
-                <li>Not all channels have their moderators operated and the trusted users voiced.</li>
-                <li>Channel names and nicknames are case-insensitive.</li>
-              </ul>
-            </div>
-
-            <div class="item carousel-space">
-              <h1>Useful Commands</h1>
-              <p>Commands start with a "/" and are case-insensitive. You do not have to memorise all of them, but you should know these:</p>
-              <table class="table table-striped table-hover">
-                <thead>
-                  <tr>
-                    <th>Syntax</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>/AWAY &lt;Reason&gt;</td>
-                    <td>Marks you as being away (better than disconnecting)</td>
-                  </tr>
-                  <tr>
-                    <td>/BACK</td>
-                    <td>Marks you as being back (the opposite of /AWAY)</td>
-                  </tr>
-                  <tr>
-                    <td>/HELP [&lt;Command&gt;]</td>
-                    <td>Gives you a list of commands or information about the command you gave it</td>
-                  </tr>
-                  <tr>
-                    <td>/JOIN &lt;Channel&gt;</td>
-                    <td>Joins that channel</td>
-                  </tr>
-                  <tr>
-                    <td>/ME &lt;Action&gt;</td>
-                    <td>Sends the action in third person</td>
-                  </tr>
-                  <tr>
-                    <td>/MSG &lt;Nick&gt; &lt;Message&gt;</td>
-                    <td>Sends a private message to that user</td>
-                  </tr>
-                  <tr>
-                    <td>/NICK &lt;Nick&gt;</td>
-                    <td>Changes your nickname</td>
-                  </tr>
-                  <tr>
-                    <td>/PART [&lt;Channel&gt;] [&lt;Reason&gt;]</td>
-                    <td>Leaves that channel (the current one by default)</td>
-                  </tr>
-                  <tr>
-                    <td>/QUERY &lt;Nick&gt; [&lt;Message&gt;]</td>
-                    <td>Opens up a new private message window to that user and optionally sends a message</td>
-                  </tr>
-                  <tr>
-                    <td>/QUIT [&lt;Reason&gt;]</td>
-                    <td>Quits from the server</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="item carousel-space">
-              <h1>Tips and Advice</h1>
-              <p>Congratulations! you have reached this section which is the most important one.<br>This is a list of things that you should follow and keep in mind:</p>
-              <ul>
-                <li class="text-danger"><b>Follow the rules of the channel that you are visiting (read the topic of the channel).</b></li>
-                <li class="text-danger"><b>Do not spam or flood (including rejoining the same channel and changing the nickname rapidly). If you want to, you can open up a new query with yourself and spam there or spam in a random and abandoned channel that does not have any users.</b></li>
-                <li class="text-danger"><b>Do not highlight users for no reason or mass-highlight the channel.</b></li>
-                <li class="text-danger"><b>Do not troll.</b></li>
-                <li class="text-danger"><b>Do not ban evade.</b></li>
-                <li class="text-warning"><b>Do not abuse caps lock or formatted characters.</b></li>
-                <li class="text-warning"><b>Do not be annoying.</b></li>
-                <li class="text-info"><b>Do not be very rude to people, be friendly to them and to new users instead.</b></li>
-                <li class="text-info"><b>Do not impersonate other users.</b></li>
-                <li class="text-info"><b>Do not ask for channel powers if you do not have rights to ask them.</b></li>
-                <li class="text-info"><b>Do not worry if users are not talking, they just talk whenever they have anything to say.</b></li>
-              </ul>
-              <p>These rules should be strictly followed depending on how important, popular and big the channel is. Have fun!</p>
-            </div>
-
-          <!-- Left and right controls -->
-          <a class="left carousel-control" href="#irc-tutorial-carousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#irc-tutorial-carousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
+        </div>
+        <div class="col-md-6">
+          <img src="startup.png" id="img-startup">
         </div>
       </div>
     </div>
-  </main>
 
+    <hr>
 
-  <!-- JS Files -->
-  <script src="script.js"></script>
-  
-</body>
+    <div class="container">
+      <h2 id="concepts">Interface and Concepts</h2>
+      <div class="col-md-6">
+        <ol>
+          <li>This is the webchat interface. Hover over each item of it for information about it.</li>
+          <li>If you want to get someone's attention, highlight them by mentioning their name.</li>
+          <li>This can be done by typing the nickname of the user you want to mention and adding either a colon or a comma followed by a space and your message.</li>
+          <li>Typing the first few letters of someone's nickname and pressing <kbd>Tab</kbd> will automatically complete it with the right letter casing.</li>
+          <li>If you want to mention a channel operator or a voiced user, do not include the at sign (@) or the plus sign (+).</li>
+          <li>Channel operators have special powers that are used to manage the channel and get rid of unwanted users.</li>
+          <li>Voiced users can still talk even if the channel is in moderation mode and even if they are banned or quieted.</li>
+        </ol>
+      </div>
+      <div class="col-md-6" id="chat-interface">
+        <div class="row">
+          <div class="btn-group">
+            <a href="#" class="btn btn-default btn-sm" data-toggle="tooltip"
+              data-original-title="Menu button: This is where you configure qwebirc"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+            <a href="#" class="btn btn-default btn-sm text-grey" data-toggle="tooltip"
+              data-original-title="Status: This is where you receive notifications from the server">Status</a>
+            <a href="#" class="btn btn-default btn-sm chan-message" data-toggle="tooltip"
+              data-original-title="Blue channel tab: This means #freenode has a new unread message">#freenode</a>
+            <a href="#" class="btn btn-default btn-sm chan-highlight" data-toggle="tooltip"
+              data-original-title="Red channel tab: This means someone highlighted you in ##chat">##chat</a>
+            <a href="#" class="btn btn-default btn-sm" data-toggle="tooltip"
+              data-original-title="Selected channel tab: This means you are currently reading messages from #channel">#channel</a>
+            <a href="#" class="btn btn-default btn-sm text-grey" data-toggle="tooltip"
+              data-original-title="Unselected channel tab: This means you are not currently reading messages from ##php and nothing has happened there">##php</a>
+            <a href="#" class="btn btn-default btn-sm chan-notification" data-toggle="tooltip"
+              data-original-title="Green channel tab: This means #lua has a new unread notification">#lua</a>
+          </div>
+        </div>
+        <div class="row">
+          <a href="#" class="btn btn-default btn-block btn-sm align-left text-grey" data-toggle="tooltip"
+              data-original-title="Topic: This shows the current topic of the channel">#Channel: Welcome to #Channel || Rules: http://www.example.com/</a>
+        </div>
+        <div class="row">
+          <div class="col-md-10 chat-window">
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[19:32]</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel notification: This indicates that this message is a notification"><span class="text-red">==</span></a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Notification message: This shows what exactly happened">John has joined #channel</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[19:32]</a>
+                <a href="#" class="btn btn-default btn-xs btn-nick" data-toggle="tooltip"
+                  data-original-title="Nickname: The nickname of the user making the action">&lt;<ins>John</ins>&gt;</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel message: A channel message sent by you">Hello everyone</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[19:32]</a>
+                <a href="#" class="btn btn-default btn-xs btn-nick" data-toggle="tooltip"
+                  data-original-title="Nickname: The nickname of the user making the action">&lt;<span class="text-red">Doe</span>&gt;</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel message: A channel message you were highlighted in and sent by a normal user">John: Oh hi</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[19:32]</a>
+                <a href="#" class="btn btn-default btn-xs btn-nick" data-toggle="tooltip"
+                  data-original-title="Nickname: The nickname of the user making the action">&lt;<span class="text-red">@Mark</span>&gt;</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel message: A channel message you were highlighted in and set by a channel operator">John, what's up?</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[19:32]</a>
+                <a href="#" class="btn btn-default btn-xs btn-nick" data-toggle="tooltip"
+                  data-original-title="Nickname: The nickname of the user making the action">&lt;<ins>John</ins>&gt;</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel message: A channel message sent by you">Not much, what about you?</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[19:33]</a>
+                <a href="#" class="btn btn-default btn-xs btn-nick" data-toggle="tooltip"
+                  data-original-title="Nickname: The nickname of the user making the action">&lt;@Mark&gt;</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel message: A channel message sent by a channel operator">Just woke up</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[20:16]</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel notification: This indicates that this message is a notification"><span class="text-red">==</span></a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Notification message: This shows what exactly happened">[Nathan] has changed nick to Nathan</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[20:16]</a>
+                <a href="#" class="btn btn-default btn-xs btn-nick" data-toggle="tooltip"
+                  data-original-title="Nickname: The nickname of the user making the action">&lt;Nathan&gt;</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel message: A channel message Steve was highlighted in and not you and sent by a normal user">Steve: I did it!</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="btn-group">
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Timestamp: [Hours:Minutes]">[20:17]</a>
+                <a href="#" class="btn btn-default btn-xs btn-nick" data-toggle="tooltip"
+                  data-original-title="Nickname: The nickname of the user making the action">&lt;+Steve&gt;</a>
+                <a href="#" class="btn btn-default btn-xs" data-toggle="tooltip"
+                  data-original-title="Channel message: A channel message sent by a voiced user">Nice :)</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 chat-window no-padding">
+            <div class="btn-group-vertical btn-block">
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="Services: This bot provides channel-related services">@ChanServ</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A channel operator">@Mark</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A channel operator">@Noah</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A voiced user">+David</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A voiced user">+Michael</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A voiced user">+Steve</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A normal user with no powers">David</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A normal user with no powers">Jack</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: This is you">John</a>
+              <a href="#" class="btn btn-default btn-xs align-left" data-toggle="tooltip"
+                data-original-title="User: A normal user with no powers">Nathan</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group no-margin">
+            <input class="form-control input-sm" type="text" placeholder="This is where you write your message. Press enter to send it.">
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div class="container">
+      <h2 id="commands">Useful commands</h2>
+      <p>You can give commands to your IRC client to make it do something special. You can run commands by pressing <kbd>/</kbd> and typing the command name. Here is a list of useful commands you should be aware of:</p>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Syntax</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>/away [&lt;Reason&gt;]</td>
+            <td>Marks you as being away. Not providing the reason will mark you as being back.</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>/help [&lt;Command&gt;]</td>
+            <td>Shows information about that command. Not providing the command will show a list of commands.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>/join &lt;Channel&gt;</td>
+            <td>Joins a channel.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>/me &lt;Action&gt;</td>
+            <td>Performs an action in third person.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>/msg &lt;Nickname&gt; &lt;Message&gt;</td>
+            <td>Sends a private message.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>/nick &lt;Nickname&gt;</td>
+            <td>Changes your nickname.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>/part [&lt;Channel&gt;] [&lt;Reason&gt;]</td>
+            <td>Leaves a channel (the current one by default). The part reason is shown to everyone in the channel.</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>/query &lt;Nickname&gt; [&lt;Message&gt;]</td>
+            <td>Opens a new tab for private messages. If the message is provided, it will send that message too.</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>/quit [&lt;Reason&gt;]</td>
+            <td>Quits from the server. The quit reason is shown to everyone in the channel.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="container">
+      <h2 id="tips">Tips and advice</h2>
+      <p>Congratulations for reaching this section which is the most important one. Here is a list of things you should keep in mind:</p>
+      <ul>
+        <li>Follow the rules of the channel that you are visiting (read the topic of the channel).</li>
+        <li>Do not spam or flood (including rejoining the same channel and changing the nickname rapidly). If you want to, you can open up a new query with yourself and spam there or spam in a random abandoned channel that does not have any users.</li>
+        <li>Do not highlight users for no reason or mass-highlight the entire channel.</li>
+        <li>Do not troll.</li>
+        <li>Do not ban evade.</li>
+        <li>Do not abuse caps lock or formatted characters.</li>
+        <li>Do not be annoying.</li>
+        <li>Do not be rude to people, be friendly to them and to new users instead.</li>
+        <li>Do not impersonate other users.</li>
+        <li>Do not ask for channel powers if you do not have rights to do that.</li>
+      </ul>
+      <p>These rules should be strictly followed depending on how important, popular and big the channel is.</p>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
