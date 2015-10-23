@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mrprocom's personal website">
     <meta name="author" content="Mrprocom">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="../../favicon.ico">
 
     <title>Mrprocom</title>
 
@@ -15,7 +15,7 @@
     <link href="style.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body id="homepage-body">
 
     <div class="container full-height">
       <div id="iframe-menu-wrapper">
@@ -24,7 +24,15 @@
             <div>
               <ul class="nav navbar-nav">
                 <li><a id="switch-main" href="#">Main Page</a></li>
-                <li><a id="switch-custom" href="#">Custom Pages</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Pages <span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu" id="custom">
+                    <li><a href="#" id="add">Add</a></li>
+                    <li><a href="#" id="edit">Edit</a></li>
+                    <li class="divider"></li>
+                  </ul>
+                </li>
+
               </ul>
               <ul class="nav navbar-nav navbar-right">
                 <li>
@@ -49,13 +57,14 @@
             </div>
           </div>
         </nav>
-        <iframe id="iframe-screen" src="main-page.html"></iframe>
+        <iframe src="main-page.html" id="iframe-screen"></iframe>
       </div>
     </div>
 
     <!-- JavaScripts -->
     <script src="../../jquery-2.1.4.min.js"></script>
     <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script src="jquery-storage/jquery.storageapi.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -3,18 +3,8 @@ body, html {
 }
 
 
-body {
+#homepage-body {
   background-color: #111111;
-}
-
-
-.full-height {
-  height: 100%;
-}
-
-
-.navbar-modified {
-  margin: 0;
 }
 
 
@@ -85,13 +75,18 @@ body {
 }
 
 
-.body-background {
+#mainpage-body {
   background: #052733;
 }
 
 
-.no-underline {
-  text-decoration: none !important;
+.full-height {
+  height: 100%;
+}
+
+
+.navbar-modified {
+  margin: 0;
 }
 
 
