@@ -1,6 +1,12 @@
 $(document).ready(function(){
 
   var oneKeyDown = false;
+  storage = $.localStorage;
+  try{
+    sPages = storage.get("pages");
+  } catch(err){
+    sPages = null;
+  }
 
   // Switch to main-page.html when #switch-main is clicked
   $("#switch-main").on("click", function(){
@@ -89,10 +95,6 @@ $(document).ready(function(){
     }
   });
 
-
-  // Global variables
-  storage = $.localStorage;
-  sPages = storage.get("pages");
 
   // Add rows to the table using sPages
   for(var page in sPages){
