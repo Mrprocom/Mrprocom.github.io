@@ -2,11 +2,11 @@ $(document).ready(function(){
 
   var oneKeyDown = false;
   storage = $.localStorage;
-  try{
-    sPages = storage.get("pages");
-  } catch(err){
-    sPages = null;
+  // Check if "pages" was declared
+  if(!storage.isSet("pages")){
+    storage.set("pages", []);
   }
+  sPages = storage.get("pages");
 
   // Switch to main-page.html when #switch-main is clicked
   $("#switch-main").on("click", function(){
