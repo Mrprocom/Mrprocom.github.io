@@ -19,7 +19,7 @@ body, html {
   width: 100%;
   height: 100%;
   border: 2px solid #000000;
-  background: #222222;
+  background-color: #222222;
 }
 
 
@@ -71,12 +71,12 @@ body, html {
 
 
 #url-tab-wrapper div div a img:hover {
-  box-shadow: 0 0 5px 2px #FFFFFF;
+  box-shadow: 0 0 5px 2px #ffffff;
 }
 
 
 #mainpage-body {
-  background: #052733;
+  background-color: #052733;
 }
 
 
@@ -90,31 +90,31 @@ body, html {
 }
 
 
-.tab-red {
-  background: #802020;
+.tab-blue {
+  background-color: #20577f;
 }
 
 
-.tab-purple {
-  background: #73207F;
-}
-
-
-.tab-orange {
-  background: #7F6C37;
-}
-
-
-.tab-green {
-  background: #207F30;
+.tab-brown {
+  background-color: #7f6620;
 }
 
 
 .tab-cyan {
-  background: #207F7A;
+  background-color: #207f7a;
 }
 
 
-.tab-blue {
-  background: #20577F;
+.tab-green {
+  background-color: #207f30;
+}
+
+
+.tab-purple {
+  background-color: #73207f;
+}
+
+
+.tab-red {
+  background-color: #802020;
 }
