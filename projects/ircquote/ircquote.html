@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mrprocom's personal website">
+    <meta name="author" content="Mrprocom">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Mrprocom</title>
+
+    <!-- Bootstrap and CSS -->
+    <link href="../../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-dialog.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container">
+      <h2>Prettify IRC Quotes</h2>
+      <hr>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="control-label col-sm-4 input-label" for="message-syntax">Message syntax:</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control input-sm" id="message-syntax" placeholder="Example: [timestamp] <nickname> message">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 input-label" for="notification-syntax">Notification syntax:</label>
+              <div class="col-sm-8"> 
+                <input type="text" class="form-control input-sm" id="notification-syntax" placeholder="Example: [timestamp] * message">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-4 input-label" for="replace-ip-with">Replace IPs with:</label>
+              <div class="col-sm-8"> 
+                <input type="text" class="form-control input-sm" id="replace-ip-with" placeholder="Example: [REDACTED]">
+              </div>
+            </div>
+            <div class="form-group"> 
+              <div class="col-sm-offset-4 col-sm-8">
+                <div class="checkbox">
+                  <label><input type="checkbox" id="hide-ip"> Hide IPs</label>
+                  <br>
+                  <label><input type="checkbox" id="hide-hostmasks"> Hide hostmasks</label>
+                  <br>
+                  <label><input type="checkbox" id="colour-nick"> Colour nicknames</label>
+                  <br>
+                  <label><input type="checkbox" id="convert-format"> Convert IRC formatted text</label>
+                  <br>
+                  <label><input type="checkbox" id="encode-text"> Encode special characters</label>
+                  <br>
+                  <label><input type="checkbox" id="no-syntax"> Do not change the syntaxes</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-4 col-sm-8">
+                <button type="button" class="btn btn-default" id="prettify">Prettify</button>
+                <button type="button" class="btn btn-default" id="preview">Preview</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="form-group">
+            <label class="control-label no-bold" for="irc-quote">Your quote:</label>
+            <textarea class="form-control" id="irc-quote"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="control-label no-bold" for="result">Result:</label>
+            <textarea class="form-control" id="result" onClick="this.select();" readonly></textarea>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+      <h2>How to use</h2>
+      Paste your quote in the "Your quote" text field. If the syntax of all messages and all notifications is the same and you want to change it to HexChat's syntaxes, then make sure you enter the messsage syntax and the notification syntax in their own text fields and makes sure you do not enable the "Do not change the syntaxes" checkbox, otherwise check that checkbox. You can automatically convert IRC formatted text into HTML by checking the "Convert IRC formatted text" checkbox. If you want IP and/or hostmasks to be hidden, check one or both of the first two checkboxes and fill the "Replace IPs with" text field with whatever you want to IPs/hostmasks to be replaced with.
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../../jquery-2.1.4.min.js"></script>
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <script src="bootstrap-dialog.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
