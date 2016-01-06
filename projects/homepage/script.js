@@ -96,7 +96,7 @@ $(document).ready(function(){
   });
 
 
-  // Add rows to the table using sPages
+  // Add rows to the dropdown list using sPages
   for(var page in sPages){
 
     var newItem = "<li><a href='" + sPages[page][1] + "' class='shiftable'>" + sPages[page][0] + "</a></li>";
