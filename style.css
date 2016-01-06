@@ -1,0 +1,27 @@
+body {
+  color: #ffffff;
+  background-color: #111111;
+}
+
+
+.jumbotron-dark {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+
+.col-dark {
+  background-color: #333333;
+  height: 235px;
+}
+
+
+.no-padding-left {
+  padding-left: 0;
+}
+
+
+.no-padding-right {
+  padding-right: 0;
+}
+
