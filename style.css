@@ -1,27 +1,58 @@
 body {
-  color: #ffffff;
-  background-color: #111111;
+  background-color: #7F8C8D;
+  line-height: 130%;
 }
 
 
-.jumbotron-dark {
-  color: #ffffff;
-  background-color: #333333;
+kbd {
+  background-color: #2C3E50;
 }
 
 
-.col-dark {
-  background-color: #333333;
-  height: 235px;
+dd {
+  padding-left: 40px;
 }
 
 
-.no-padding-left {
-  padding-left: 0;
+.no-radius {
+  border-radius: 0;
 }
 
 
-.no-padding-right {
-  padding-right: 0;
+.well-height {
+  height: 325px;
 }
 
+
+.colour-inverse {
+  color: #FFFFFF;
+  background-color: #34495E;
+  border: none;
+}
+
+
+.modal-header {
+  color: #FFFFFF;
+  background-color: #1ABC9C;
+  border: none;
+}
+
+
+.modal-body {
+  color: #FFFFFF;
+  background-color: #34495E;
+  border: none;
+}
+
+
+.modal-footer {
+  color: #FFFFFF;
+  background-color: #2C3E50;
+  border: none;
+}
+
+
+.fixed-scroll {
+  height: 450px;
+  overflow: auto;
+}
