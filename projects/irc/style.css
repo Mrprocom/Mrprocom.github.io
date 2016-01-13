@@ -3,11 +3,6 @@ html, body {
 }
 
 
-body {
-  background-color: #34495E;
-}
-
-
 #client-container {
   position: relative;
   top: 50%;
@@ -18,14 +13,14 @@ body {
 #irc-client {
   width: 100%;
   height: 500px;
-  border: none;
+  border: 2px solid #34495E;
   background-color: #ECF0F1;
 }
 
 
 #options {
   position: relative !important;
-  top: -9px !important;
+  top: -5px !important;
 }
 
 
