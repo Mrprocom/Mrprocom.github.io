@@ -395,13 +395,13 @@ $(document).ready(function(){
     var result =
       "<ul>" +
         "<li>Paste your quote in the \"Your quote\" text field.</li>" +
-        "<li>If you want the syntax to be change, make sure you do not check the first checkbox and enter the message syntax and the notification syntax your client uses in their own text fields. This will not work with quotes that have different syntaxes. Message syntax must contain the word \"nickname\" and the word \"message\". Notification syntaxes must contain the word \"message\". The word \"timestamp\" is optional.</li>" +
-        "<li>If you want IPs and/or hostmasks to be hidden, check the second and/or the third checkbox and enter what you want them to be replaced with in the \"Replace IPs with text\" field.</li>" +
-        "<li>If you want each nickname to have a random colour, check the fourth checkbox. This will only work if the first checkbox is not checked.</li>" +
+        "<li>If you want the syntax to be changed, check the first checkbox and enter the message syntax (Example: [timestamp] <nickname> message) and the notification syntax (Example: [time] * message) in their own text fields.</li>" +
+        "<li>If you want IPs and/or hostmasks to be hidden, check the second and/or the third checkbox and enter what you want them to be replaced with in the \"Replace IPs/hostmasks with\" text field.</li>" +
+        "<li>If you want each nickname to have a random colour, check the fourth checkbox. This will only work if the first checkbox is checked.</li>" +
         "<li>If you want IRC formatted text to be converted into HTML formatted text, check the fifth checkbox.</li>" +
-        "<li>If you want special characters that have a decimal value that is more than 255 to be encoded, check the sixth checkbox.</li>" +
+        "<li>If you want special characters that have a decimal value that is higher than 255 to be encoded, check the sixth checkbox.</li>" +
         "<li>Press \"Prettify\" to get the new HTML code or \"Preview\" to see how it looks first.</li>" +
-        "<li>After pressing \"Prettify\" the \"Result\" text field will have the new HTML code, copy it and do whatever you want with it.</li>" +
+        "<li>After pressing \"Prettify\" the \"Result\" text field will have the new HTML code, click it, copy it and do whatever you want with it.</li>" +
       "</ul>";
 
     BootstrapDialog.show({
