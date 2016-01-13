@@ -39,6 +39,8 @@ html, body {
   background: #fafaf8;
   border: 1px solid #cccccc;
   overflow: auto;
+  word-wrap: break-word;
+  font-size: 15px;
 }
 
 
