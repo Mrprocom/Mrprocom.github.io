@@ -354,7 +354,7 @@ function getResult(){
           if(isConvertFmtChecked){
             quoteline = ircFormatToHtml(quoteline) + "\n";
           }
-          newQuote += quoteline;
+          newQuote += quoteline + "\n";
         }
       }
       return newQuote;
