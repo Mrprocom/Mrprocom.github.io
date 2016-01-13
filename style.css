@@ -56,3 +56,8 @@ dd {
   height: 450px;
   overflow: auto;
 }
+
+
+.checkbox {
+  margin-top: 0 !important;
+}

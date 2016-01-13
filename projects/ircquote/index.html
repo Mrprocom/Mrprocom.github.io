@@ -11,82 +11,76 @@
     <title>Mrprocom</title>
 
     <!-- Bootstrap and CSS -->
-    <link href="../../bootstrap/bootstrap.min.css" rel="stylesheet">
-    <link href="bootstrap-dialog.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/flat-ui.min.css" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
   <body>
 
-    <div class="container">
-      <h2>Prettify IRC Quotes</h2>
-      <hr>
-
-      <div class="row">
-        <div class="col-lg-6">
-          <form class="form-horizontal" role="form">
-            <div class="form-group">
-              <label class="control-label col-sm-4 input-label" for="message-syntax">Message syntax:</label>
-              <div class="col-sm-8">
-                <input type="text" class="form-control input-sm" id="message-syntax" placeholder="Example: [timestamp] <nickname> message">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-sm-4 input-label" for="notification-syntax">Notification syntax:</label>
-              <div class="col-sm-8"> 
-                <input type="text" class="form-control input-sm" id="notification-syntax" placeholder="Example: [timestamp] * message">
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label col-sm-4 input-label" for="replace-ip-with">Replace IPs with:</label>
-              <div class="col-sm-8"> 
-                <input type="text" class="form-control input-sm" id="replace-ip-with" placeholder="Example: [REDACTED]">
-              </div>
-            </div>
-            <div class="form-group"> 
-              <div class="col-sm-offset-4 col-sm-8">
-                <div class="checkbox">
-                  <label><input type="checkbox" id="change-syntax"> Change the syntaxes</label>
-                  <br>
-                  <label><input type="checkbox" id="hide-ip"> Hide IPs</label>
-                  <br>
-                  <label><input type="checkbox" id="hide-hostmasks"> Hide hostmasks</label>
-                  <br>
-                  <label><input type="checkbox" id="colour-nick"> Colour nicknames</label>
-                  <br>
-                  <label><input type="checkbox" id="convert-format"> Convert IRC formatted text</label>
-                  <br>
-                  <label><input type="checkbox" id="encode-text"> Encode special characters</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-offset-4 col-sm-8">
-                <button type="button" class="btn btn-default" id="prettify">Prettify</button>
-                <button type="button" class="btn btn-default" id="preview">Preview</button>
-                <button type="button" class="btn btn-default" id="help">Help</button>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        <div class="col-lg-6">
-          <div class="form-group">
-            <label class="control-label no-bold" for="irc-quote">Your quote:</label>
-            <textarea class="form-control" id="irc-quote"></textarea>
+    <div class="container colour-inverse" id="ircquote-container">
+      <h3 id="title">IRC Quote Prettifier</h3>
+      <div class="col-lg-4">
+        <form class="form-horizontal" role="form">
+          <div class="form-group less-margin">
+            <input type="text" class="form-control input-sm" id="message-syntax" placeholder="Message syntax">
+          </div>
+          <div class="form-group less-margin">
+            <input type="text" class="form-control input-sm" id="notification-syntax" placeholder="Notification syntax">
+          </div>
+          <div class="form-group less-margin">
+            <input type="text" class="form-control input-sm" id="replace-ip-with" placeholder="Replace IPs/hostmasks with">
+          </div>
+          <div class="form-group less-margin"> 
+            <label class="checkbox" for="change-syntax">
+              <input type="checkbox" value="" id="change-syntax" data-toggle="checkbox">
+              Change the syntaxes
+            </label>
+            <label class="checkbox" for="hide-ip">
+              <input type="checkbox" value="" id="hide-ip" data-toggle="checkbox">
+              Hide IPs
+            </label>
+            <label class="checkbox" for="hide-hostmasks">
+              <input type="checkbox" value="" id="hide-hostmasks" data-toggle="checkbox">
+              Hide hostmasks
+            </label>
+            <label class="checkbox" for="colour-nick">
+              <input type="checkbox" value="" id="colour-nick" data-toggle="checkbox">
+              Colour nicknames
+            </label>
+            <label class="checkbox" for="convert-format">
+              <input type="checkbox" value="" id="convert-format" data-toggle="checkbox">
+              Convert IRC formatted text
+            </label>
+            <label class="checkbox" for="encode-text">
+              <input type="checkbox" value="" id="encode-text" data-toggle="checkbox">
+              Encode special characters
+            </label>
           </div>
           <div class="form-group">
-            <label class="control-label no-bold" for="result">Result:</label>
-            <textarea class="form-control" id="result" onClick="this.select();" readonly></textarea>
+            <div class="btn-group btn-group-justified">
+              <a href="#" class="btn btn-primary" id="prettify">Prettify</a>
+              <a href="#" class="btn btn-primary" id="preview">Preview</a>
+              <a href="#" class="btn btn-primary" id="help">Help</a>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
+
+      <div class="col-lg-8">
+        <form class="form-horizontal less-margin" role="form">
+          <textarea class="form-control" id="irc-quote" placeholder="Your IRC quote"></textarea>
+          <textarea class="form-control" id="result"  placeholder="The result" onClick="this.select();" readonly></textarea>
+        </div>
+      </form>
     </div>
 
     <!-- JavaScripts -->
-    <script src="../../jquery-2.1.4.min.js"></script>
-    <script src="../../bootstrap/bootstrap.min.js"></script>
-    <script src="bootstrap-dialog.min.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../plugins/bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="../../plugins/radiocheck.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,38 +1,33 @@
-body {
-  background: #111111;
-  color: #ffffff;
+html, body {
+  height: 100%;
 }
 
 
-hr {
-  border-color: #555555;
+#ircquote-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 20px 5px 0 20px;
+  border-radius: 6px;
 }
 
 
-input[type=text] {
-  background: #333333;
-  border-color: #555555;
-  color: #ffffff;
-}
-
-
-textarea {
-  background: #333333 !important;
-  border-color: #555555 !important;
-  color: #ffffff !important;
+#title {
+  margin-top: 0;
 }
 
 
 #irc-quote{
-  height: 133px;
+  height: 191px;
   resize: none;
   margin-bottom: 15px;
 }
 
 
 #result {
-  height: 133px;
+  height: 192px;
   resize: none;
+  color: #000000;
 }
 
 
@@ -47,25 +42,6 @@ textarea {
 }
 
 
-.modal-header, .modal-footer {
-  background: #555555 !important;
-  border-color: #555555 !important;
-}
-
-
-.modal-body {
-  background: #333333;
-}
-
-
-.input-label {
-  padding-top: 5px !important;
-  padding-left: 50px !important;
-  text-align: left !important;
-  font-weight: normal;
-}
-
-
-.no-bold {
-  font-weight: normal;
+.less-margin {
+  margin-bottom: 15px;
 }

@@ -252,8 +252,13 @@ function getResult(){
       // Turn message and notification syntaxes into regular expressions
       messageSyntax = messageSyntax.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
       notificationSyntax = notificationSyntax.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
-      var messageRe = new RegExp(messageSyntax.replace("timestamp", "(.+)").replace("nickname", "(\\S+)").replace("message", "(.+)"));
-      var notificationRe = new RegExp(notificationSyntax.replace("timestamp", "(.+)").replace("message", "(.+)"));
+      var messageRe = new RegExp(messageSyntax.replace("timestamp", ".+").replace("nickname", "\\S+").replace("message", ".+"));
+      var msgTimeRe = new RegExp(messageSyntax.replace("timestamp", "(.+)").replace("nickname", "\\S+").replace("message", ".+"));
+      var msgNickRe = new RegExp(messageSyntax.replace("timestamp", ".+").replace("nickname", "(\\S+)").replace("message", ".+"));
+      var msgMsgRe = new RegExp(messageSyntax.replace("timestamp", ".+").replace("nickname", "\\S+").replace("message", "(.+)"));
+      var notificationRe = new RegExp(notificationSyntax.replace("timestamp", ".+").replace("message", ".+"));
+      var notifTimeRe = new RegExp(notificationSyntax.replace("timestamp", "(.+)").replace("message", ".+"));
+      var notifMsgRe = new RegExp(notificationSyntax.replace("timestamp", ".+").replace("message", "(.+)"));
 
       // Remove all IRC formatted text if the user did not want to convert them
       if(!isConvertFmtChecked){
@@ -275,8 +280,8 @@ function getResult(){
         if(messageRe.exec(quoteline) && messageRe.exec(quoteline)[0] == quoteline){
           // Check if the user did not use timestamps
           if(messageSyntax.indexOf("timestamp") == -1){
-            var nickname = messageRe.exec(quoteline)[1];
-            var message = messageRe.exec(quoteline)[2];
+            var nickname = msgNickRe.exec(quoteline)[1];
+            var message = msgMsgRe.exec(quoteline)[1];
             message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
             if(isEncodeTextChecked){
@@ -293,9 +298,9 @@ function getResult(){
 
             var newline = "&lt;" + nickname + "&gt; " + message + "\n";
           } else {
-            var timestamp = messageRe.exec(quoteline)[1];
-            var nickname = messageRe.exec(quoteline)[2];
-            var message = messageRe.exec(quoteline)[3];
+            var timestamp = msgTimeRe.exec(quoteline)[1];
+            var nickname = msgNickRe.exec(quoteline)[1];
+            var message = msgMsgRe.exec(quoteline)[1];
             message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
             if(isEncodeTextChecked){
               message = htmlEncode(message);
@@ -313,7 +318,7 @@ function getResult(){
         // Do the same thing but with notifications if they match
         } else if(notificationRe.exec(quoteline) && notificationRe.exec(quoteline)[0] == quoteline){
           if(notificationSyntax.indexOf("timestamp") == -1){
-            var message = notificationRe.exec(quoteline)[1];
+            var message = notifMsgRe.exec(quoteline)[1];
             message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
             if(isEncodeTextChecked){
               message = htmlEncode(message);
@@ -323,8 +328,8 @@ function getResult(){
             }
             var newline = "* " + message + "\n";
           } else {
-            var timestamp = notificationRe.exec(quoteline)[1];
-            var message = notificationRe.exec(quoteline)[2];
+            var timestamp = notifTimeRe.exec(quoteline)[1];
+            var message = notifMsgRe.exec(quoteline)[1];
             message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
             if(isEncodeTextChecked){
               message = htmlEncode(message);
@@ -360,6 +365,13 @@ function getResult(){
 
 $(document).ready(function(){
 
+  $("[data-toggle='checkbox']").radiocheck();
+  // Disable all of these at the beginning
+  $("#message-syntax").prop("disabled", true);
+  $("#notification-syntax").prop("disabled", true);
+  $("#colour-nick").prop("disabled", true);
+  $("#replace-ip-with").prop("disabled", true);
+
   $("#prettify").click(function(){
     var result = getResult();
     if(result){
@@ -375,10 +387,6 @@ $(document).ready(function(){
       BootstrapDialog.show({
         title: "Preview",
         message: result,
-        buttons: [{
-          label: "Close",
-          action: function(dialogItself){dialogItself.close();}
-        }]
       });
     }
   });
@@ -395,13 +403,33 @@ $(document).ready(function(){
         "<li>Press \"Prettify\" to get the new HTML code or \"Preview\" to see how it looks first.</li>" +
         "<li>After pressing \"Prettify\" the \"Result\" text field will have the new HTML code, copy it and do whatever you want with it.</li>" +
       "</ul>";
+
     BootstrapDialog.show({
-        title: "How to use",
-        message: result,
-        buttons: [{
-          label: "Close",
-          action: function(dialogItself){dialogItself.close();}
-        }]
-      });
+      title: "How to use",
+      message: result,
+    });
   });
+
+  // Enable Message and Notification syntax inputs and Colour nicks checkbox if Change syntax checkbox is checked and vice versa
+  $("#change-syntax").click(function(){
+    if($("#change-syntax").is(":checked")){
+      $("#message-syntax").prop("disabled", false);
+      $("#notification-syntax").prop("disabled", false);
+      $("#colour-nick").prop("disabled", false);
+    } else {
+      $("#message-syntax").prop("disabled", true);
+      $("#notification-syntax").prop("disabled", true);
+      $("#colour-nick").prop("disabled", true);
+    }
+  });
+
+  // Enable Replace IPs/hostmasks with input if Hide IPs checkbox or Hide hostmasks checkbox is checked and vice versa
+  $("#hide-ip, #hide-hostmasks").click(function(){
+    if($("#hide-ip").is(":checked") || $("#hide-hostmasks").is(":checked")){
+      $("#replace-ip-with").prop("disabled", false);
+    } else {
+      $("#replace-ip-with").prop("disabled", true);
+    }
+  });
+
 });
