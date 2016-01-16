@@ -395,7 +395,7 @@ $(document).ready(function(){
     var result =
       "<ul>" +
         "<li>Paste your quote in the \"Your quote\" text field.</li>" +
-        "<li>If you want the syntax to be changed, check the first checkbox and enter the message syntax (Example: [timestamp] <nickname> message) and the notification syntax (Example: [time] * message) in their own text fields.</li>" +
+        "<li>If you want the syntax to be changed, check the first checkbox and enter the message syntax (Example: [timestamp] &lt;nickname&gt; message) and the notification syntax (Example: [time] * message) in their own text fields.</li>" +
         "<li>If you want IPs and/or hostmasks to be hidden, check the second and/or the third checkbox and enter what you want them to be replaced with in the \"Replace IPs/hostmasks with\" text field.</li>" +
         "<li>If you want each nickname to have a random colour, check the fourth checkbox. This will only work if the first checkbox is checked.</li>" +
         "<li>If you want IRC formatted text to be converted into HTML formatted text, check the fifth checkbox.</li>" +
