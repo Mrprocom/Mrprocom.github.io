@@ -11,7 +11,9 @@
     <title>Mrprocom</title>
 
     <!-- Bootstrap and CSS -->
-    <link href="../../bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/flat-ui.min.css" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
@@ -19,7 +21,7 @@
 
     <div class="container full-height">
       <div id="iframe-menu-wrapper">
-        <nav class="navbar navbar-default navbar-modified">
+        <nav class="navbar navbar-inverse no-radius" id="toolbar">
           <div class="container-fluid">
             <div>
               <ul class="nav navbar-nav">
@@ -38,10 +40,10 @@
                 <li>
                   <div class="navbar-form navbar-left">
                     <div class="input-group">
-                      <input type="text" class="form-control" id="search-input">
+                      <input type="text" class="form-control no-radius" id="search-input">
                       <span class="input-group-btn">
                         <a href="#" class="btn btn-default google">Google</a>
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+                        <a href="#" class="btn btn-default dropdown-toggle no-radius" data-toggle="dropdown"><span class="caret"></span></a>
                         <ul class="dropdown-menu">
                           <li><a href="#" class="google">Google</a></li>
                           <li><a href="#" class="youtube">YouTube</a></li>
@@ -62,9 +64,9 @@
     </div>
 
     <!-- JavaScripts -->
-    <script src="../../jquery-2.1.4.min.js"></script>
-    <script src="../../bootstrap/bootstrap.min.js"></script>
-    <script src="jquery-storage/jquery.storageapi.js"></script>
+    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../plugins/jquery-storage/jquery.storageapi.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

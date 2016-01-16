@@ -15,7 +15,7 @@ dd {
 
 
 .no-radius {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 
@@ -61,4 +61,14 @@ dd {
 
 .checkbox {
   margin-top: 0 !important;
+}
+
+
+.dropdown-menu {
+  border-radius: 0 !important;
+}
+
+
+.navbar-inverse .navbar-nav>.open>.dropdown-menu>li>a {
+  border-radius: 0px;
 }
