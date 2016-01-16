@@ -186,7 +186,7 @@ function stripIrcFmt(s){
   This function removes all formatted text from s.
   */
 
-  return s.replace(/\003(\d{1,2},)?\d{1,2}/g, "").replace(/(\002|\003|\017|\026|\035|\037)/g, "");
+  return s.replace(/\003(\d{1,2},)?\d{1,2}/g, "").replace(/(\002|\003|\010|\017|\026|\035|\037)/g, "");
 }
 
 
@@ -207,7 +207,7 @@ function getResult(){
   var isChngSyntaxChecked = $("#change-syntax").is(":checked");
   var oldQuote            = $("#irc-quote").val();
   var newQuote            = "";
-  var ipRe                = /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/g;
+  var ipRe                = /(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|(?:[A-F0-9]{1,4}:){7}[A-F0-9]{1,4})/gi;
   var hostmaskRe          = /[^! ]+@\S+/g;
 
   // If the user did not want to the syntaxes to be changed
@@ -228,7 +228,7 @@ function getResult(){
     }
     // Convert all IRC formatted text into HTML formatted text if the user wanted to
     if(isConvertFmtChecked){
-      var quotelines = oldQuote.split("\n");
+      var quotelines = oldQuote.replace(/\010/g, "").split("\n");
       for(var i = 0; i < quotelines.length; i++){
         newQuote += ircFormatToHtml(quotelines[i]) + "\n";
       }
