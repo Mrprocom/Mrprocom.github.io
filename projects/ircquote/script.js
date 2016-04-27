@@ -37,7 +37,7 @@ function htmlEncode(s){
   for(var i = 0; i < s.length; i++){
     // If the decimal version of the character higher than 255, then encode it
     if(s.charCodeAt(i) > 255){
-      s = s.replace(s[i], "&#" + s.charCodeAt(i) + ";");
+      s = s.replace(s[i], "&amp;#" + s.charCodeAt(i) + ";");
     }
   }
 
@@ -213,8 +213,8 @@ function getResult(){
   // If the user did not want to the syntaxes to be changed
   if(!isChngSyntaxChecked){
 
-    // Replace all < and > with &lt; and &gt;
-    oldQuote = oldQuote.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    // Replace all < and > with &amp;lt; and &amp;gt;
+    oldQuote = oldQuote.replace(/&/g, "&amp;amp;").replace(/</g, "&amp;lt;").replace(/>/g, "&amp;gt;");
     // Hide hostmaks and/or IPs if the user wanted to
     if(isHideHostChecked){
       oldQuote = oldQuote.replace(hostmaskRe, replaceIpWith);
@@ -282,7 +282,7 @@ function getResult(){
           if(messageSyntax.indexOf("timestamp") == -1){
             var nickname = msgNickRe.exec(quoteline)[1];
             var message = msgMsgRe.exec(quoteline)[1];
-            message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            message = message.replace(/&/g, "&amp;amp;").replace(/</g, "&amp;lt;").replace(/>/g, "&amp;gt;");
 
             if(isEncodeTextChecked){
               message = htmlEncode(message);
@@ -296,12 +296,12 @@ function getResult(){
               message = ircFormatToHtml(message);
             }
 
-            var newline = "&lt;" + nickname + "&gt; " + message + "\n";
+            var newline = "&amp;lt;" + nickname + "&amp;gt; " + message + "\n";
           } else {
             var timestamp = msgTimeRe.exec(quoteline)[1];
             var nickname = msgNickRe.exec(quoteline)[1];
             var message = msgMsgRe.exec(quoteline)[1];
-            message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            message = message.replace(/&/g, "&amp;amp;").replace(/</g, "&amp;lt;").replace(/>/g, "&amp;gt;");
             if(isEncodeTextChecked){
               message = htmlEncode(message);
             }
@@ -311,7 +311,7 @@ function getResult(){
             if(isConvertFmtChecked){
               message = ircFormatToHtml(message);
             }
-            var newline = "[" + timestamp + "] &lt;" + nickname + "&gt; " + message + "\n";
+            var newline = "[" + timestamp + "] &amp;lt;" + nickname + "&amp;gt; " + message + "\n";
           }
           newQuote += newline;
 
@@ -319,7 +319,7 @@ function getResult(){
         } else if(notificationRe.exec(quoteline) && notificationRe.exec(quoteline)[0] == quoteline){
           if(notificationSyntax.indexOf("timestamp") == -1){
             var message = notifMsgRe.exec(quoteline)[1];
-            message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            message = message.replace(/&/g, "&amp;amp;").replace(/</g, "&amp;lt;").replace(/>/g, "&amp;gt;");
             if(isEncodeTextChecked){
               message = htmlEncode(message);
             }
@@ -330,7 +330,7 @@ function getResult(){
           } else {
             var timestamp = notifTimeRe.exec(quoteline)[1];
             var message = notifMsgRe.exec(quoteline)[1];
-            message = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            message = message.replace(/&/g, "&amp;amp;").replace(/</g, "&amp;lt;").replace(/>/g, "&amp;gt;");
             if(isEncodeTextChecked){
               message = htmlEncode(message);
             }
@@ -374,21 +374,20 @@ $(document).ready(function(){
 
   $("#prettify").click(function(){
     var result = getResult();
-    if(result){
-      $("#result").val(result);
-    }
+    result = "<textarea id='result' class='form-control no-radius'>" + result + "</textarea>";
+    BootstrapDialog.show({
+      title: "Preview",
+      message: result
+    });
   });
 
   $("#preview").click(function(){
     var result = getResult();
-    result = "<div id='preview-container'>" + result + "</div>"
-    if(result){
-      // Show a dialog of the results
-      BootstrapDialog.show({
-        title: "Preview",
-        message: result,
-      });
-    }
+    result = "<div id='preview-container'>" + result + "</div>";
+    BootstrapDialog.show({
+      title: "Preview",
+      message: result
+    });
   });
 
   $("#help").click(function(){
@@ -406,7 +405,7 @@ $(document).ready(function(){
 
     BootstrapDialog.show({
       title: "How to use",
-      message: result,
+      message: result
     });
   });
 

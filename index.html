@@ -18,54 +18,50 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse no-radius">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="http://mrprocom.github.io">Site</a>
-        </div>
-
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Main</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="projects/gamebrowser/">Game Browser</a></li>
-                <li><a href="projects/homepage/">Homepage</a></li>
-                <li><a href="projects/irc/">IRC Tutorial</a></li>
-                <li><a href="projects/ircquote/">IRC Quote Prettifier</a></li>
-                <li><a href="http://files.brilliant-minds.tk/Organize-Post.html">Organizing Your Post</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+    <nav class="navbar navbar-inverse navbar-static-top no-margin" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="index.html">Main Page</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle pointer" data-toggle="dropdown">Project List <b class="caret"></b></a>
+            <span class="dropdown-arrow"></span>
+            <ul class="dropdown-menu">
+              <li><a href="projects/homepage/">Homepage</a></li>
+              <li><a href="projects/irc/">IRC Tutorial</a></li>
+              <li><a href="projects/ircquote/">IRC Quote Prettifier</a></li>
+              <li><a href="http://files.brilliant-minds.tk/Organize-Post.html">Organizing Your Post</a></li>
+            </ul>
+          </li>
+         </ul>
       </div>
     </nav>
 
-    <div class="container">
-      <div class="jumbotron colour-inverse">
-        <h2>Mrprocom</h1>
-        <p>Welcome to my personal website! This website contains some of the projects I published and will hopefully be full in the future.</p>
-      </div>
+    <div class="jumbotron" id="welcome-screen">
+      <img src="logo.png" id="logo">
+      <h2 id="headline">Mrprocom<br><small>My Personal Website</small></h2>
+    </div>
 
+    <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <div class="well well-lg well-height colour-inverse">
-            <h3>About</h3>
-            <p>Hello, I am Mrprocom. I mainly work with Python projects and web development. I am decent at Python and JavaScript and I know the basics of C++, Lua and Ruby.</p>
-            <p>If you want to check out my projects, click Projects from the navigation bar and you will find them there.</p>
-          </div>
+          <h3>About</h3>
+          <p>I work a lot with python projects and web projects. Although I learned C++, Lua and Ruby, I never done a whole lot using them, which makes me inexpercienced at them.</p>
+          <p>This website is mainly for publishing useful tools. If you want to check them out, they are listed in the navigation bar.</p>
         </div>
         <div class="col-md-6">
-          <div class="well well-lg well-height colour-inverse">
-            <h3>Places to be found</h2>
-            <p>Not so many:</p>
-            <ul>
-              <li><a href="http://webchat.freenode.net?channels=%23%23Mrprocom">Freenode</a></li>
-              <li><a href="https://github.com/Mrprocom/">GitHub</a></li>
-              <li><a href="http://tpt.io/@Mrprocom">The Powder Toy</a></li>
-            </ul>
-          </div>
+          <h3>More info</h3>
+          Repository: <a href="https://github.com/Mrprocom/Mrprocom.github.io">Mrprocom.github.io</a><br>You can find me on the Internet as Mrprocom on:
+          <ul>
+            <li><a href="https://github.com/Mrprocom">GitHub</a></li>
+            <li><a href="http://webchat.freenode.net/">Freenode</a></li>
+            <li><a href="tpt.io/@Mrprocom">The Powder Toy</a></li>
+          </ul>
         </div>
       </div>
     </div>

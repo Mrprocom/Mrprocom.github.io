@@ -6,67 +6,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mrprocom's personal website">
     <meta name="author" content="Mrprocom">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>Mrprocom</title>
 
     <!-- Bootstrap and CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/flat-ui.min.css" rel="stylesheet">
-    <link href="../../style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
-  <body id="homepage-body">
+  <body id="index-body">
 
-    <div class="container full-height">
-      <div id="iframe-menu-wrapper">
-        <nav class="navbar navbar-inverse no-radius" id="toolbar">
-          <div class="container-fluid">
-            <div>
-              <ul class="nav navbar-nav">
-                <li><a id="switch-main" href="#">Main Page</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My Pages <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu" id="custom">
-                    <li><a href="#" id="add">Add</a></li>
-                    <li><a href="#" id="edit">Edit</a></li>
-                    <li class="divider"></li>
-                  </ul>
-                </li>
+    <nav class="navbar navbar-default navbar-static-top navbar-transparent no-margin">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Navigation</a>
+        </div>
 
+        <div id="navbar-collapse-1" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a id="home" class="pointer"><span class="glyphicon glyphicon-home space"></span> Main Page</a></li>
+            <li><a id="ip" class="pointer"><span class="glyphicon glyphicon-map-marker space"></span> My IP</a></li>
+            <li><a id="settings" class="pointer"><span class="glyphicon glyphicon-cog space"></span> Settings</a></li>
+            <li><a id="info" class="pointer"><span class="glyphicon glyphicon-info-sign space"></span> Info</a></li>
+            <li><a id="fullscreen" class="pointer"><span class="glyphicon glyphicon-fullscreen space-more"></span>Full screen</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle pointer" data-toggle="dropdown">Dim Level <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a id="dim-0" class="pointer">0%</a></li>
+                <li><a id="dim-01" class="pointer">10%</a></li>
+                <li><a id="dim-02" class="pointer">20%</a></li>
+                <li><a id="dim-03" class="pointer">30%</a></li>
+                <li><a id="dim-04" class="pointer">40%</a></li>
+                <li><a id="dim-05" class="pointer">50%</a></li>
+                <li><a id="dim-06" class="pointer">60%</a></li>
+                <li><a id="dim-07" class="pointer">70%</a></li>
+                <li><a id="dim-08" class="pointer">80%</a></li>
+                <li><a id="dim-09" class="pointer">90%</a></li>
+                <li><a id="dim-1" class="pointer">100%</a></li>
               </ul>
-              <ul class="nav navbar-nav navbar-right">
-                <li>
-                  <div class="navbar-form navbar-left">
-                    <div class="input-group">
-                      <input type="text" class="form-control no-radius" id="search-input">
-                      <span class="input-group-btn">
-                        <a href="#" class="btn btn-default google">Google</a>
-                        <a href="#" class="btn btn-default dropdown-toggle no-radius" data-toggle="dropdown"><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#" class="google">Google</a></li>
-                          <li><a href="#" class="youtube">YouTube</a></li>
-                          <li><a href="#" class="images">Images</a></li>
-                          <li><a href="#" class="maps">Maps</a></li>
-                          <li><a href="#" class="url">URL</a></li>
-                        </ul>
-                      </span>
-                    </div>
-                  </div>
-                </li>
+            </li>
+            <li class="dropdown">
+              <a class="dropdown-toggle pointer" data-toggle="dropdown">Quick Access <span class="caret"></span></a>
+              <ul id="quick-access" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" id="search-input" class="form-control no-radius" placeholder="Search">
+            </div>
+            <div class="btn-group navbar-btn">
+              <button type="button" id="search" class="btn btn-default no-radius dark-background"><span class="glyphicon glyphicon-search"></span></button>
+              <button data-toggle="dropdown" class="btn btn-default dropdown-toggle dark-background no-radius"><span class="caret"></span></button>
+              <ul class="dropdown-menu no-radius">
+                <li><a id="search-web" class="pointer">Web</a></li>
+                <li><a id="search-images" class="pointer">Images</a></li>
+                <li><a id="search-videos" class="pointer">Videos</a></li>
+                <li><a id="search-maps" class="pointer">Maps</a></li>
+                <li><a id="search-youtube" class="pointer">YouTube</a></li>
+                <li><a id="search-url" class="pointer">URL</a></li>
               </ul>
             </div>
-          </div>
-        </nav>
-        <iframe src="main-page.html" id="iframe-screen"></iframe>
+          </form>
+        </div>
       </div>
-    </div>
+    </nav>
+
+    <iframe src="main.html" id="iframe-screen"></iframe>
+    <div id="dimmer"></div>
 
     <!-- JavaScripts -->
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../plugins/jquery-storage/jquery.storageapi.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="jquery-storage/jquery.storageapi.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

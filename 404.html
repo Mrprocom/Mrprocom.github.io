@@ -18,42 +18,40 @@
 
   <body>
 
-    <nav class="navbar navbar-inverse no-radius">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="http://mrprocom.github.io">Site</a>
-        </div>
-
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Main</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="/projects/gamebrowser/">Game Browser</a></li>
-                <li><a href="/projects/homepage/">Homepage</a></li>
-                <li><a href="/projects/irc/">IRC Tutorial</a></li>
-                <li><a href="/projects/ircquote/">IRC Quote Prettifier</a></li>
-                <li><a href="/projects/homepage/">Homepage</a></li>
-                <li><a href="http://files.brilliant-minds.tk/Organize-Post.html">Organizing Your Post</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
+    <nav class="navbar navbar-inverse navbar-static-top no-margin" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+        <a class="navbar-brand"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="index.html">Main Page</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle pointer" data-toggle="dropdown">Project List <b class="caret"></b></a>
+            <span class="dropdown-arrow"></span>
+            <ul class="dropdown-menu">
+              <li><a href="/projects/homepage/">Homepage</a></li>
+              <li><a href="/projects/irc/">IRC Tutorial</a></li>
+              <li><a href="/projects/ircquote/">IRC Quote Prettifier</a></li>
+              <li><a href="http://files.brilliant-minds.tk/Organize-Post.html">Organizing Your Post</a></li>
+            </ul>
+          </li>
+         </ul>
       </div>
     </nav>
 
+    <div class="jumbotron" id="welcome-screen">
+      <div class="container">
+        <h1 id="headline" class="larger">404<br><small>Page Not Found</small></h1>
+      </div>
     </div>
     <div class="container">
-      <div class="row">
-        <div class="jumbotron colour-inverse">
-          <h1>Error 404 Not Found</h1>
-          <p>Sorry, the requested page was does not exist.<br>
-          Maybe it is because the page has been removed or because the URL is wrong.<br>
-          Please use the navigation bar to help you get to the place you are looking for.</p>
-          <a href="/index.html" class="btn btn-primary no-radius">Go back</a>
-        </div>
-      </div>
+      <p>Sorry, the requested page does not exist.<br>
+      It could be because the page was removed or because the URL is incorrect.</p>
+      <a class="btn btn-primary no-radius pointer" onclick="history.back()">Previous Page</a>
+      <a href="/index.html" class="btn btn-primary no-radius">Main Page</a>
     </div>
 
     <!-- JavaScripts -->

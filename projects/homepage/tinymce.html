@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TinyMCE</title>
+    <link href="http://www.tinymce.com/css/codepen.min.css" rel="stylesheet">
+    <script src="http://cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+      selector: "textarea",
+      height: 532,
+      plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen textcolor colorpicker insertdatetime spellchecker wordcount",
+        "insertdatetime media table contextmenu paste code"
+      ],
+      toolbar: "insertfile undo redo | styleselect bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor | insertdatetime | spellchecker",
+    });
+    </script>
+  </head>
+
+  <body>
+    <textarea></textarea>
+  </body>
+</html>

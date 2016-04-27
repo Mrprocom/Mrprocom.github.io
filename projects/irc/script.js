@@ -5,7 +5,7 @@ $(document).ready(function(){
   var connectText =
     "<ul>" +
       "<li>Enter a valid nickname that is not currently being used in the Nickname text field.</li>" +
-      "<li>Enter the channel name you want to join after connecting. All channels start with at least one pound sign (#). Separate your channel names with a comma if you want to join multiple channels. This field can be left empty.</li>" +
+      "<li>Enter the channel name you want to join after connecting. All channels start with at least one pound sign <kbd>#</kbd>. Separate your channel names with a comma <kbd>,</kbd> if you want to join multiple channels. This field can be left empty.</li>" +
       "<li>If you have a NickServ account and want to identify to your account, ckeck the Auth to services checkbox and enter your username and your password in their own text fields. You can ignore it if you do not want to identify.</li>" +
       "<li>Complete the reCAPTCHA by following the instructions. This is only used to prevent abuse.</li>" +
       "<li>Click \"Connect\" to connect to the server.</li>" +
@@ -13,12 +13,11 @@ $(document).ready(function(){
 
   var conceptsText =
     "<ul>" +
-      "<li>If you want to get someone's attention, highlight them by mentioning their name.</li>" +
-      "<li>If you want to addreess them, type their nick at the beginning then either add a colon <kbd>:</kbd> or a comma <kbd>,</kbd> followed by a space and your message.</li>" +
+      "<li>If you want to get someone's attention, highlight them by mentioning their nickname.</li>" +
+      "<li>If you want to addreess them, type their nickname at the beginning then either add a colon <kbd>:</kbd> or a comma <kbd>,</kbd> followed by a space at the beginning of your message.</li>" +
       "<li>Typing the first few letters of someone's nickname and pressing <kbd>Tab</kbd> will automatically complete it with the right letter casing.</li>" +
       "<li>If you want to mention a channel operator or a voiced user, do not include the at sign <kbd>@</kbd> or the plus sign <kbd>+</kbd>.</li>" +
       "<li>Channel operators have special powers that are used to manage the channel and get rid of unwanted users.</li>" +
-      "<li>Voiced users can talk even if the channel is in moderation mode and even if they are banned or quieted from talking in the channel.</li>" +
     "</ul>";
 
   var commandsText =
@@ -56,13 +55,11 @@ $(document).ready(function(){
       "<li>Follow the rules of the channel that you are visiting (read the topic of the channel).</li>" +
       "<li>Do not spam or flood (including rejoining the same channel and changing the nickname rapidly). If you want to, you can open up a new query with yourself and spam there or spam in a random abandoned channel that does not have any users.</li>" +
       "<li>Do not highlight users for no reason or mass-highlight the entire channel.</li>" +
-      "<li>Do not troll.</li>" +
-      "<li>Do not ban evade.</li>" +
+      "<li>Do not troll or ban evade.</li>" +
       "<li>Do not abuse caps lock or formatted characters.</li>" +
-      "<li>Do not be annoying.</li>" +
-      "<li>Do not be rude to people, be friendly to them and to new users instead.</li>" +
+      "<li>Do not be annoying or too rude.</li>" +
       "<li>Do not impersonate other users.</li>" +
-      "<li>Do not ask for channel powers if you do not have rights to do that.</li>" +
+      "<li>Do not ask for channel powers if you do not have rights to do so.</li>" +
     "</ul>";
 
 

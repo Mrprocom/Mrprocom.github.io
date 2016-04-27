@@ -6,31 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mrprocom's personal website">
     <meta name="author" content="Mrprocom">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
     <title>Mrprocom</title>
 
     <!-- Bootstrap and CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../css/flat-ui.min.css" rel="stylesheet">
-    <link href="../../style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/flat-ui.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
   <body>
 
-    <div class="container colour-inverse" id="ircquote-container">
+    <div class="container" id="ircquote-container">
       <h3>IRC Quote Prettifier</h3>
+      <hr>
       <div class="col-lg-4">
         <form class="form-horizontal" role="form">
           <div class="form-group less-margin">
-            <input type="text" class="form-control input-sm" id="message-syntax" placeholder="Message syntax">
+            <input type="text" class="form-control input-sm no-radius" id="message-syntax" placeholder="Message syntax">
           </div>
           <div class="form-group less-margin">
-            <input type="text" class="form-control input-sm" id="notification-syntax" placeholder="Notification syntax">
+            <input type="text" class="form-control input-sm no-radius" id="notification-syntax" placeholder="Notification syntax">
           </div>
           <div class="form-group less-margin">
-            <input type="text" class="form-control input-sm" id="replace-ip-with" placeholder="Replace IPs/hostmasks with">
+            <input type="text" class="form-control input-sm no-radius" id="replace-ip-with" placeholder="Replace IPs/hostmasks with">
           </div>
           <div class="form-group less-margin"> 
             <label class="checkbox" for="change-syntax">
@@ -58,29 +58,26 @@
               Encode special characters
             </label>
           </div>
-          <div class="form-group">
-            <div class="btn-group btn-group-justified">
-              <a href="#" class="btn btn-primary" id="prettify">Prettify</a>
-              <a href="#" class="btn btn-primary" id="preview">Preview</a>
-              <a href="#" class="btn btn-primary" id="help">Help</a>
-            </div>
-          </div>
         </form>
       </div>
 
       <div class="col-lg-8">
         <form class="form-horizontal less-margin" role="form">
-          <textarea class="form-control" id="irc-quote" placeholder="Your IRC quote"></textarea>
-          <textarea class="form-control" id="result"  placeholder="The result" onClick="this.select();" readonly></textarea>
-        </div>
-      </form>
+          <textarea class="form-control no-radius" id="irc-quote" placeholder="Your IRC quote"></textarea>
+          <div class="btn-group btn-group-justified">
+            <a href="#" class="btn btn-default no-radius" id="prettify">Prettify</a>
+            <a href="#" class="btn btn-default" id="preview">Preview</a>
+            <a href="#" class="btn btn-default no-radius" id="help">Help</a>
+          </div>
+        </form>
+      </div>
     </div>
 
     <!-- JavaScripts -->
-    <script src="../../js/jquery.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../plugins/bootstrap-dialog/bootstrap-dialog.min.js"></script>
-    <script src="../../plugins/radiocheck.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/radiocheck.js"></script>
+    <script src="bootstrap-dialog/bootstrap-dialog.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

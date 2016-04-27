@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg3399"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   width="512"
+   height="512"
+   xml:space="preserve"
+   sodipodi:docname="netflix.svg"><metadata
+     id="metadata3405"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs3403" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     id="namedview3401"
+     showgrid="false"
+     fit-margin-left="0.5"
+     fit-margin-bottom="0.5"
+     fit-margin-top="0.5"
+     fit-margin-right="0.5"
+     inkscape:zoom="0.83032488"
+     inkscape:cx="346.47278"
+     inkscape:cy="294.23551"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3407" /><g
+     id="g3407"
+     inkscape:groupmode="layer"
+     inkscape:label="Netflix_Web_Logo"
+     transform="matrix(1.25,0,0,-1.25,0.5,511.49999)"><path
+       inkscape:connector-curvature="0"
+       id="path3431"
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 243.4662,83.146175 -2.88831,-0.34765 -49.7691,326.331265 -66.29079,0.0702 0.0288,-409.599997 c 0,0 13.17156,1.8924777 41.1611,5.0709161 l -2.88868,311.3470409 2.87426,0.25887 47.357,-306.7373451 c 0,0 16.19003,1.9069251 71.23149,7.3535911 l 0,392.281024 -42.28878,0 1.47298,-326.028012" /></g></svg>

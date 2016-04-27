@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body id="settings-body">
+
+    <div class="container">
+      <h1>Settings</h1>
+      <p>Change the way you want this page to look like.<br>
+      These settings get saved to your device when the save button is clicked and should stay there unless somethign wrong happens, so it is adviced to back up your links.</p>
+
+      <hr>
+
+      <h3>Quick Access List <small id="settings-quick-access" class="pointer">Info</small></h3>
+      <div id="help-quick-access">
+        <p>Here you can add pages you would like to be added to the quick access list, which can be accessed from the navigation bar up top.<br>
+        Syntax:</p>
+        <pre><span class="t-red">&lt;Link&gt;</span> <span class="t-blue">&lt;Title&gt;</span></pre>
+        <p>Example:</p>
+        <pre><span class="t-red">https://google.com/</span> <span class="t-blue">Google Search Engine</span><br><span class="t-red">https://youtube.com/</span> <span class="t-blue">YouTube</span><br><span class="t-red">https://mail.google.com/</span> <span class="t-blue">Gmail</span></pre>
+      </div>
+      <textarea id="quick-access-input" class="form-control textarea-input no-radius" rows="5" placeholder="Add your pages here"></textarea>
+
+      <hr>
+
+      <h3>Custom Pages <small id="settings-custom-pages" class="pointer">Info</small></h3>
+      <div id="help-custom-pages">
+        <p>Here you can add your favourite pages to be added to the Custom Pages section, which can be accessed from clicking the Custom tile from the main section.<br>
+        <ul>
+          <li>The custom page is separated into 4 columns, each column with its own tiles.</li>
+          <li>There are 2 tile types: <code>section</code> (redirects to an existing section) and <code>website</code> (redirects to another website).</li>
+          <li>There are 15 sections: <code>access</code>, <code>communication</code>, <code>entertainment</code>, <code>games</code>, <code>knowledge</code>, <code>media</code>, <code>microsoft</code>, <code>miscellaneous</code>, <code>news</code>, <code>notes</code>, <code>search</code>, <code>social</code>, <code>store</code> and <code>tools</code></li>
+          <li>There are 2 tile sizes: <code>small</code> and <code>wide</code>.</li>
+          <li>There are 5 colours: <code>blue</code>, <code>green</code>, <code>orange</code>, <code>purple</code> and <code>red</code>.</li>
+          <li>There are 2 title types: <code>icon</code> (image with label) and <code>text</code> (text in the middle of the tile).</li>
+          <li>If you want to use existing icons, use <code>icons/icon-name.svg</code> as the icon link. <a href="https://github.com/Mrprocom/Mrprocom.github.io/tree/master/projects/homepage/icons">List of existing icons</a>.</li>
+        </ul>
+        <p>Section Tile Syntax:</p>
+        <pre>section <span class="t-blue">&lt;Section Name&gt; &lt;Tile Size&gt; &lt;Tile Colour&gt; &lt;Title Type&gt;</span></pre>
+        <p>Example:</p>
+        <pre>section <span class="t-blue">search wide red icon</span><br>section <span class="t-blue">social small blue text</span><br>section <span class="t-blue">news small purple text</span></pre>
+        <p>Website Tile Syntaxes:</p>
+        <pre>website <span class="t-red">&lt;Page Link&gt;</span> <span class="t-blue">&lt;Tile Size&gt; &lt;Tile Colour&gt;</span> icon <span class="t-red">&lt;Icon Link&gt;</span> <span class="t-blue">&lt;Label&gt;</span><br>website <span class="t-red">&lt;Page Link&gt;</span> <span class="t-blue">&lt;Tile Size&gt; &lt;Tile Colour&gt;</span> text <span class="t-blue">&lt;Title&gt;</span></pre>
+        <p>Example:</p>
+        <pre>website <span class="t-red">https://google.com/</span> <span class="t-blue">wide blue</span> text <span class="t-blue">Google Search Engine</span><br>website <span class="t-red">https://youtube.com/</span> <span class="t-blue">small red</span> icon <span class="t-red">http://example.com/img.png</span> <span class="t-blue">YouTube</span><br>website <span class="t-red">https://mail.google.com/</span> <span class="t-blue">small red</span> icon <span class="t-red">icons/gmail.svg</span> <span class="t-blue">Gmail</span></pre>
+      </div>
+      <div class="row">
+        <div class="col-md-3"><textarea id="custom-pages0-input" class="form-control textarea-input no-radius" rows="5" placeholder="Column 1 Tiles"></textarea></div>
+        <div class="col-md-3"><textarea id="custom-pages1-input" class="form-control textarea-input no-radius" rows="5" placeholder="Column 2 Tiles"></textarea></div>
+        <div class="col-md-3"><textarea id="custom-pages2-input" class="form-control textarea-input no-radius" rows="5" placeholder="Column 3 Tiles"></textarea></div>
+        <div class="col-md-3"><textarea id="custom-pages3-input" class="form-control textarea-input no-radius" rows="5" placeholder="Column 4 Tiles"></textarea></div>
+      </div>
+
+      <hr>
+
+      <h3>More Settings</h3>
+      <select id="background-select" class="form-control form-group no-radius">
+        <option>Black Background</option>
+        <option>Blue Background</option>
+        <option>Cyan Background</option>
+        <option>Green Background</option>
+        <option>Orange Background</option>
+        <option>Pink Background</option>
+        <option>Purple Background</option>
+        <option>Red Background</option>
+        <option>Yellow Background</option>
+      </select>
+      <div class="checkbox">
+        <label><input type="checkbox" id="gradient-checkbox"> Add gradient effect on tiles</label>
+      </div>
+      <div class="checkbox">
+        <label><input type="checkbox" id="custom-first-checkbox"> Change the first page to custom</label>
+      </div>
+
+      <hr>
+
+      <a id="save" class="btn btn-primary btn-lg btn-block no-radius pointer">Save</a>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="jquery-storage/jquery.storageapi.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
