@@ -12,26 +12,27 @@
 
     <!-- Bootstrap and CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/flat-ui.min.css" rel="stylesheet">
     <link href="/style.css" rel="stylesheet">
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-static-top no-margin" role="navigation">
+    <nav class="navbar navbar-default navbar-static-top no-margin" role="navigation">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-          <span class="sr-only">Toggle navigation</span>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand"></a>
+        <a class="navbar-brand">Mrprocom</a>
       </div>
-      <div class="collapse navbar-collapse" id="navbar-collapse-01">
-        <ul class="nav navbar-nav navbar-left">
+      <div id="navbar-collapse-1" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
           <li><a href="/index.html">Main Page</a></li>
           <li class="dropdown">
             <a class="dropdown-toggle pointer" data-toggle="dropdown">Project List <b class="caret"></b></a>
             <span class="dropdown-arrow"></span>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" role="menu">
               <li><a href="/projects/homepage/">Homepage</a></li>
               <li><a href="/projects/irc/">IRC Tutorial</a></li>
               <li><a href="/projects/ircquote/">IRC Quote Prettifier</a></li>
@@ -42,13 +43,13 @@
       </div>
     </nav>
 
-    <div class="jumbotron" id="welcome-screen">
+    <div class="jumbotron" id="error-404">
       <div class="container">
         <h1 id="headline" class="larger">404<br><small>Page Not Found</small></h1>
       </div>
     </div>
     <div class="container">
-      <p>Sorry, the requested page does not exist.<br>
+      <p class="lead">Sorry, the requested page does not exist.<br>
       It could be because the page was removed or because the URL is incorrect.</p>
       <a class="btn btn-primary no-radius pointer" onclick="history.back()">Previous Page</a>
       <a href="/index.html" class="btn btn-primary no-radius">Main Page</a>
@@ -56,6 +57,5 @@
 
     <!-- JavaScripts -->
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/flat-ui.min.js"></script>
   </body>
 </html>

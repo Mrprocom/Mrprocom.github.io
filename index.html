@@ -12,26 +12,27 @@
 
     <!-- Bootstrap and CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/flat-ui.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-static-top no-margin" role="navigation">
+    <nav class="navbar navbar-default navbar-static-top no-margin" role="navigation">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-          <span class="sr-only">Toggle navigation</span>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand"></a>
+        <a class="navbar-brand">Mrprocom</a>
       </div>
-      <div class="collapse navbar-collapse" id="navbar-collapse-01">
-        <ul class="nav navbar-nav navbar-left">
+      <div id="navbar-collapse-1" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
           <li><a href="index.html">Main Page</a></li>
           <li class="dropdown">
             <a class="dropdown-toggle pointer" data-toggle="dropdown">Project List <b class="caret"></b></a>
             <span class="dropdown-arrow"></span>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" role="menu">
               <li><a href="projects/homepage/">Homepage</a></li>
               <li><a href="projects/irc/">IRC Tutorial</a></li>
               <li><a href="projects/ircquote/">IRC Quote Prettifier</a></li>
@@ -44,23 +45,28 @@
 
     <div class="jumbotron" id="welcome-screen">
       <img src="logo.png" id="logo">
-      <h2 id="headline">Mrprocom<br><small>My Personal Website</small></h2>
+      <h1 id="headline">Mrprocom<br><small>My Personal Website</small></h1>
     </div>
 
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <h3>About</h3>
-          <p>I work a lot with python projects and web projects. Although I learned C++, Lua and Ruby, I never done a whole lot using them, which makes me inexpercienced at them.</p>
-          <p>This website is mainly for publishing useful tools. If you want to check them out, they are listed in the navigation bar.</p>
+        <div class="col-md-4 more-margin">
+          <h3>About me</h3>
+          <p>I am fairly good at web development and coding in python, because that is what I mostly do. Although I also know C++, Lua and Ruby, I am not that good at them.</p>
+          <p>I have basic knowledge about many things related to computers, I am also alright at photo editing.</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4 more-margin">
+          <h3>The website</h3>
+          <p>This website is intended to be for publishing useful online tools and fun projects. You can find them in the navigation bar up top.</p>
+          <p>The website uses the Bootstrap framework and it is hosted on GitHub. Repository: <a href="https://github.com/Mrprocom/Mrprocom.github.io">Mrprocom.github.io</a>.</p>
+        </div>
+        <div class="col-md-4 more-margin">
           <h3>More info</h3>
-          Repository: <a href="https://github.com/Mrprocom/Mrprocom.github.io">Mrprocom.github.io</a><br>You can find me on the Internet as Mrprocom on:
+          You can find me on the Internet as Mrprocom on:
           <ul>
             <li><a href="https://github.com/Mrprocom">GitHub</a></li>
             <li><a href="http://webchat.freenode.net/">Freenode</a></li>
-            <li><a href="tpt.io/@Mrprocom">The Powder Toy</a></li>
+            <li><a href="http://tpt.io/@Mrprocom">The Powder Toy</a></li>
           </ul>
         </div>
       </div>
@@ -68,6 +74,6 @@
 
     <!-- JavaScripts -->
     <script src="js/jquery.min.js"></script>
-    <script src="js/flat-ui.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
