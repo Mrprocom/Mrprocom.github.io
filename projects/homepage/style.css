@@ -210,6 +210,11 @@ html#main-html body {
 }
 
 
+.navbar .nav>li>a, .dropdown-menu>li>a {
+  text-transform: none;
+}
+
+
 .navbar-nav>li>.dropdown-menu {
   border-radius: 0;
 }

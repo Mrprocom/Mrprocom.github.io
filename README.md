@@ -1,3 +1,9 @@
 # Mrprocom.github.io
+----------
 
-Welcome to Mrprocom's personal website, it's currently work in progress.
+This is the GitHub repository for my personal website, [mrprocom.github.io](http://mrprocom.github.io/), which is mainly for publishing some of the things I make.
+
+ - Framework: [Bootstrap](http://getbootstrap.com/).
+ - Library: [jQuery](https://jquery.com/).
+ - Main Theme: [Sandstone](https://bootswatch.com/sandstone/).
+ 
