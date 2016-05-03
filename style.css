@@ -18,6 +18,21 @@ h1 small {
 }
 
 
+#goto-homepage, #goto-irc {
+  margin-top: 19px;
+}
+
+
+#goto-ircquote {
+  margin-top: 39px;
+}
+
+
+#goto-organizepost {
+  margin-top: 30px;
+}
+
+
 #headline {
   text-align: center;
 }
@@ -35,6 +50,12 @@ h1 small {
 #welcome-screen {
   background-color: #79a736;
   background-image: url(background.png);
+}
+
+
+.col-fixed {
+  margin-bottom: 15px;
+  width: 488px;
 }
 
 
