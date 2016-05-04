@@ -102,3 +102,27 @@ h1 small {
 .pointer {
   cursor: pointer;
 }
+
+
+.save {
+  background-color: #ffffff;
+  border: 1px solid #82827f;
+  padding: 5px;
+}
+
+
+
+.save-wrapper {
+  padding: 5px;
+}
+
+
+.user {
+  padding: 0 0 0 15px;
+}
+
+
+.votes {
+  padding: 0 15px 0 0;
+  text-align: right;
+}
