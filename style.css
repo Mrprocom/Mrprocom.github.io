@@ -54,7 +54,6 @@ h1 small {
 
 
 .col-fixed {
-  margin-bottom: 15px;
   width: 488px;
 }
 
@@ -66,6 +65,11 @@ h1 small {
 
 .larger {
   font-size: 500% !important;
+}
+
+
+.more-margin {
+  margin-bottom: 30px;
 }
 
 
@@ -81,11 +85,6 @@ h1 small {
 
 .navbar-nav>li>.dropdown-menu {
   border-radius: 0;
-}
-
-
-.more-margin {
-  margin-bottom: 30px;
 }
 
 
