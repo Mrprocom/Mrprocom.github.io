@@ -3,6 +3,7 @@ $(document).ready(function(){
   // Store settings
   var storage = $.localStorage;
   var defaultSettings = {
+    dim: "0",
     quickAccess: [],
     customPages0: [],
     customPages1: [],
@@ -37,17 +38,13 @@ $(document).ready(function(){
       "<li>Over 60% of all icons are from <a href='http://www.flaticon.com/'>Flaticon</a>.</li>" +
     "</ul>";
 
-  if(!storage.get("dim")){
-    storage.set("dim", "0");
-  }
-  
-  var dim = storage.get("dim");
-
-  if(!storage.get("settings")){
-    storage.set("settings", defaultSettings);
-    var settings = storage.get("settings");
+  if(!storage.get("homepage")){
+    storage.set("homepage", defaultSettings);
+    var settings = storage.get("homepage");
+    var dim = storage.get("homepage")["dim"];
   } else {
-    var settings = storage.get("settings");
+    var settings = storage.get("homepage");
+    var dim = storage.get("homepage")["dim"];
     var newQuickAccess = "";
     var newCustomPages0 = "";
     var newCustomPages1 = "";
@@ -170,7 +167,7 @@ $(document).ready(function(){
       gradient: currentGradient,
       customFirst: currentCustomFirst
     }
-    storage.set("settings", newSettings);
+    storage.set("homepage", newSettings);
     window.top.location.href = "index.html";
   });
 
@@ -369,17 +366,17 @@ $(document).ready(function(){
 
 
   // Dim screen when needed
-  $("#dim-0").click(function(){$("#dimmer").css("opacity", "0"); storage.set("dim", "0");});
-  $("#dim-01").click(function(){$("#dimmer").css("opacity", "0.1"); storage.set("dim", "0.1");});
-  $("#dim-02").click(function(){$("#dimmer").css("opacity", "0.2"); storage.set("dim", "0.2");});
-  $("#dim-03").click(function(){$("#dimmer").css("opacity", "0.3"); storage.set("dim", "0.3");});
-  $("#dim-04").click(function(){$("#dimmer").css("opacity", "0.4"); storage.set("dim", "0.4");});
-  $("#dim-05").click(function(){$("#dimmer").css("opacity", "0.5"); storage.set("dim", "0.5");});
-  $("#dim-06").click(function(){$("#dimmer").css("opacity", "0.6"); storage.set("dim", "0.6");});
-  $("#dim-07").click(function(){$("#dimmer").css("opacity", "0.7"); storage.set("dim", "0.7");});
-  $("#dim-08").click(function(){$("#dimmer").css("opacity", "0.8"); storage.set("dim", "0.8");});
-  $("#dim-09").click(function(){$("#dimmer").css("opacity", "0.9"); storage.set("dim", "0.9");});
-  $("#dim-1").click(function(){$("#dimmer").css("opacity", "1"); storage.set("dim", "1");});
+  $("#dim-0").click(function(){$("#dimmer").css("opacity", "0"); settings["dim"] = "0"; storage.set("homepage", settings);});
+  $("#dim-01").click(function(){$("#dimmer").css("opacity", "0.1"); settings["dim"] = "0.1"; storage.set("homepage", settings);});
+  $("#dim-02").click(function(){$("#dimmer").css("opacity", "0.2"); settings["dim"] = "0.2"; storage.set("homepage", settings);});
+  $("#dim-03").click(function(){$("#dimmer").css("opacity", "0.3"); settings["dim"] = "0.3"; storage.set("homepage", settings);});
+  $("#dim-04").click(function(){$("#dimmer").css("opacity", "0.4"); settings["dim"] = "0.4"; storage.set("homepage", settings);});
+  $("#dim-05").click(function(){$("#dimmer").css("opacity", "0.5"); settings["dim"] = "0.5"; storage.set("homepage", settings);});
+  $("#dim-06").click(function(){$("#dimmer").css("opacity", "0.6"); settings["dim"] = "0.6"; storage.set("homepage", settings);});
+  $("#dim-07").click(function(){$("#dimmer").css("opacity", "0.7"); settings["dim"] = "0.7"; storage.set("homepage", settings);});
+  $("#dim-08").click(function(){$("#dimmer").css("opacity", "0.8"); settings["dim"] = "0.8"; storage.set("homepage", settings);});
+  $("#dim-09").click(function(){$("#dimmer").css("opacity", "0.9"); settings["dim"] = "0.9"; storage.set("homepage", settings);});
+  $("#dim-1").click(function(){$("#dimmer").css("opacity", "1"); settings["dim"] = "1"; storage.set("homepage", settings);});
 
 
   // Google search
