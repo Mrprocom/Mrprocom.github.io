@@ -65,6 +65,7 @@ $(document).ready(function(){
     for(var i = 0; i < settings["customPages3"].length; i++){
       newCustomPages3 += settings["customPages3"][i].join(" ") + "\n";
     }
+    $("#dimmer").css("opacity", dim);
     $("#quick-access-input").val(newQuickAccess.slice(0, -1));
     $("#custom-pages0-input").val(newCustomPages0.slice(0, -1));
     $("#custom-pages1-input").val(newCustomPages1.slice(0, -1));
@@ -158,6 +159,7 @@ $(document).ready(function(){
       newCustom.push(newCustomSet);
     }
     var newSettings = {
+      dim: storage.get("homepage")["dim"],
       quickAccess: newQuickAccess,
       customPages0: newCustom[0],
       customPages1: newCustom[1],
@@ -271,10 +273,6 @@ $(document).ready(function(){
       window.top.location.href = $(this).attr("href");
     }
   });
-
-
-  // Set dim level to how it used it be last time
-  $("#dimmer").css("opacity", dim);
 
 
   // Switch to main.html when #home is clicked
