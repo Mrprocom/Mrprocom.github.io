@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mrprocom's IRC Tutorial Project">
+    <meta name="keywords" content="irc, irc tutorial, mrprocom, mrprocom website, online tools, project, tools, tutorial">
+    <meta name="author" content="Mrprocom">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Pyramid - Mrprocom</title>
+
+    <!-- Bootstrap and CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="container-fluid">
+      <div id="controls" class="row">
+        <div id="controls-start" class="btn-group btn-group-justified">
+          <a id="start" class="btn btn-primary btn-lg btn-block">Start</a>
+        </div>
+        <div id="controls-update" class="btn-group btn-group-justified">
+          <a id="update-start" class="btn btn-primary btn-lg btn-block">Update Pyramid</a>
+        </div>
+        <div id="controls-stop" class="btn-group btn-group-justified">
+          <a id="update-stop" class="btn btn-danger btn-lg btn-block">Pause Updating</a>
+        </div>
+      </div>
+      <div id="settings" class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label class="control-label" for="birth">Crude Birth Rate</label>
+            <input id="birth" class="form-control" placeholder="Example: 13">
+            <span id="birth-error" class="text-danger">Number is not valid</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label class="control-label" for="death">Crude Death Rate</label>
+            <input id="death" class="form-control" placeholder="Example: 8">
+            <span id="death-error" class="text-danger">Number is not valid</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label class="control-label" for="ratio">Males for Each 100 Female</label>
+            <input id="ratio" class="form-control" placeholder="Example: 105">
+            <span id="ratio-error" class="text-danger">Number is not valid</span>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="form-group">
+            <label class="control-label" for="migration">Net Migration Rate</label>
+            <input id="migration" class="form-control" placeholder="Example: 4">
+            <span id="migration-error" class="text-danger">Number is not valid</span>
+          </div>
+        </div>
+      </div>
+      <div id="stats" class="row">
+        <div class="col-md-3 col-sm-6">
+          <h6>Crude Birth Rate</h6>
+          <h4 id="s-birth"></h4>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h6>Crude Death Rate</h6>
+          <h4 id="s-death"></h4>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h6>Sex Ratio</h6>
+          <h4 id="s-ratio"></h4>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <h6>Net Migration Rate</h6>
+          <h4 id="s-migration"></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div id="male" class="col-xs-6"></div>
+        <div id="separator" class="col-xs-1">
+          <div id="age-1" class="progress" data-toggle="tooltip" data-placement="top"><div class="progress-bar progress-bar-danger"></div></div>
+          <div id="age-2" class="progress" data-toggle="tooltip" data-placement="top"><div class="progress-bar progress-bar-warning"></div></div>
+          <div id="age-3" class="progress" data-toggle="tooltip" data-placement="top"><div class="progress-bar progress-bar-success"></div></div>
+        </div>
+        <div id="female" class="col-xs-6"></div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -33,6 +33,11 @@ h1 small {
 }
 
 
+#goto-pyramid {
+  margin-top: 9px;
+}
+
+
 #headline {
   text-align: center;
 }
@@ -50,6 +55,11 @@ h1 small {
 #welcome-screen {
   background-color: #79a736;
   background-image: url(background.png);
+}
+
+
+.btn {
+  text-transform: none;
 }
 
 

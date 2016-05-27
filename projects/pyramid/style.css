@@ -1,0 +1,156 @@
+#age-1 {
+  height: 184px;
+}
+
+
+#age-2 {
+  height: 207px;
+}
+
+
+#age-3 {
+  height: 69px;
+}
+
+
+#birth-error,
+#controls-stop,
+#controls-update,
+#death-error,
+#migration-error,
+#population-error,
+#ratio-error,
+#stats {
+  display: none;
+}
+
+
+#female {
+  padding-left: 0;
+  width: 49%;
+}
+
+
+#male {
+  padding-right: 0;
+  width: 49%;
+}
+
+
+#male .age-group .progress {
+  float: right;
+}
+
+
+#separator {
+  padding: 0;
+  width: 2%;
+}
+
+
+#separator .progress {
+  width: 100%;
+}
+
+
+#start-wrapper, #stats, #settings {
+  margin-bottom: 15px;
+}
+
+
+.age {
+  color: #d6746f;
+}
+
+
+.age-group, .progress {
+  height: 23px;
+  margin: 0;
+}
+
+
+.btn {
+  border-radius: 0;
+  box-shadow: none !important;
+  font-size: 14px;
+  padding: 12px;
+  text-transform: none;
+}
+
+
+.container-fluid {
+  margin-bottom: 25px;
+}
+
+
+.per {
+  color: #6fd674;
+}
+
+
+.progress {
+  transition: width 0.4s;
+  width: 5%;
+}
+
+
+.progress .progress-bar {
+  border-radius: 0;
+  transition: all 0.4s;
+  width: 100% !important;
+}
+
+
+.progress-bar-danger:hover {
+  background-color: #b0141a;
+  cursor: pointer;
+}
+
+
+.progress-bar-info:hover,
+.progress-bar-info.hover {
+  background-color: #701c7e;
+  cursor: pointer;
+}
+
+
+.progress-bar-primary:hover,
+.progress-bar-primary.hover {
+  background-color: #0b76cc;
+  cursor: pointer;
+}
+
+
+.progress-bar-success:hover {
+  background-color: #39843c;
+  cursor: pointer;
+}
+
+
+.progress-bar-warning:hover {
+  background-color: #c27400;
+  cursor: pointer;
+}
+
+
+.tooltip-inner {
+  background-color: #333740;
+  border-radius: 2px;
+  max-width: none;
+  white-space: nowrap;
+}
+
+
+.tooltip.left .tooltip-arrow {
+  border-left: 5px solid #333740;
+}
+
+
+.tooltip.right .tooltip-arrow {
+  border-right: 5px solid #333740;
+}
+
+
+.tooltip.top .tooltip-arrow {
+  border-top: 5px solid #333740;
+}
