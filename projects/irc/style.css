@@ -4,7 +4,7 @@ html, body {
 
 
 kbd {
-  background-color: #2c3e50;
+  background-color: #222222;
 }
 
 
@@ -13,17 +13,10 @@ kbd {
 }
 
 
-#interface-img {
-  display: block;
-  margin: auto;
-  width: 550px;
-}
-
-
 #irc-client {
   background-color: #ecf0f1;
   border: none;
-  height: calc(100% - 82px);
+  height: calc(100% - 125px);
   width: 100%;
 }
 
@@ -34,8 +27,104 @@ kbd {
 }
 
 
+.btn-0 {
+  color: #d3d7cf;
+}
+
+
+.btn-1 {
+  color: #2e3436;
+}
+
+
+.btn-2 {
+  color: #3465a4;
+}
+
+
+.btn-3 {
+  color: #4e9a06;
+}
+
+
+.btn-4 {
+  color: #cc0000;
+}
+
+
+.btn-5 {
+  color: #8f3902;
+}
+
+
+.btn-6 {
+  color: #5c3566;
+}
+
+
+.btn-7 {
+  color: #ce5c00;
+}
+
+
+.btn-8 {
+  color: #c4a000;
+}
+
+
+.btn-9 {
+  color: #73d216;
+}
+
+
+.btn-10 {
+  color: #11a879;
+}
+
+
+.btn-11 {
+  color: #58a19d;
+}
+
+
+.btn-12 {
+  color: #57799e;
+}
+
+
+.btn-13 {
+  color: #a04265;
+}
+
+
+.btn-14 {
+  color: #555753;
+}
+
+
+.btn-15 {
+  color: #888a85;
+}
+
+
+.btn-back, .btn-for {
+  font-weight: bold;
+}
+
+
+.copy-text {
+  display: none;
+}
+
+
+.fixed-scroll {
+  height: 350px;
+  overflow: auto;
+}
+
+
 .modal-body {
-  background-color: #34495e;
+  background-color: #191919;
   border: none;
   color: #ffffff;
   font-size: 15px;
@@ -43,19 +132,47 @@ kbd {
 
 
 .modal-footer {
-  background-color: #2c3e50;
+  background-color: #333333;
   border: none;
   color: #ffffff;
 }
 
 
 .modal-header {
-  background-color: #1abc9c;
+  background-color: #333333;
   border: none;
   color: #ffffff;
 }
 
 
-.no-radius {
-  border-radius: 0;
+.panel {
+  margin-bottom: 0;
+}
+
+
+.panel-body {
+  color: #000000;
+  display: none;
+}
+
+
+.panel-default {
+  border-color: #222222;
+}
+
+
+.panel-default>.panel-heading {
+  color: #ffffff;
+  background-color: #222222;
+  border-color: #222222;
+}
+
+.panel-heading {
+  cursor: pointer;
+}
+
+
+.selected-back, .selected-for {
+  background-color: #090909;
+  border-color: #040404;
 }

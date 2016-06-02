@@ -13,24 +13,33 @@
 
     <!-- Bootstrap and CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/flat-ui.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
   <body>
 
     <div id="client-menu">
+      <textarea id="normal" class="copy-text">&#xf;</textarea>
+      <textarea id="bold" class="copy-text">&#x2;</textarea>
+      <textarea id="italic" class="copy-text">&#x1d;</textarea>
+      <textarea id="underline" class="copy-text">&#x1f;</textarea>
+      <div class="btn-group btn-group-justified">
+        <a id="switch" class="btn btn-default">Switch Client</a>
+      </div>
+      <div class="btn-group btn-group-justified">
+        <a id="copy-normal" class="btn btn-default">Normal</a>
+        <a id="copy-bold" class="btn btn-default">Bold</a>
+        <a id="copy-colour" class="btn btn-default">Colour</a>
+        <a id="copy-italic" class="btn btn-default">Italic</a>
+        <a id="copy-underline" class="btn btn-default">Underline</a>
+      </div>
       <iframe src="https://webchat.freenode.net/" id="irc-client"></iframe>
       <div id="options">
         <div class="btn-group btn-group-justified">
-          <a href="https://webchat.freenode.net/" target="_blank" class="btn btn-inverse no-radius">Qwebirc</a>
-          <a href="#" class="btn btn-inverse" id="connect">Connect</a>
-          <a href="#" class="btn btn-inverse no-radius" id="interface">Interface</a>
-        </div>
-        <div class="btn-group btn-group-justified">
-          <a href="#" class="btn btn-inverse no-radius" id="concepts">Concepts</a>
-          <a href="#" class="btn btn-inverse" id="commands">Commands</a>
-          <a href="#" class="btn btn-inverse no-radius" id="tips">Advice</a>
+          <a id="interface" class="btn btn-default">Interface</a>
+          <a id="help" class="btn btn-default">Help</a>
+          <a id="commands" class="btn btn-default">Commands</a>
+          <a id="fullscreen" class="btn btn-default">Fullscreen</a>
         </div>
       </div>
     </div>

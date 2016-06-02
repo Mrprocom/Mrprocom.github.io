@@ -1,0 +1,660 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   viewBox="0 0 600.00001 400.00001"
+   height="400"
+   width="600"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="kiwiirc.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="706"
+     id="namedview144"
+     showgrid="false"
+     inkscape:zoom="3.9466667"
+     inkscape:cx="312.16138"
+     inkscape:cy="183.05886"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipEmfPath1">
+      <path
+         d="m 0.300009,0.300009 562.817991,0 0,375.011991 -562.817991,0 z"
+         id="path3341" />
+    </clipPath>
+    <pattern
+       id="EMFhbasepattern"
+       patternUnits="userSpaceOnUse"
+       width="6"
+       height="6"
+       x="0"
+       y="0" />
+  </defs>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-652.36216)"
+     id="layer1">
+    <g
+       transform="matrix(3.7772645,0,0,3.7809191,-0.15988616,652.04203)"
+       id="g3599">
+      <path
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         clip-path="url(#clipEmfPath1)"
+         d="m 0.150005,0.150005 0,375.011995 562.836995,0 0,-375.011995 -562.836995,0 z"
+         id="path3344"
+         transform="matrix(0.28222222,0,0,0.28222222,-6.1820328e-6,0)" />
+      <path
+         style="fill:#bfbfbf;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         clip-path="url(#clipEmfPath1)"
+         d="m 0.150005,342.367 0,32.795 562.836995,0 0,-32.795 -562.836995,0 z"
+         id="path3346"
+         transform="matrix(0.28222222,0,0,0.28222222,-6.1820328e-6,0)" />
+      <path
+         style="fill:#404040;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         clip-path="url(#clipEmfPath1)"
+         d="m 0.150005,0.150005 0,32.813495 562.836995,0 0,-32.813495 -562.836995,0 z"
+         id="path3348"
+         transform="matrix(0.28222222,0,0,0.28222222,-6.1820328e-6,0)" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         clip-path="url(#clipEmfPath1)"
+         d="m 0.150005,32.9635 0,21.0945 562.836995,0 0,-21.0945 -562.836995,0 z"
+         id="path3350"
+         transform="matrix(0.28222222,0,0,0.28222222,-6.1820328e-6,0)" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.89819455px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="53.616852"
+         y="13.634111"
+         id="text3352"><tspan
+           x="53.616852"
+           y="13.634111"
+           id="tspan3354"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.89819455px;font-family:Calibri;fill:#7f7f7f"
+             id="tspan3356">The topic of the selected channel</tspan></tspan></text>
+      <path
+         style="fill:#d9d9d9;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 125.10939,15.256369 0,81.367207 33.77805,0 0,-81.367207 -33.77805,0 z"
+         id="path3358" />
+      <path
+         style="fill:#f2f2f2;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 0.04232856,15.256369 0,81.367207 125.06706144,0 0,-81.367207 -125.06706144,0 z"
+         id="path3360" />
+      <path
+         style="fill:#a6a6a6;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 0.04232856,52.960693 0,3.968891 125.06706144,0 0,-3.968891 -125.06706144,0 z"
+         id="path3362" />
+      <path
+         style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 0.04232856,1.3652923 0,7.9377399 13.89106144,0 0,-7.9377399 -13.89106144,0 z"
+         id="path3364" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:700;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="2.7089961"
+         y="6.4345365"
+         id="text3366"><tspan
+           x="2.7089961"
+           y="6.4345365"
+           id="tspan3368"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:700;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3370">Server</tspan></tspan></text>
+      <path
+         style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 15.965446,1.3652923 0,7.9377399 37.704466,0 0,-7.9377399 -37.704466,0 z"
+         id="path3372" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="18.628138"
+         y="4.5294762"
+         id="text3374"><tspan
+           x="18.628138"
+           y="4.5294762"
+           id="tspan3376"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3378">Channel with </tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="36.239361"
+         y="4.5294762"
+         id="text3380"><tspan
+           x="36.239361"
+           y="4.5294762"
+           id="tspan3382"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3384">1</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="18.628138"
+         y="8.3395967"
+         id="text3386"><tspan
+           x="18.628138"
+           y="8.3395967"
+           id="tspan3388"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3390">unread message</tspan></tspan></text>
+      <path
+         style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 55.654216,1.3652923 0,7.9377399 37.704324,0 0,-7.9377399 -37.704324,0 z"
+         id="path3392" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="58.317169"
+         y="4.5294762"
+         id="text3394"><tspan
+           x="58.317169"
+           y="4.5294762"
+           id="tspan3396"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3398">Channel with </tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="75.928391"
+         y="4.5294762"
+         id="text3400"><tspan
+           x="75.928391"
+           y="4.5294762"
+           id="tspan3402"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3404">1</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="58.317169"
+         y="8.3395967"
+         id="text3406"><tspan
+           x="58.317169"
+           y="8.3395967"
+           id="tspan3408"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3410">unread highlight</tspan></tspan></text>
+      <path
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 95.342845,1.3652923 0,7.9377399 27.782235,0 0,-7.9377399 -27.782235,0 z"
+         id="path3412" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="98.365662"
+         y="6.4345365"
+         id="text3414"><tspan
+           x="98.365662"
+           y="6.4345365"
+           id="tspan3416"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#000000"
+             id="tspan3418">Selected channel</tspan></tspan></text>
+      <path
+         style="fill:#595959;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 125.10939,1.3652923 0,7.9377399 31.79346,0 0,-7.9377399 -31.79346,0 z"
+         id="path3420" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="128.38266"
+         y="6.4345365"
+         id="text3422"><tspan
+           x="128.38266"
+           y="6.4345365"
+           id="tspan3424"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.2102778px;font-family:Calibri;fill:#d9d9d9"
+             id="tspan3426">Unselected channel</tspan></tspan></text>
+      <path
+         style="fill:#00cc00;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 43.747543,4.0111962 c 0,-0.3651109 0.296333,-0.6614724 0.661529,-0.6614724 0,0 0,0 0,0 l 0,0 6.614724,0 0,0 c 0.365196,0 0.661529,0.2963615 0.661529,0.6614724 0,0 0,0 0,0 l 0,0 0,2.645918 0,0 c 0,0.3651391 -0.296333,0.6615007 -0.661529,0.6615007 0,0 0,0 0,0 l 0,0 -6.614724,0 0,0 c -0.365196,0 -0.661529,-0.2963616 -0.661529,-0.6615007 0,0 0,0 0,0 z"
+         id="path3428" />
+      <path
+         style="fill:#c0504d;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 83.436454,4.0111962 c 0,-0.3651109 0.296333,-0.6614724 0.661246,-0.6614724 0,0 0,0 0,0 l 0,0 6.615007,0 0,0 c 0.364913,0 0.661247,0.2963615 0.661247,0.6614724 0,0 0,0 0,0 l 0,0 0,2.645918 0,0 c 0,0.3651391 -0.296334,0.6615007 -0.661247,0.6615007 0,0 0,0 0,0 l 0,0 -6.615007,0 0,0 c -0.364913,0 -0.661246,-0.2963616 -0.661246,-0.6615007 0,0 0,0 0,0 z"
+         id="path3430" />
+      <path
+         style="fill:#be4b48;fill-opacity:1;fill-rule:nonzero;stroke:#be4b48;stroke-width:0.01875059px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         clip-path="url(#clipEmfPath1)"
+         d="m 337.829,3.43136 98.441,0.16875 0,2.81259 -98.441,-0.16875 z"
+         id="path3432"
+         transform="matrix(0.28222222,0,0,0.28222222,-6.1820328e-6,0)" />
+      <path
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 25.887646,98.608162 0,5.953198 130.972874,0 0,-5.953198 -130.972874,0 z"
+         id="path3434" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.89819455px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="28.55081"
+         y="102.93444"
+         id="text3436"><tspan
+           x="28.55081"
+           y="102.93444"
+           id="tspan3438"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:3.89819455px;font-family:Calibri;fill:#a6a6a6"
+             id="tspan3440">Where you type your messages and commands.</tspan></tspan></text>
+      <path
+         style="fill:#f2f2f2;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 2.0743921,98.608162 0,5.953198 23.8132539,0 0,-5.953198 -23.8132539,0 z"
+         id="path3442" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:700;font-size:2.78694439px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="5.2666597"
+         y="102.55343"
+         id="text3444"><tspan
+           x="5.2666597"
+           y="102.55343"
+           id="tspan3446"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:700;font-size:2.78694439px;font-family:Calibri;fill:#7f7f7f"
+             id="tspan3448">Your Nickname</tspan></tspan></text>
+      <path
+         style="fill:#00cc00;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 127.01975,27.655125 c 0,-0.545056 0.44478,-0.989584 0.99511,-0.989584 0,0 0,0 0,0 l 0,0 3.9689,0 0,0 c 0.54497,0 0.98947,0.444528 0.98947,0.989584 0,0 0,0 0,0 l 0,0 0,3.969004 0,0 c 0,0.550333 -0.4445,0.994833 -0.98947,0.994833 0,0 0,0 0,0 l 0,0 -3.9689,0 0,0 c -0.55033,0 -0.99511,-0.4445 -0.99511,-0.994833 0,0 0,0 0,0 z"
+         id="path3450" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:2.78694439px;line-height:125%;font-family:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none"
+         x="128.55675"
+         y="30.364843"
+         id="text3452"><tspan
+           x="128.55675"
+           y="30.364843"
+           id="tspan3454">@<tspan
+   style="font-style:normal;font-variant:normal;font-weight:400;font-size:2.78694439px;font-family:Arial;fill:#ffffff"
+   id="tspan3456" /></tspan></text>
+      <path
+         style="fill:#00cc00;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 127.01975,34.978904 c 0,-0.550333 0.44478,-0.994833 0.99511,-0.994833 0,0 0,0 0,0 l 0,0 3.9689,0 0,0 c 0.54497,0 0.98947,0.4445 0.98947,0.994833 0,0 0,0 0,0 l 0,0 0,3.968892 0,0 c 0,0.545253 -0.4445,0.989753 -0.98947,0.989753 0,0 0,0 0,0 l 0,0 -3.9689,0 0,0 c -0.55033,0 -0.99511,-0.4445 -0.99511,-0.989753 0,0 0,0 0,0 z"
+         id="path3458" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:2.78694439px;line-height:125%;font-family:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="128.55675"
+         y="37.683403"
+         id="text3460"><tspan
+           style="fill:#ffffff"
+           x="128.55675"
+           y="37.683403"
+           id="tspan3462">@<tspan
+   style="font-style:normal;font-variant:normal;font-weight:400;font-size:2.78694439px;font-family:Arial;fill:#ffffff"
+   id="tspan3464" /></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="133.72673"
+         y="31.17576"
+         id="text3466"><tspan
+           x="133.72673"
+           y="31.17576"
+           id="tspan3468"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3470">ChanServ</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="133.72673"
+         y="38.40799"
+         id="text3472"><tspan
+           x="133.72673"
+           y="38.40799"
+           id="tspan3474"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3476">Operator</tspan></tspan></text>
+      <path
+         style="fill:#a6a6a6;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 127.01975,42.472187 c 0,-0.544971 0.44478,-0.989471 0.99511,-0.989471 0,0 0,0 0,0 l 0,0 3.9689,0 0,0 c 0.54497,0 0.98947,0.4445 0.98947,0.989471 0,0 0,0 0,0 l 0,0 0,3.968891 0,0 c 0,0.550333 -0.4445,0.994833 -0.98947,0.994833 0,0 0,0 0,0 l 0,0 -3.9689,0 0,0 c -0.55033,0 -0.99511,-0.4445 -0.99511,-0.994833 0,0 0,0 0,0 z"
+         id="path3478" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="133.72673"
+         y="46.345798"
+         id="text3480"><tspan
+           x="133.72673"
+           y="46.345798"
+           id="tspan3482"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3484">Voiced User</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="126.98027"
+         y="53.093418"
+         id="text3486"><tspan
+           x="126.98027"
+           y="53.093418"
+           id="tspan3488"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3490">Normal User</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:'MS Gothic';text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="20.632595"
+         id="text3492"><tspan
+           x="32.519714"
+           y="20.632595"
+           id="tspan3494"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:'MS Gothic';fill:#00cc00"
+             id="tspan3496">ⓘ</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="37.599876"
+         y="20.632595"
+         id="text3498"><tspan
+           x="37.599876"
+           y="20.632595"
+           id="tspan3500"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#00cc00"
+             id="tspan3502">Notification</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="25.628086"
+         id="text3504"><tspan
+           x="32.519714"
+           y="25.628086"
+           id="tspan3506"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#00cc00"
+             id="tspan3508">→ Join notification</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="30.708248"
+         id="text3510"><tspan
+           x="32.519714"
+           y="30.708248"
+           id="tspan3512"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:italic;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#c0504d"
+             id="tspan3514">← Leave notification</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="35.788406"
+         id="text3516"><tspan
+           x="32.519714"
+           y="35.788406"
+           id="tspan3518"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3520">Message sent by a normal user</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="40.868568"
+         id="text3522"><tspan
+           x="32.519714"
+           y="40.868568"
+           id="tspan3524"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3526">Message sent by the same user</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="45.948727"
+         id="text3528"><tspan
+           x="32.519714"
+           y="45.948727"
+           id="tspan3530"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3532">Message sent by a voiced user</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="51.028889"
+         id="text3534"><tspan
+           x="32.519714"
+           y="51.028889"
+           id="tspan3536"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3538">Message sent by an operator</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="56.109047"
+         id="text3540"><tspan
+           x="32.519714"
+           y="56.109047"
+           id="tspan3542"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3544">Highlight sent by a normal user</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="32.519714"
+         y="61.189209"
+         id="text3546"
+         sodipodi:linespacing="125%"><tspan
+           x="32.519714"
+           y="61.189209"
+           id="tspan3548"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3550">Notice sent by a user</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="10.336125"
+         y="35.788406"
+         id="text3552"><tspan
+           x="10.336125"
+           y="35.788406"
+           id="tspan3554"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3556">Nickname</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="8.2193918"
+         y="45.948727"
+         id="text3558"><tspan
+           x="8.2193918"
+           y="45.948727"
+           id="tspan3560"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3562">+Nickname</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="6.5260053"
+         y="51.028889"
+         id="text3564"><tspan
+           x="6.5260053"
+           y="51.028889"
+           id="tspan3566"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3568">@Nickname</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="10.336125"
+         y="56.109047"
+         id="text3570"><tspan
+           x="10.336125"
+           y="56.109047"
+           id="tspan3572"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3574">Nickname</tspan></tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="7.7960453"
+         y="61.189209"
+         id="text3576"><tspan
+           x="7.7960453"
+           y="61.189209"
+           id="tspan3578"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3580">[Nickname]</tspan></tspan></text>
+      <path
+         style="fill:#a6a6a6;fill-opacity:1;fill-rule:nonzero;stroke:#a6a6a6;stroke-width:0.00529183px;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m 30.073594,15.256369 -0.04233,47.631773 -0.354753,-0.0054 0.0477,-47.626411 z"
+         id="path3582" />
+      <path
+         style="fill:#bfbfbf;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         d="m 125.10939,15.256369 0,7.937726 33.77805,0 0,-7.937726 -33.77805,0 z"
+         id="path3584" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+         x="127.87907"
+         y="20.706709"
+         id="text3586"><tspan
+           x="127.87907"
+           y="20.706709"
+           id="tspan3588"><tspan
+             dx="0"
+             dy="0"
+             style="font-style:normal;font-variant:normal;font-weight:400;font-size:4.23333311px;font-family:Calibri;fill:#000000"
+             id="tspan3590">Number of users</tspan></tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-size:10.53211784px;line-height:125%;font-family:Arial;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="485.99875"
+       y="825.90784"
+       id="text3460-1"
+       transform="scale(0.99951663,1.0004836)"><tspan
+         style="font-size:17.5px;fill:#ffffff"
+         x="485.99875"
+         y="825.90784"
+         id="tspan3462-1">+</tspan></text>
+    <text
+       id="text3746"
+       y="672.98718"
+       x="180.5"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         y="672.98718"
+         x="180.5"
+         id="tspan3748" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-size:12.13193321px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="176.90375"
+       y="675.74451"
+       id="text3380-6"
+       transform="scale(0.99951663,1.0004836)"><tspan
+         x="176.90375"
+         y="675.74451"
+         id="tspan3382-7"><tspan
+           dx="0"
+           dy="0"
+           style="font-style:normal;font-variant:normal;font-weight:400;font-size:12.13193321px;font-family:Calibri;fill:#d9d9d9"
+           id="tspan3384-2">1</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:400;font-size:12.13193321px;line-height:125%;font-family:Calibri;text-align:start;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none"
+       x="326.89124"
+       y="675.74451"
+       id="text3380-6-1"
+       transform="scale(0.99951663,1.0004836)"><tspan
+         x="326.89124"
+         y="675.74451"
+         id="tspan3382-7-0"><tspan
+           dx="0"
+           dy="0"
+           style="font-style:normal;font-variant:normal;font-weight:400;font-size:12.13193321px;font-family:Calibri;fill:#d9d9d9"
+           id="tspan3384-2-9">1</tspan></tspan></text>
+  </g>
+</svg>
