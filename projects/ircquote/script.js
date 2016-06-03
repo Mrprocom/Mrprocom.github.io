@@ -365,7 +365,6 @@ function getResult(){
 
 $(document).ready(function(){
 
-  $("[data-toggle='checkbox']").radiocheck();
   // Disable all of these at the beginning
   $("#message-syntax").prop("disabled", true);
   $("#notification-syntax").prop("disabled", true);
@@ -376,14 +375,14 @@ $(document).ready(function(){
     var result = getResult();
     result = "<textarea id='result' class='form-control no-radius'>" + result + "</textarea>";
     BootstrapDialog.show({
-      title: "Preview",
+      title: "Result",
       message: result
     });
   });
 
   $("#preview").click(function(){
     var result = getResult();
-    result = "<div id='preview-container'>" + result + "</div>";
+    result = "<div id='preview-container'>" + result.replace(/&amp;/g, "&") + "</div>";
     BootstrapDialog.show({
       title: "Preview",
       message: result
@@ -394,7 +393,7 @@ $(document).ready(function(){
     var result =
       "<ul>" +
         "<li>Paste your quote in the \"Your quote\" text field.</li>" +
-        "<li>If you want the syntax to be changed, check the first checkbox and enter the message syntax (Example: [timestamp] &lt;nickname&gt; message) and the notification syntax (Example: [time] * message) in their own text fields.</li>" +
+        "<li>If you want the syntax to be changed, check the first checkbox and enter the message syntax (Example: [timestamp] &lt;nickname&gt; message) and the notification syntax (Example: [timestamp] * message) in their own text fields.</li>" +
         "<li>If you want IPs and/or hostmasks to be hidden, check the second and/or the third checkbox and enter what you want them to be replaced with in the \"Replace IPs/hostmasks with\" text field.</li>" +
         "<li>If you want each nickname to have a random colour, check the fourth checkbox. This will only work if the first checkbox is checked.</li>" +
         "<li>If you want IRC formatted text to be converted into HTML formatted text, check the fifth checkbox.</li>" +

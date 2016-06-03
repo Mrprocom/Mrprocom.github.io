@@ -3,9 +3,13 @@ html, body {
 }
 
 
-body {
-  background-color: #34495e;
-  color: #ffffff;
+li {
+  margin-bottom: 10px;
+}
+
+
+#checkboxes {
+  margin-left: 5px;
 }
 
 
@@ -39,30 +43,8 @@ body {
 }
 
 
-.less-margin {
-  margin-bottom: 15px;
-}
-
-
-.modal-body {
-  background-color: #34495e;
+.btn {
   border: none;
-  color: #ffffff;
-  font-size: 15px;
-}
-
-
-.modal-footer {
-  background-color: #2c3e50;
-  border: none;
-  color: #ffffff;
-}
-
-
-.modal-header {
-  background-color: #1abc9c;
-  border: none;
-  color: #ffffff;
 }
 
 
