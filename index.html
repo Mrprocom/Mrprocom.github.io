@@ -9,75 +9,232 @@
     <meta name="author" content="Mrprocom">
     <link rel="icon" href="favicon.ico">
 
-    <title>Index - Mrprocom</title>
+    <title>Mrprocom</title>
 
     <!-- Bootstrap and CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
   </head>
 
   <body>
 
-    <nav class="navbar navbar-default navbar-static-top no-margin">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand">Mrprocom</a>
-      </div>
-      <div id="navbar-collapse-1" class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="index.html">Index</a></li>
-          <li><a href="list.html">My Projects</a></li>
-          <li><a href="saves.html">Powder Toy Saves</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle pointer" data-toggle="dropdown">Projects List <b class="caret"></b></a>
-            <span class="dropdown-arrow"></span>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="projects/homepage/">Homepage</a></li>
-              <li><a href="projects/ircquote/">IRC Quote Prettifier</a></li>
-              <li><a href="projects/irc/">IRC Tutorial</a></li>
-              <li><a href="http://files.brilliant-minds.tk/Organize-Post.html">Organizing Your Post</a></li>
-              <li><a href="projects/pyramid/">Population Pyramid Generator</a></li>
-            </ul>
-          </li>
-         </ul>
-      </div>
-    </nav>
-
-    <div class="jumbotron" id="welcome-screen">
-      <img src="logo.png" id="logo" alt="Mrprocom's Logo">
+    <div id="logo-wrapper">
+      <img src="logo.svg" alt="Mrprocom's Logo" id="logo">
       <h1 id="headline">Mrprocom<br><small>My Personal Website</small></h1>
     </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 more-margin">
-          <h3>About me</h3>
-          <p>I am fairly good at web development and coding in python, because that is what I mostly do. Although I also know C++, Lua and Ruby, I am not that good at them.</p>
-          <p>I have basic knowledge about many things related to computers, I am also alright at photo editing.</p>
-        </div>
-        <div class="col-md-4 more-margin">
-          <h3>The website</h3>
-          <p>This website is intended to be for publishing useful online tools and fun projects. You can find them in the navigation bar up top.</p>
-          <p>The website uses the Bootstrap framework and it is hosted on GitHub. Repository: <a href="https://github.com/Mrprocom/Mrprocom.github.io">Mrprocom.github.io</a>.</p>
-        </div>
-        <div class="col-md-4 more-margin">
-          <h3>More info</h3>
-          You can find me on the Internet as Mrprocom on:
+    <div id="sections-wrapper">
+      <div class="socket"><div id="about" class="section inactive"><h4>About</h4></div></div>
+      <div class="socket"><div id="projects" class="section inactive"><h4>Projects</h4></div></div>
+      <div class="socket"><div id="tpt" class="section inactive"><h4>TPT</h4></div></div>
+      <div class="socket"><div id="scripts" class="section inactive"><h4>Scripts</h4></div></div>
+      <div class="socket"><div id="midi" class="section inactive"><h4>MIDI</h4></div></div>
+    </div>
+
+    <div id="about-panel" class="panel-section">
+      <div class="col-sm-6 text-wrapper">
+        <div class="text-section">
+          <h1 class="header">About Me</h1>
+          <p>Hello, I'm known as Mrprocom on the Internet, that is the username I always use.</p>
+          <p>I enjoy working on random and fun projects that involve coding. I am very good at programming in Python and JavaScript because I work on projects related to them a lot. I also have basic knowledge of Batch, C++, Lua and Ruby.</p>
+          <p>Other than coding, I am good at photo editing and playing the piano.</p>
+          <p>Places I am very active in:</p>
           <ul>
+            <li><a href="https://webchat.freenode.net/">Freenode</a></li>
             <li><a href="https://github.com/Mrprocom">GitHub</a></li>
-            <li><a href="http://webchat.freenode.net/">Freenode</a></li>
-            <li><a href="http://tpt.io/@Mrprocom">The Powder Toy</a></li>
+            <li><a href="http://tpt.io/@Mrprocom">Powder Toy</a></li>
           </ul>
         </div>
+      </div>
+      <div class="col-sm-6 text-wrapper">
+        <div class="text-section">
+          <h1 class="header">About the Website</h1>
+          <p>I made this website for publishing some of my work, that includes projects and web applications, Powder Toy saves, scripts and modified piano songs. These can be found in the other few tabs above if you want to check them out.</p>
+          <p>I made this website using HTML, CSS and JavaScript with some help from the Bootstrap framework.</p>
+          <p>This website is hosted on GitHub. Repository: <a href="https://github.com/Mrprocom/Mrprocom.github.io">Mrprocom.github.io</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects-panel" class="panel-section">
+      <div class="list-wrapper">
+        <div class="padding15">
+          <h2 class="header">Projects</h2>
+          <p class="font17">Here you will find a list of web projects made by me.</p>
+          <hr>
+        </div>
+        <div class="col-md-4 col-sm-6 project-container">
+          <div class="project">
+            <a href="projects/homepage/">
+              <img src="thumbnails/homepage.svg" alt="Thumbnail" class="project-thumbnail img-responsive">
+              <div class="project-description">
+                <h3 class="header">Homepage</h3>
+                <p>This page contains a collection of fun, popular and useful websites organised into sections. It is very customisable, you can add your own collection of websites in a separate section. This project was inspired by the start screen from windows 8.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 project-container">
+          <div class="project">
+            <a href="projects/ircquote/">
+              <img src="thumbnails/ircquote.svg" alt="Thumbnail" class="project-thumbnail img-responsive">
+              <div class="project-description">
+                <h3 class="header">IRC Quote Prettifier</h3>
+                <p>This tool automatically prettifies IRC quotes. It has options to change the message syntax, hide IPs, HTML colour nicknames, convert IRC formatted text to HTML, HTML encode special characters and preview the result. It is useful for posting quotes in forums.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 project-container">
+          <div class="project">
+            <a href="projects/irc/">
+              <img src="thumbnails/irc.svg" alt="Thumbnail" class="project-thumbnail img-responsive">
+              <div class="project-description">
+                <h3 class="header">IRC Tutorial</h3>
+                <p>This page has 3 web clients you can choose from. It shows you information about the web client, how to connect, useful things to know about, commands and how to behave. It also allows you to use colours and other text formats for web clients.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 project-container">
+          <div class="project">
+            <a href="projects/pyramid/">
+              <img src="thumbnails/pyramid.svg" alt="Thumbnail" class="project-thumbnail img-responsive">
+              <div class="project-description">
+                <h3 class="header">Population Pyramid Generator</h3>
+                <p>This tool generates a semi-accurate population pyramid using 4 variables entered by the user, crude birth rate, crude death rate, sex ratio and net migration rate.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tpt-panel" class="panel-section">
+      <div class="list-wrapper">
+        <div class="padding15">
+          <h2 class="header">Powder Toy Saves</h2>
+          <p class="font17">Here you will find a list of <a href="http://powdertoy.co.uk/">Powder Toy</a> saves made by me.</p>
+          <hr>
+        </div>
+        <div class="col-md-3 col-sm-4 save-container">
+          <div class="save">
+            <img src="http://static.powdertoy.co.uk/1907373.png" alt="Thumbnail" class="save-thumbnail img-responsive">
+            <div class="save-buttons">
+              <a href="http://tpt.io/~1907373"><div class="save-button save-view">View</div></a>
+              <a href="ptsave:1907373"><div class="save-button save-open">Open</div></a>
+            </div>
+            <div class="save-description">
+              <h3 class="header"><a href="http://tpt.io/~1907373">Image Shrinker</a></h3>
+              <p>This machine shrinks down any image that is made of solids and does not contain DMND at all.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-4 save-container">
+          <div class="save">
+            <img src="http://static.powdertoy.co.uk/1858279.png" alt="Thumbnail" class="save-thumbnail img-responsive">
+            <div class="save-buttons">
+              <a href="http://tpt.io/~1858279"><div class="save-button save-view">View</div></a>
+              <a href="ptsave:1858279"><div class="save-button save-open">Open</div></a>
+            </div>
+            <div class="save-description">
+              <h3 class="header"><a href="http://tpt.io/~1858279">Semi-Realistic Tank</a></h3>
+              <p>This tank shoots a moving projectile that can explode.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-4 save-container">
+          <div class="save">
+            <img src="http://static.powdertoy.co.uk/1904829.png" alt="Thumbnail" class="save-thumbnail img-responsive">
+            <div class="save-buttons">
+              <a href="http://tpt.io/~1904829"><div class="save-button save-view">View</div></a>
+              <a href="ptsave:1904829"><div class="save-button save-open">Open</div></a>
+            </div>
+            <div class="save-description">
+              <h3 class="header"><a href="http://tpt.io/~1904829">Multi-Purpose Laser</a></h3>
+              <p>This laser has a controllable beam colour and temperature and it has no WIFI.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="scripts-panel" class="panel-section">
+      <div class="list-wrapper">
+        <h2 class="header">Scripts</h2>
+        <p class="font17">Here you will find a list of scripts made by me.</p>
+        <hr>
+        <div class="row script">
+          <a href="https://github.com/Mrprocom/Mrprocom.github.io/blob/master/scripts/bot_framework.py">
+            <div class="col-sm-4 col-xs-12">
+              <img src="icons/python.svg" alt="Python" class="script-icon">
+              <div class="script-name">Bot Framework</div>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <div class="script-description">Simple IRC bot framework</div>
+            </div>
+          </a>
+        </div>
+        <div class="row script">
+          <a href="https://github.com/Mrprocom/Mrprocom.github.io/blob/master/scripts/irc_to_html.py">
+            <div class="col-sm-4 col-xs-12">
+              <img src="icons/python.svg" alt="Python" class="script-icon">
+              <div class="script-name">IRC to HTML</div>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <div class="script-description">Converts IRC formatted text to HTML</div>
+            </div>
+          </a>
+        </div>
+        <hr>
+        <div class="row script">
+          <a href="https://github.com/Mrprocom/Mrprocom.github.io/blob/master/scripts/invite_join.py">
+            <div class="col-sm-4 col-xs-12">
+              <img src="icons/hexchat.svg" alt="HexChat" class="script-icon">
+              <div class="script-name">Join on Invite</div>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <div class="script-description">Automatically joins the channel you have been invited to</div>
+            </div>
+          </a>
+        </div>
+        <div class="row script">
+          <a href="https://github.com/Mrprocom/Mrprocom.github.io/blob/master/scripts/kick_rejoin.py">
+            <div class="col-sm-4 col-xs-12">
+              <img src="icons/hexchat.svg" alt="HexChat" class="script-icon">
+              <div class="script-name">Rejoin on Kick</div>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <div class="script-description">Automatically joins after getting kicked</div>
+            </div>
+          </a>
+        </div>
+        <div class="row script">
+          <a href="https://github.com/Mrprocom/Mrprocom.github.io/blob/master/scripts/rainbow.py">
+            <div class="col-sm-4 col-xs-12">
+              <img src="icons/hexchat.svg" alt="HexChat" class="script-icon">
+              <div class="script-name">Rainbow</div>
+            </div>
+            <div class="col-sm-8 col-xs-12">
+              <div class="script-description">Sends colourful messages</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="midi-panel" class="panel-section">
+      <div class="list-wrapper">
+        <h2 class="header">MIDI Files [WIP]</h2>
+        <p class="font17">Here you will find a list MIDI files of songs modified by me.</p>
+        <hr>
       </div>
     </div>
 
     <!-- JavaScripts -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>

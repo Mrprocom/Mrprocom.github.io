@@ -1,3 +1,11 @@
+# This function converts IRC formated text to HTML
+# Example:
+#     irc_to_html("\002Hello \00304World!") => "<b>Hello <span style='color: #CC0000;'>World!</span></b>"
+
+
+import re
+
+
 def irc_to_html(irc_msg):
 
     boldChar = False
