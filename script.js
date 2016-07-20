@@ -9,6 +9,8 @@ function showPanel(panel){
 
 $(document).ready(function(){
 
+  setTimeout(function(){$(".section").removeAttr("style")}, 10);
+
   $(document).on("click", "#about.inactive", function(){
     showPanel("#about-panel");
     $(".section").removeClass("active").addClass("inactive");
