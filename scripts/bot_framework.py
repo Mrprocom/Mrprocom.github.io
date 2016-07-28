@@ -14,7 +14,10 @@ channels = ["##MyChannel"]
 
 
 # Define the socket
-irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+if ipv6:
+    irc = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)
+else:
+    irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 # Create two messages, one to set the nick and the other one to set the user
 nick_msg = "NICK {0}\r\n".format(nick)
 user_msg = "USER {0} {1} - - :{2}\r\n".format(ident, nick, realname)
