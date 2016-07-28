@@ -11,6 +11,7 @@ nick = "MyBot"
 ident = "MyBot"
 realname = "MyBot"
 channels = ["##MyChannel"]
+ipv6 = False
 
 
 # Define the socket
