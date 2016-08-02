@@ -198,7 +198,7 @@ $(document).ready(function(){
     kiwiirc: "<h2>Connecting</h2>" +
       "<ul>" +
         "<li>Featured Networks: A list of very popular IRC networks you can choose from</li>"
-        "<li>Server and networks: Click on this to access advanced connecting features, ex: Enabling SSL, changing the server's port,, entering a custom server URL</li>"
+        "<li>Server and networks: Click on this to access advanced connecting features, ex: Enabling SSL, changing the server's port, entering a custom server URL</li>"
         "<li>Nickname: The name you want to be known as when you connect. If you enter a nickname that is registered or currently being used, you will either be disconnected or have a new random nickname.</li>" +
         "<li>Channel: The channels you want to automatically join after connecting. You can leave this text field empty if you do not want to automatically join a channel after connecting. You can join multiple channels by separating them with commas <kbd>,</kbd>. Channels start with at least one hash <kbd>#</kbd>. You can still join other channels after connecting using commands.</li>" +
         "<li>I have a password: Enable this if you have a NickServ account you want to log in or the server requires a password to access it.</li>" +
