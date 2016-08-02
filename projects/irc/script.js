@@ -189,14 +189,27 @@ $(document).ready(function(){
     "<p>Choose a topic to learn about.</p>";
 
   var connectingText = {
-    freenode: "<h2>Connecting</h2>" +
+    qwebirc: "<h2>Connecting</h2>" +
       "<ul>" +
         "<li>Nickname: The name you want to be known as when you connect. If you enter a nickname that is registered or currently being used, you will either be disconnected or have a new random nickname.</li>" +
         "<li>Channels: The channels you want to automatically join after connecting. You can leave this text field empty if you do not want to automatically join a channel after connecting. You can join multiple channels by separating them with commas <kbd>,</kbd>. Channels start with at least one hash <kbd>#</kbd>. You can still join other channels after connecting using commands.</li>" +
         "<li>Auth to services: Enable this if you have a NickServ account you want to log in.</li>" +
+      "</ul>"
+    kiwiirc: "<h2>Connecting</h2>" +
+      "<ul>" +
+        "<li>Featured Networks: A list of very popular IRC networks you can choose from</li>"
+        "<li>Server and networks: Click on this to access advanced connecting features, ex: Enabling SSL, changing the server's port,, entering a custom server URL</li>"
+        "<li>Nickname: The name you want to be known as when you connect. If you enter a nickname that is registered or currently being used, you will either be disconnected or have a new random nickname.</li>" +
+        "<li>Channel: The channels you want to automatically join after connecting. You can leave this text field empty if you do not want to automatically join a channel after connecting. You can join multiple channels by separating them with commas <kbd>,</kbd>. Channels start with at least one hash <kbd>#</kbd>. You can still join other channels after connecting using commands.</li>" +
+        "<li>I have a password: Enable this if you have a NickServ account you want to log in or the server requires a password to access it.</li>" +
       "</ul>",
-    kiwiirc: "",
-    mibbit: ""
+    mibbit: "<h2>Connecting</h2>" +
+      "<ul>" +
+        "<li>Connect: Select the server you want to connect to from this dropdown menu" +
+        "<li>Nick: The name you want to be known as when you connect. If you enter a nickname that is registered or currently being used, you will either be disconnected or have a new random nickname.</li>" +
+        "<li>Channel: The channels you want to automatically join after connecting. You can leave this text field empty if you do not want to automatically join a channel after connecting. You can join multiple channels by separating them with commas <kbd>,</kbd>. Channels start with at least one hash <kbd>#</kbd>. You can still join other channels after connecting using commands.</li>" +
+        "<li>Auth: Click on this if you have a NickServ account you want to log in or the server requires a password to access it.</li>" +
+      "</ul>"
   };
 
   var conceptsText =
@@ -427,11 +440,11 @@ $(document).ready(function(){
   $("#help").click(function(){
     var text;
     if(currentClient == "qwebirc"){
-      text = connectingText.freenode;
+      text = connectingText['qwebirc'];
     } else if(currentClient == "kiwiirc") {
-      text = connectingText.kiwiirc;
+      text = connectingText['kiwiirc'];
     } else{
-      text = connectingText.mibbit;
+      text = connectingText['mibbit'];
     }
     BootstrapDialog.show({
       title: "Help",
