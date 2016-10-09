@@ -1,0 +1,17 @@
+html {
+  height: 100%;
+}
+
+
+body {
+  background-color: #191916;
+  height: 100%;
+}
+
+
+#interface {
+  display: block;
+  height: 95%;
+  margin: auto;
+  width: 100%;
+}
