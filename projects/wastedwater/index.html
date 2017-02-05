@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mrprocom's IRC Tutorial Project">
+    <meta name="keywords" content="calculator, droplets, drip, leak, mrprocom, mrprocom website, online tools, project, tools, wasted water">
+    <meta name="author" content="Mrprocom">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Drip Calculator</title>
+
+    <!-- Bootstrap and CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <main class="container">
+      <h2>Number of Drips per Number of Seconds Multiplied by Duration</h2>
+      <div class="well">
+        <div class="row">
+          <div class="col-sm-3 col-xs-6"><input type="number" id="driples" placeholder="Number of Drips" class="form-control"></div>
+          <div class="col-sm-3 col-xs-6"><input type="number" id="persecond" placeholder="Per Number of Seconds" class="form-control"></div>
+          <div class="col-sm-3 col-xs-6"><input type="number" id="duration" placeholder="Leak Duration" class="form-control"></div>
+          <div class="col-sm-3 col-xs-6">
+            <select id="unit" class="form-control">
+              <option>Minutes</option>
+              <option>Hours</option>
+              <option selected="selected">Days</option>
+              <option>Weeks</option>
+              <option>Months</option>
+              <option>Years</option>
+            </select>
+          </div>
+        </div>
+        <sub>Example: If you want to calculate how much water is wasted after 2 months from a faucet that drips 2 times every 10 seconds, fill in the text fields with the numbers: 2, 10 and 2 in order then select "Months" from the selector.<br>Icons were made by <a href="http://www.flaticon.com/">Flaticon</a>.</sub>
+      </div>
+      <hr>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Wasted Amount</div>
+        <div class="panel-body">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Wasted Droplets</h4>
+            <img src="icons/total-drops.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="total-drops" class="result"></b> Droplets</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Wasted Amount of Water</h4>
+            <img src="icons/total-litre.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="total-litre" class="result"></b> Litres</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Wasted Amount in Gallons</h4>
+            <img src="icons/total-gallon.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="total-gallon" class="result"></b> Gallons</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Average Money Cost</h4>
+            <img src="icons/total-price.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="total-price" class="result"></b> USD</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">Wasted Amount in Different Containers</div>
+        <div class="panel-body">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Enough to Fill</h4>
+            <img src="icons/container-1half.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="container-1half" class="result"></b> Bottles (1.5L)</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Enough to Fill</h4>
+            <img src="icons/container-5gallon.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="container-5gal" class="result"></b> Bottles (5gal)</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Enough to Fill</h4>
+            <img src="icons/container-barrel.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="container-barrel" class="result"></b> Oil Barrels</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">Enough to Fill</h4>
+            <img src="icons/container-bathtub.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="container-bathtub" class="result"></b> Bathtubs</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">What it Could Have Been Used for</div>
+        <div class="panel-body">
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">It Could Have Watered</h4>
+            <img src="icons/used-watering.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="used-watering" class="result"></b> Plants</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">It Could Have Hydrated</h4>
+            <img src="icons/used-drinking.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="used-drinking" class="result"></b> Humans</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">It Could Have Flushed</h4>
+            <img src="icons/used-flushing.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="used-flushing" class="result"></b> Toilets</h3>
+          </div>
+          <div class="col-md-3 col-sm-6 col-xs-12">
+            <h4 class="top-text">It Could Have Bathed</h4>
+            <img src="icons/used-bathing.svg" alt="Icon" class="icon">
+            <h3 class="bottom-text"><b id="used-bathing" class="result"></b> People</h3>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- JavaScripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+.bottom-text {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+
+.icon {
+  display: block;
+  margin: auto;
+  padding: 10px 0;
+  width: 50%;
+}
+
+
+.panel {
+  display: none;
+}
+
+
+.result {
+  color: #ffffff;
+}
+
+
+.top-text {
+  margin-top: 50px;
+  text-align: center;
+}
+
+
+.well .row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+
+.well .row div {
+  padding: 5px;
+}
