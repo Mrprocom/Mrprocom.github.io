@@ -1,3 +1,4 @@
+# Copyright 2017 Mrprocom All Rights Reserved
 # This HexChat script automatically joins any channel you were invited to
 # Add channels you do not want to automatically join after getting invited to to the blacklist list
 

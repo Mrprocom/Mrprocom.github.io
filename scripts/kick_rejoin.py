@@ -1,3 +1,4 @@
+# Copyright 2017 Mrprocom All Rights Reserved
 # This HexChat script automatically joins the channel you were kicked from
 # Change the value of the delay variable to the time you want to wait before rejoining in milliseconds
 # Add channels you do not want to automatically join after getting kicked from in the blacklist list

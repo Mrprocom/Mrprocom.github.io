@@ -1,3 +1,4 @@
+# Copyright 2017 Mrprocom All Rights Reserved
 # This HexChat script allows you to send rainbow-looking text
 # Command: /RB [me|msg|print] <message>
 # [me|msg|print]: the message type.
