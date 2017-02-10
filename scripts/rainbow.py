@@ -11,7 +11,7 @@ import hexchat
 # Module information
 __module_name__         = "Rainbow"
 __module_version__      = "1.0"
-__module_description__  = "Makes you able to send rainbow messages"
+__module_description__  = "Enables you to send rainbow messages"
 __module_author__       = "Mrprocom"
 
 
