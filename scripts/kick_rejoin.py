@@ -18,28 +18,28 @@ __module_author__       = "Mrprocom"
 delay = 1000
 # Add channels you do not want to rejoin automatically after getting kicked
 blacklist = [
-    "#freenode"
+	"#freenode"
 ]
 
 def unload(userdata):
 
-    # Print a message saying that the script was unloaded
-    print(__module_name__ + " was unloaded")
+	# Print a message saying that the script was unloaded
+	print(__module_name__ + " plugin unloaded")
 
 
 def kicked_check(word, word_eol, userdata):
 
-    # This function rejoins channel
-    def rejoin(userdata):
+	# This function rejoins channel
+	def rejoin(userdata):
 
-        # Check if the channel is not blacklisted
-        if channel not in blacklist:
-            hexchat.command("join " + channel)
+		# Check if the channel is not blacklisted
+		if channel not in blacklist:
+			hexchat.command("join " + channel)
     
-    # Set the value of channel to the channel you were kicked from
-    channel = word[1]
-    # Run rejoin after <delay> millisecond
-    hexchat.hook_timer(delay, rejoin)
+	# Set the value of channel to the channel you were kicked from
+	channel = word[1]
+	# Run rejoin after <delay> millisecond
+	hexchat.hook_timer(delay, rejoin)
 
 
 # Make a hook that calls kicked_check after getting kicked
@@ -47,4 +47,4 @@ hexchat.hook_print("You Kicked", kicked_check)
 hexchat.hook_unload(unload)
 
 # Print a message saying that the script was loaded
-print(__module_name__ + " was loaded")
+print(__module_name__ + " plugin loaded")
