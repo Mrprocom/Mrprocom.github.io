@@ -11,7 +11,7 @@ function isVisible(elem){
 $(document).ready(function(){
   // Edit the href attribute of all .sub-topic a to redirect to the correct page
   $(".sub-topic a").each(function(){
-    $(this).attr("href", window.location.href.replace(/\/pages\/\S+\.html/, "") + $(this).attr("href"));
+    $(this).attr("href", window.location.href.replace(/\/pages\/\S+\.html.*/, "") + $(this).attr("href"));
   });
 
   // Allow shift-click on .shift-click links to change the iframe
