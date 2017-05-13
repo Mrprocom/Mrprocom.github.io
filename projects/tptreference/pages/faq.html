@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+  </head>
+
+  <body class="page">
+    
+    <div id="page-content">
+      <h2>Tips and Frequently Asked Questions</h2>
+      <hr>
+      <p>This page covers some useful tips, answers to frequently asked questions and common problems.</p>
+
+      <h3 id="tips" class="sub-topic"><a href="#faq#tips" target="_top">Tips</a></h3>
+      <hr>
+      <ul class="muted-list">
+        <li class="text-muted"><b>Use the console to do quick calculations:</b> Since the console can be used as a Lua shell, you can use it to calculate numbers whenever you are taking measurements. Just open the console, write your calculation there, for example, 2 * (12^2 + 24) / 6 - 14, and then press <kbd>Enter</kbd>, it will give you the answer, which is 42 for that example. Use the asterisk sign <kbd>*</kbd> for multiplication.</li>
+        <li class="text-muted"><b>Do not make laggy saves:</b> When you are making saves, make sure they look nice and not laggy, laggy saves are annoying to run, so users might not like it.</li>
+        <li class="text-muted"><b>Use deco:</b> Always use decoration and colours whenever possible because these are very attractive.</li>
+        <li class="text-muted"><b>Give instructions using elements:</b> If you want to explain your save using text, write using elements instead of signs, preferably with an element that disappears over time, like BRAY. Use Lua scripts to help you write using elements like the <a href="http://starcatcher.us/scripts/#51" target="_top" class="shift-click">Texter</a> script.</li> 
+        <li class="text-muted"><b>Learn from other saves:</b> If you find an advanced save and you do not know how it works, try to investigate in it and learn the concept behind it to improve your skills.</li>
+        <li class="text-muted"><b>Do not report saves using comments:</b> If you find a save that violates the rules, instead of talking about it in the comments, report the save without saying anything in the comments, this will inform the moderators and will prevent you from being hated on or offended.</li>
+        <li class="text-muted"><b>Store backups of your save:</b> Always keep backups of the save you are working on. Use stamps to save your progress for later or save it locally, it is better than saving it online, even if it is not published, some users can still search for saves using IDs, find yours and possibly steal it.</li>
+        <li class="text-muted"><b>Take inspirations:</b> You can use Google Images for inspiration if you are having problems designing something.</li>
+        <li class="text-muted"><b>Re-upload your decent saves:</b> If you think your save deserves getting to the Front Page, but is not receiving much attention, try updating it after 3 hours to get it to the first position in the recent saves tab. You could even try removing it and re-uploading it later when more users are active.</li>
+        <li class="text-muted"><b>Be friendly:</b> Be polite and respectful and always follow the rules so that you do not get banned and other do not hate you.</li>
+        <li class="text-muted"><b>Check before asking or suggesting:</b> Before you ask a question or post a suggestion on the forum, make sure that it has not been suggested or asked before. You can check by searching it on the website using the search bar.</li>
+        <li class="text-muted"><b>Know how to suggest elements:</b> When you post a suggestion to be added to the game, make sure to only mention one or more related features and list detailed information about them including how they can be useful.</li>
+      </ul>
+
+      <h3 id="faq" class="sub-topic"><a href="#faq#faq" target="_top">Frequently Asked Questions</a></h3>
+      <hr>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">Am I allowed to make multiple accounts?</h3></div>
+        <div class="panel-body">
+          <p>Yes, although abusing multiple accounts for vote fraud or spam is against the rules, using multiple accounts to allow you to vote multiple times will result in a ban.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">How do I use Powder Toy behind a proxy?</h3></div>
+        <div class="panel-body">
+          <p>You can use the Powder Toy behind a proxy by specifying it at the command line, On Windows and Linux, this is simply a case of issuing the command:</p>
+          <pre>powder-sse(2/3) proxy:&lt;address&gt;:&gt;port&gt;</pre>
+          <p>where &lt;address&gt; is the address of the proxy and &lt;port&gt; is the port.<br>On a Mac, this is a bit more complicated, you must open a terminal and go to the directory with Powder.app in, and issue the command:</p>
+          <pre>Powder.app/Contents/MacOS/powder-x proxy:&lt;address&gt;:&lt;port&gt;</pre>
+          <p>An example command would be:</p>
+          <pre>powder.exe proxy:wwwcache.school.ac.uk:3128</pre>
+        </div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">When I try to login, I get a "605 Timeout" error. How do I fix this?</h3></div>
+        <div class="panel-body">
+          <p>This error is very general. It means that the Powder Toy cannot communicate with the server, usually because there is no internet connection, or the port used (port 80) has been intentionally blocked by an administrator. If you are trying to use the Powder Toy from within a corporate or school network, it is likely you will need to use a proxy. Another known cause is Firewall or internet filtering software that runs on the computer, like Windows Live Family Safety, if this is the case, the relevant proxy settings need to be acquired, or the software disabled.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">I have registered on the website, but I cannot sign in.</h3></div>
+        <div class="panel-body">
+          <p>If you are told your username or password is incorrect, it may be that you registered with a username that is not compatible with the Powder Toy. To keep usernames readable, only alpha-numeric, as well as hyphens <kbd>-</kbd> and underscores <kbd>_</kbd> characters are allowed in usernames, any other characters in your username are replaced with a hyphen <kbd>-</kbd>. Try using your adjusted username to sign in. Other common issues are:
+          <ul>
+            <li>Your password may have characters that you cannot correctly enter into the Powder Toy, in which case, you should change your password on the website in your profile.</li>
+            <li>You may not have typed your username or password correctly (they are case sensitive).</li>
+            <li>Another rare but possible issue is that the username or password is too long to be entered in the game login screen.</li>
+          </ul></p>
+        </div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">What is TPT and FP? and what is TPT++?</h3></div>
+        <div class="panel-body">
+          <p>TPT stands for The Powder Toy and FP stands for Front Page, which is the first page displayed in the game and on the website by default. Powder Toy was originally written in C, but now it is being rewritten in C++.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">Can we have movable solids?</h3></div>
+        <div class="panel-body">
+          <p>No. That will require too much work, because it's hard to make particle-solid collisions.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">Will there be a 3D powder toy?</h3></div>
+        <div class="panel-body">
+          <p>No. 3D powder toy can be imagined as many usual TPT windows stacked in one. FPS of that "stack" will be really small.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">Can we have cookable items, dirt, chemistry, etc?</h3></div>
+        <div class="panel-body">
+          <p>No. These additions mostly have no uses, but you can find a modification with these things and try them.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">Can we have weapons, arms, more stickmen, etc?</h3></div>
+        <div class="panel-body">
+          <p>No. It's not a game about stickmen.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">How do I become a moderator?</h3></div>
+        <div class="panel-body">
+          <p>Better do not ask questions like that. Be a nice user, help others, make saves, program for TPT and maybe Simon will notice you.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">My new avatar does not appear, how do I fix that?</h3></div>
+        <div class="panel-body">
+          <p>It takes some time for avatars to be updated. You can try emptying your browser's cache, if that does not work, then you will have to wait for about a day.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">How can I remove my account?</h3></div>
+        <div class="panel-body">
+          <p>Sadly, you cannot remove your account because that would cause a lot of problems. What you can do is ask a moderator to hide all your posts, unpublish all your saves and permanently ban your account, but your account will still exist.</p></div>
+      </div>
+      <div class="panel panel-default clickable-panel">
+        <div class="panel-heading"><h3 class="panel-title">Someone is violating the rules, what should I do?</h3></div>
+        <div class="panel-body">
+          <p>If you see anything that violates the rules, report it using the report button shown when you preview the save before opening it. Do not report using comments, moderators will not be able to see them. You can also report your own save if it has inappropriate or offensive tags or if something bad has happened in the comments section. If you are reporting a stolen save, make sure you mention the ID of the original save in your report.</p></div>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="../pages-script.js"></script>
+  </body>
+</html>

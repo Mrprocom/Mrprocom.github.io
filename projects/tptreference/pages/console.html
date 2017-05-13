@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+  </head>
+
+  <body class="page">
+    
+    <div id="page-content">
+      <h2>Console</h2>
+      <hr>
+      <p>The console is a window you can bring up where you can run built-in commands or Lua commands. You can access it by pressing the C quick option or by   pressing the <kbd>~</kbd> key. All built-in commands start with an exclamation mark <kbd>!</kbd>, if it does not, then it will be considered a Lua command. Pressing the   up arrow key while in the console inputs the last command you ran, pressing it more inputs the command before it and so own. Pressing the down arrow key does   the opposite, if you press the up arrow key multiple times, you can press the down arrow key to input the more recent commands.</p>
+
+      <h3 id="set" class="sub-topic"><a href="#console#set" target="_top">The Set Command</a></h3>
+      <hr>
+      <div class="well">
+        <p>This command changes the value of any property of particles.</p>
+        <b>Syntax:</b>
+        <pre>!<span class="text-info">set</span> <span class="text-success">&lt;Property&gt;</span> <span class="text-warning">&lt;Element&gt; &lt;Value&gt;</span></pre>
+        <b>Explanation:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>Property:</b> The property you want to change its value: type, ctype, life, temp, tmp, tmp2, flags, dcolor, pavg0, pavg1, x, y, vx, vy.</li>
+          <li class="text-muted"><b>Element:</b> The short element name (metl or METL for example) or <kbd>all</kbd> to target all particles in the simulation or the particle index.</li>
+          <li class="text-muted"><b>Value:</b> The value you want to set the property of the targeted particles to. This could be a number or an element name or <kbd>none</kbd> sometimes.</li>
+        </ul>
+        <b>Examples:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">type</span> <span class="text-warning">dust metl</span>:</b>
+          Turns all DUST into METL.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">type</span> <span class="text-warning">dust none</span>:</b>
+          Removes all DUST.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">type</span> <span class="text-warning">3 metl</span>:</b>
+          Turns the particle with an index of #3 to METL.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">ctype</span> <span class="text-warning">clne 3</span>:</b>
+          Changes the Ctype value of all CLNE to the element with an ID of 3, which is OIL.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">ctype</span> <span class="text-warning">clne watr</span>:</b>
+          Changes the Ctype value of all CLNE to WATR.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">temp</span> <span class="text-warning">all 1000</span>:</b>
+          Changes the temperature of all particles to 1000 Kelvin.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">temp</span> <span class="text-warning">all 1000C</span>:</b>
+          Changes the temperature of all particles to 1000 Celsius.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">life</span> <span class="text-warning">phot 1000</span>:</b>
+          Changes the Life value of all PHOT to 1000.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">life</span> <span class="text-warning">stkm 1000</span>:</b>
+          Changes the Life value of all STKM to 1000.</li>
+          <li class="text-muted"><b>!<span class="text-info">set</span> <span class="text-success">dcolor</span> <span class="text-warning">metl 0xffffffff</span>:</b>
+          Changes the colour of all METL to 0xFFFFFFFF, which is the colour white.</li>
+        </ul>
+      </div>
+
+      <h3 id="create" class="sub-topic"><a href="#console#create" target="_top">The Create Command</a></h3>
+      <hr>
+      <div class="well">
+        <p>This command creates a particle in specified coordinates.</p>
+        <b>Syntax:</b>
+        <pre>!<span class="text-info">create</span> <span class="text-success">&lt;Element&gt;</span> <span class="text-warning">&lt;Coordinates&gt;</span></pre>
+        <b>Explanation:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>Element:</b> The short element name (metl or METL for example) or the element ID.</li>
+          <li class="text-muted"><b>Coordinates:</b> The X and Y coordinates of where the element will be created. The X and Y values are separated by a comma.</li>
+        </ul>
+        <b>Examples:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>!<span class="text-info">create</span> <span class="text-success">dust</span> <span class="text-warning">300,200</span>:</b>
+          Creates one pixel of DUST in X:300, Y:200.</li>
+          <li class="text-muted"><b>!<span class="text-info">create</span> <span class="text-success">3</span> <span class="text-warning">300,200</span>:</b>
+          Creates one pixel of the element with an ID of 3, which is OIL, in X:300, Y:200.</li>
+        </ul>
+      </div>
+
+      <h3 id="delete" class="sub-topic"><a href="#console#delete" target="_top">The Delete or Kill Command</a></h3>
+      <hr>
+      <div class="well">
+        <p>This command deletes a particle in specified coordinates or deletes a particle with a specified index.</p>
+        <b>Syntax:</b>
+        <pre>!<span class="text-info">delete</span> <span class="text-warning">&lt;Coordinates or Index&gt;</span></pre>
+        <b>Explanation:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>Coordinates or Index:</b> The X and Y coordinates of the particle that will be deleted or the index of the particle that will be  deleted. The X and Y values are separated by a comma.</li>
+        </ul>
+        <b>Examples:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>!<span class="text-info">delete</span> <span class="text-warning">300,200</span>:</b>
+          Deletes the particle in X:300, Y:200.</li>
+          <li class="text-muted"><b>!<span class="text-info">kill</span> <span class="text-warning">300,200</span>:</b>
+          Deletes the particle in X:300, Y:200. There is no difference between !delete and !kill.</li>
+          <li class="text-muted"><b>!<span class="text-info">delete</span> <span class="text-warning">3</span>:</b>
+          Deletes the particle with an index of #3.</li>
+        </ul>
+      </div>
+
+      <h3 id="reset" class="sub-topic"><a href="#console#reset" target="_top">The Reset Command</a></h3>
+      <hr>
+      <div class="well">
+        <p>This command can resets velocities, pressures, temperatures and sparks.</p>
+        <b>Syntax:</b>
+        <pre>!<span class="text-info">reset</span> <span class="text-warning">&lt;What to Reset&gt;</span></pre>
+        <b>Explanation:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>What to Reset:</b> The thing you want to reset. This could either be velocity, temperature, pressure or sparks.</li>
+        </ul>
+        <b>Examples:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>!<span class="text-info">reset</span> <span class="text-warning">velocity</span>:</b>
+          Resets velocities.</li>
+          <li class="text-muted"><b>!<span class="text-info">reset</span> <span class="text-warning">temp</span>:</b>
+          Resets all temperatures back to their original temperature when they were drawn.</li>
+          <li class="text-muted"><b>!<span class="text-info">reset</span> <span class="text-warning">pressure</span>:</b>
+          Resets all pressure back to 0.</li>
+          <li class="text-muted"><b>!<span class="text-info">reset</span> <span class="text-warning">sparks</span>:</b>
+          Removes all SPRK leaving the conductor behind.</li>
+        </ul>
+      </div>
+
+      <h3 id="bubble" class="sub-topic"><a href="#console#bubble" target="_top">The Bubble Command</a></h3>
+      <hr>
+      <div class="well">
+        <p>This command creates a big SOAP bubble in the coordinates.</p>
+        <b>Syntax:</b>
+        <pre>!<span class="text-info">bubble</span> <span class="text-warning">&lt;Coordinates&gt;</span></pre>
+        <b>Explanation:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>Coordinates:</b> The X and Y coordinates of where the bubble will be created. The X and Y values are separated by a comma.</li>
+        </ul>
+        <b>Example:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>!<span class="text-info">bubble</span> <span class="text-warning">300,200</span>:</b>
+          Creates a SOAP bubble in X:300, Y:200.</li>
+        </ul>
+      </div>
+
+      <h3 id="load" class="sub-topic"><a href="#console#load" target="_top">The Load Command</a></h3>
+      <hr>
+      <div class="well">
+        <p>This command loads a save with a specified ID.</p>
+        <b>Syntax:</b>
+        <pre>!<span class="text-info">load</span> <span class="text-warning">&lt;Save ID&gt;</span></pre>
+        <b>Explanation:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>Save ID:</b> The ID of the save that will be loaded.</li>
+        </ul>
+        <b>Example:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b>!<span class="text-info">load</span> <span class="text-warning">2198</span>:</b>
+          Loads the save with the ID 2198, which is the Desert City 5 save.</li>
+        </ul>
+      </div>
+
+      <h3 id="quit" class="sub-topic"><a href="#console#quit" target="_top">The Quit Command</a></h3>
+      <hr>
+      <div class="well">
+        <p>This command closes the game instantly without asking for confirmation.</p>
+        <b>Syntax:</b>
+        <pre>!<span class="text-info">quit</span></pre>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="../pages-script.js"></script>
+  </body>
+</html>

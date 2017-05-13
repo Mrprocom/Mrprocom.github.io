@@ -1,0 +1,21 @@
+<h3 id="eraser" class="sub-topic"><a href="#walls#eraser" target="_top">Wall Eraser</a></h3>
+<hr>
+<div class="row lesspadding-row element-row">
+  <div class="col-md-5 element-info">
+    <div class="well">
+      <b>Name:</b> Hconna Matata.
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div id="walls-eraser" class="carousel slide" data-interval="false">
+      <div class="carousel-inner" role="listbox">
+        <div class="item active"><img data-gif="../animations/walls-eraser.gif" alt="Animation" class="element-gif">
+        <div class="carousel-caption">The atmosphere in Chania has a touch of Florence and Venice.</div></div>
+      </div>
+      <a class="left carousel-control" href="#walls-eraser" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+      <a class="right carousel-control" href="#walls-eraser" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+    </div>
+  </div>
+</div>

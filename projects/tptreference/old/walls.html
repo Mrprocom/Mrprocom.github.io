@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+  </head>
+
+  <body class="page elements-body">
+    
+    <div id="page-content">
+      <h2>Walls</h2>
+      <hr>
+      <p>Walls can be found in the first category. When you select a wall element, your brush will have a rectangular shape with a size starting from 4×4 pixels and going up in multiplications of 4. Walls are not affected by heat, they are indestructible and cannot be moved by other particles like PSTN. Some particles like BRAY and LIGHT can pass through walls.</p>
+
+      <h3 id="types" class="sub-topic"><a href="#walls#types" target="_top">Wall Types</a></h3>
+      <hr>
+      <div id="walls-carousel" class="carousel slide" data-interval="false">
+        <div class="carousel-inner" role="listbox">
+          <div class="item active"><img data-gif="../gif/walls/walls-conductive.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[1/10]<br>Conductive Walls block everything. They can conduct electricity.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-e.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[2/10]<br>E-Walls block everything until they receive electricity.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-detector.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[3/10]<br>Detectors generate electricity when a particle is inside. They allow particles to pass through.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-streamline.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[4/10]<br>Streamlines show how pressure is moving and how strong it is.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-fan.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[5/10]<br>Fans generate airflow and give stickmen the ability to shoot air. After placing some, use the line tool <kbd>Shift+Drag</kbd> on the fans while having it selected to define the direction and strength of the generated airflow.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-blockers.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[6/10]<br>Liquid Walls block everything except liquids, Powder Walls block everything except powders, Gas Walls block everything except gases and Energy Walls block everything except energy particles.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-airs.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[7/10]<br>Absorbing Walls absorb any particle that touches them, but they allow air to pass through, Air Walls block everything, but allow air to pass through and Airblock Walls block air, but allow particles to pass through.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-conductor.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[8/10]<br>Conductor Walls conduct electricity and allow all particles to pass through.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-ehole.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[9/10]<br>E-Holes holds particles and releases them when electrified. They form black holes when too much mass is put into them. Each pixel of E-Hole can have up to 1500 parts in it before it forms a black hole. They will also remove jetpacks from stickmen.</div></div>
+          <div class="item"><img data-gif="../gif/walls/walls-gravity.gif" alt="Animation" class="element-gif">
+          <div class="carousel-caption">[10/10]<br>Gravity Walls cancel the effect of newtonian gravity. When a box of it is drawn, newtonian gravity gets cancelled inside the box. They provide stickmen with jetpacks when they touch them, these release plasma and allow stickmen to fly.</div></div>
+        </div>
+        <a class="left carousel-control" href="#walls-carousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>
+        <a class="right carousel-control" href="#walls-carousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="../pages-script.js"></script>
+  </body>
+</html>

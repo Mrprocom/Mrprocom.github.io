@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+  </head>
+
+  <body class="page">
+    
+    <div id="page-content">
+      <h2>Powder Toy Forum</h2>
+      <hr>
+      <p>The <a href="http://powdertoy.co.uk/Discussions/Categories/Index.html" target="_top" class="shift-click">Powder Toy Forum</a> contains different categories you can make new threads in. If you want to make a new thread, make sure you make it in the proper category that matches your thread. Making new threads or posts requires signing in.</p>
+      <p>On the forum page, you will see three sections, one which lists the different categories, one which lists the important topics, which are pinned topics from the Announcements category and another one which lists the most recent threads. Pinned threads are the ones with a yellow icon, only moderators can pin threads. Locked threads are the ones with a lock icon, you cannot post in those threads, only moderators can lock and unlock threads. Threads can also be removed by moderators and moved to other categories if needed.</p>
+      <p>If you post in a thread, you will not be able to post again for 24 hours or until someone else posts. If have already posted, you can edit your post if you want.</p>
+
+      <h3 id="saves" class="sub-topic"><a href="#forum#saves" target="_top">Embedding Saves on the Forum</a></h3>
+      <hr>
+      <p>If you want to embed a save to your post, you can do so by typing your save ID after a tilde sign <kbd>~</kbd>. For example, if you want to embed the Destroyable City 5 save, type <kbd>~2198</kbd> in your post.</p>
+
+      <h3 id="links" class="sub-topic"><a href="#forum#links" target="_top">Shortening Links</a></h3>
+      <hr>
+      <b>The main website:</b>
+      <ul>
+        <li>Long: <a href="http://powdertoy.co.uk/" target="_top" class="shift-click">powdertoy.co.uk</a></li>
+        <li>Short: <a href="http://tpt.io/" target="_top" class="shift-click">tpt.io</a></li>
+      </ul>
+      <b>User (Simon for example):</b>
+      <ul>
+        <li>Long: <a href="http://powdertoy.co.uk/User.html?Name=simon" target="_top" class="shift-click">powdertoy.co.uk/User.html?Name=<b>simon</b></a></li>
+        <li>Short: <a href="http://tpt.io/@simon" target="_top" class="shift-click">tpt.io/@<b>simon</b></a></li>
+      </ul>
+      <b>Save (Destroyable City 5 for example):</b>
+      <ul>
+        <li>Long: <a href="http://powdertoy.co.uk/Browse/View.html?ID=2198" target="_top" class="shift-click">powdertoy.co.uk/Browse/View.html?ID=<b>2198</b></a></li>
+        <li>Short: <a href="http://tpt.io/~2198" target="_top" class="shift-click">tpt.io/~<b>2198</b></a></li>
+      </ul>
+      <b>Thread (Information Regarding Everything for example):</b>
+      <ul>
+        <li>Long: <a href="http://powdertoy.co.uk/Discussions/Thread/View.html?Thread=17088" target="_top" class="shift-click">powdertoy.co.uk/Discussions/Thread/View.html?Thread=<b>17088</b></a></li>
+        <li>Short: <a href="http://tpt.io/:17088" target="_top" class="shift-click">tpt.io/:<b>17088</b></a></li>
+      </ul>
+      <b>Post (Lockheedmartin's organised rules post for example):</b>
+      <ul>
+        <li>Long: <a href="http://powdertoy.co.uk/Discussions/Thread/View.html?Thread=543&PageNum=3#Message=246995" target="_top" class="shift-click">powdertoy.co.uk/Discussions/Thread/View.html?Thread=543&amp;PageNum=3#Message=<b>246995</b></a></li>
+        <li>Short: <a href="http://tpt.io/.246995" target="_top" class="shift-click">tpt.io/.<b>246995</b></a></li>
+      </ul>
+
+      <h3 id="formatting" class="sub-topic"><a href="#forum#formatting" target="_top">Formatting Posts</a></h3>
+      <hr>
+      <p>Powder Toy posts are formatted using HTML tags, but not all HTML tags can be used, some tags like the script, style and iframe cannot be used. By default, accounts have WYSIWYG editor enabled, which stands for "What You See is What You Get", it is what you see when making a new post, it allows you to make text bold, italic, underlined, make links, post images and more. Sadly, you cannot use this editor in group posts, so you will have to use HTML tags to format the posts you make in Powder Toy groups. If you want, you can disable this editor by unchecking the last checkbox from your <a href="http://powdertoy.co.uk/Profile.html" target="_top" class="shift-click">profile settings page</a>.</p>
+      <p>If you decide to not use the WYSIWYG editor, you will need to know some HTML tags to help you format your posts. This is how HTML tags usually look like:</p>
+      <pre>&lt;<span class="text-danger">tag</span>&gt;Visible Text&lt;/<span class="text-danger">tag</span>&gt;</pre>
+      <p>Some tags require attributes, which are additional information the tag uses, this is how they are added:</p>
+      <pre>&lt;<span class="text-danger">tag</span> <span class="text-success">attribute</span>=<span class="text-warning">"value"</span>&gt;Visible Text&lt;/<span class="text-danger">tag</span>&gt;</pre>
+      <p>For tags that do not show any text, this is how they look like:</p>
+      <pre>&lt;<span class="text-danger">tag</span> <span class="text-success">attribute</span>=<span class="text-warning">"value"</span>&gt;</pre>
+
+      <h3 id="tags" class="sub-topic"><a href="#forum#tags" target="_top">Useful HTML Tags</a></h3>
+      <hr>
+      <div class="well">
+        <b class="bold-title">Paragraph:</b>
+        <pre>&lt;<span class="text-danger">p</span>&gt;This is the first paragraph.&lt;/<span class="text-danger">p</span>&gt;<br>&lt;<span class="text-danger">p</span>&gt;This is the second paragraph, there will be a small space between this one and the first paragraph.&lt;/<span class="text-danger">p</span>&gt;</pre>
+        <p>This is the first paragraph</p><p>This is the second paragraph, there will be a small space between this one and the first.</p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Line Break:</b>
+        <pre>This will be the first line.&lt;<span class="text-danger">br</span>&gt;This will be the second line, there will not be as much space between this one and the first line.</pre>
+        <p>This will be the first line.<br>This will be the second line, there will not be as much space between this one and the first line.</p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Bold, Italic, Underline and Strikethrough:</b>
+        <pre>&lt;<span class="text-danger">b</span>&gt;This text is bold&lt;/<span class="text-danger">b</span>&gt;. &lt;<span class="text-danger">i</span>&gt;This text is italic&lt;/<span class="text-danger">i</span>&gt;. &lt;<span class="text-danger">ins</span>&gt;This text is underlined or inserted&lt;/<span class="text-danger">ins</span>&gt;. &lt;<span class="text-danger">del</span>&gt;This text is deleted&lt;/<span class="text-danger">del</span>&gt;.</pre>
+        <p><b>This text is bold</b>. <i>This text is italic</i>. <ins>This text is underlined or inserted</ins>. <del>This text is deleted</del>.</p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Colours:</b>
+        <pre>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">red</span>"&gt;This text is in red.&lt;/<span class="text-danger">font</span>&gt;<br>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">#00ff00</span>"&gt;This text is in green.&lt;/<span class="text-danger">font</span>&gt;</pre>
+        <p><font color="red">This text is in red.</font><br><font color="#00ff00">This text is in green.</font></p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Link:</b>
+        <pre>&lt;<span class="text-danger">a</span> <span class="text-success">href</span>=<span class="text-warning">"https://google.com"</span>&gt;This is a link to the Google search engine&lt;/<span class="text-danger">a</span>&gt;.</pre>
+        <p><a href="https://google.com" target="_top" class="shift-click">This is a link to the Google search engine</a>.</p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Ordered List:</b>
+        <pre>&lt;<span class="text-danger">ol</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;First item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Second Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Third Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;/<span class="text-danger">ol</span>&gt;</pre>
+        <p><ol><li>First item</li><li>Second Item</li><li>Third Item</li></ol></p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Unordered List:</b>
+        <pre>&lt;<span class="text-danger">ul</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;First item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Second Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Third Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;/<span class="text-danger">ul</span>&gt;</pre>
+        <p><ul><li>First item</li><li>Second Item</li><li>Third Item</li></ul></p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Quote:</b>
+        <pre>&lt;<span class="text-danger">cite</span>&gt;Author:&lt;/<span class="text-danger">cite</span>&gt;<br>&lt;<span class="text-danger">blockquote</span>&gt;The quote message taken from the author&lt;/<span class="text-danger">blockquote</span>&gt;</pre>
+        <p><cite>Author:</cite><blockquote>The quote message taken from the author</blockquote></p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Code:</b>
+        <pre>&lt;<span class="text-danger">code</span>&gt;<br>def greet(name)<br>&nbsp;&nbsp;&nbsp;&nbsp;message = "Hello " + name.title() + "!"<br>&nbsp;&nbsp;&nbsp;&nbsp;print(message)<br>greet("Jone")<br>&lt;/<span class="text-danger">code</span>&gt;</pre>
+        <p><pre class="code text-danger">def greet(name)
+    message = "Hello " + name.title() + "!"
+    print(message)
+greet("Jone")</pre></p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Header:</b>
+        <pre>&lt;<span class="text-danger">h1</span>&gt;Header 1&lt;/<span class="text-danger">h1</span>&gt;<br>&lt;<span class="text-danger">h2</span>&gt;Header 2&lt;/<span class="text-danger">h2</span>&gt;<br>&lt;<span class="text-danger">h3</span>&gt;Header 3&lt;/<span class="text-danger">h3</span>&gt;<br>&lt;<span class="text-danger">h4</span>&gt;Header 4&lt;/<span class="text-danger">h4</span>&gt;<br>&lt;<span class="text-danger">h5</span>&gt;Header 5&lt;/<span class="text-danger">h5</span>&gt;<br>&lt;<span class="text-danger">h6</span>&gt;Header 6&lt;/<span class="text-danger">h6</span>&gt;</pre>
+        <p><h1 class="example-header">Header 1</h1><h2 class="example-header">Header 2</h2><h3 class="example-header">Header 3</h3><h4 class="example-header">Header 4</h4><h5 class="example-header">Header 5</h5><h6 class="example-header">Header 6</h6></p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Image:</b>
+        <pre>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span>&gt;&lt;<span class="text-danger">br</span>&gt;<br>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span> <span class="text-success">width</span>=<span class="text-warning">"50"</span> <span class="text-success">height</span>=<span class="text-warning">"50"</span>&gt;</pre>
+        <p><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"><br><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" width="50" height="50"></p>
+      </div>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="../pages-script.js"></script>
+  </body>
+</html>

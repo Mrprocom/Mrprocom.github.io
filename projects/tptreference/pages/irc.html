@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+  </head>
+
+  <body class="page">
+    
+    <div id="page-content">
+      <h2>Internet Relay Chat (IRC)</h2>
+      <hr>
+      <iframe src="http://webchat.freenode.net?channels=%23powder" id="irc-iframe" class="inside-iframe"></iframe>
+      <a href="http://webchat.freenode.net?channels=%23powder" target="_top" class="btn btn-primary btn-block shift-click">QwebIRC</a>
+
+      <h3 id="connect" class="sub-topic"><a href="#irc#connect" target="_top">How to Connect</a></h3>
+      <hr>
+      <p>Enter a nickname you want to be seen as in the nickname text field, it is recommended that you pick a nickname that can be recognised by others as you. In the channels text field, the official IRC channel is already entered there, so you do not have to change it. If you do not have a NickServ account, ignore the Auth to services checkbox, if you have, check it and enter your username and password. Finally, complete the reCAPTCHA to confirm that you are not a robot and press Connect. If you want to learn more about IRC, check out the <a href="http://mrprocom.github.io/projects/irc/">IRC Tutorial</a> made by <a href="http://tpt.io/@Mrprocom">Mrprocom</a>.</p>
+
+      <h3 id="description" class="sub-topic"><a href="#irc#description" target="_top">Brief Channel Description</a></h3>
+      <hr>
+      <p>Although this channel was intended to be for Powder Toy related discussions, you can talk about anything there as long as it is not violating the <a href="../#rules#irc" target="_top">rules</a>, users rarely talk about Powder Toy there. Do not expect the channel to be active all the time, users only talk when there is an interesting topic to talk about. The userlist on the right contains a list of users currently joined to the channel, but that does not mean they are currently online, they might be busy doing something else.</p>
+      <p>PowderBot is the only IRC bot there, it provides useful commands users can run to get automated answers, all of its commands start with a dollar sign <kbd>$</kbd>. When using PowderBot, make sure you do not spam the channel with it, if necessary, do your testings either in ##powder-bots or in a separate query with PowderBot using the /query command. The <a href="../#notable#irc" target="_top">voiced users</a>, who have a plus sign <kbd>+</kbd> at the beginning of their nicknames, moderate the channel, they can kick and ban other users who violate the rules.</p>
+      <p>When chatting in this channel, make sure you are following the rules and not being rude or annoying towards others, this way, you will be able to stay in the channel and not be hated by anyone.</p>
+
+      <h3 id="channels" class="sub-topic"><a href="#irc#channels" target="_top">Powder Toy Channels</a></h3>
+      <hr>
+      <table class="table table-bordered table-condensed table-hover">
+        <thead><tr><td class="col-md-2 col-sm-3 col-xs-4">Channel</td><td>Description</td></tr></thead>
+        <tbody>
+          <tr><td>#powder</td>
+          <td>The main channel. Discussions about random topics, rarely about Powder Toy.</td></tr>
+          <tr><td>##powder-bots</td>
+          <td>A bot testing channel. There are many IRC bots there, you can add your own if you have one. Almost all PowderBot commands are enabled there.</td></tr>
+          <tr><td>#powder-dev</td>
+          <td>Discussions about the development of the game. Very inactive.</td></tr>
+          <tr><td>#powder-forum</td>
+          <td>A channel where PowderBot automatically announces new forum threads and posts.</td></tr>
+          <tr><td>##powder-mc</td>
+          <td>The main channel for the Powder Toy Minecraft server. Messages get relied between IRC and the Minecraft server.</td></tr>
+          <tr><td>##powder-moo</td>
+          <td>A spam channel for running Crackbot commands.</td></tr>
+          <tr><td>#powder-social</td>
+          <td>An off-topic channel. Users banned from the main channel can get redirected to this one.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="commands" class="sub-topic"><a href="#irc#commands" target="_top">Important PowderBot Commands</a></h3>
+      <hr>
+      <table class="table table-bordered table-condensed table-hover">
+        <thead><tr><td class="col-md-2 col-sm-3">Command</td><td>Description</td><td class="col-md-2 col-sm-3">Example</td></tr></thead>
+        <tbody>
+          <tr><td>$<span class="text-info">any</span> <span class="text-warning">&lt;Nickname&gt;</span></td>
+          <td>Displays the last time that person did something (including joins and quits) and what their last action was.</td>
+          <td>$<span class="text-info">any</span> <span class="text-warning">Ximon</span></td></tr>
+          <tr><td>$<span class="text-info">calc</span> <span class="text-warning">&lt;Calculation&gt;</span></td>
+          <td>Solves the given calculation.</td>
+          <td>$<span class="text-info">calc</span> <span class="text-warning">8 * (5 + 8) / 4</span></td></tr>
+          <tr><td>$<span class="text-info">commands</span></td>
+          <td>Returns a list of commands the bot has.</td>
+          <td>$<span class="text-info">commands</span></td></tr>
+          <tr><td>$<span class="text-info">help</span> <span class="text-warning">&lt;Command&gt;</span></td>
+          <td>Returns information on the given command</td>
+          <td>$<span class="text-info">help</span> <span class="text-warning">seen</span></td></tr>
+          <tr><td>$<span class="text-info">justme</span> <span class="text-warning">&lt;URL&gt;</span></td>
+          <td>Checks if that page is only down for you or for everyone.</td>
+          <td>$<span class="text-info">justme</span> <span class="text-warning">google.com</span></td></tr>
+          <tr><td>$<span class="text-info">list</span> <span class="text-warning">[&lt;Plugin&gt;]</span></td>
+          <td>Running the command with no arguments returns a list of plugins. Running the command with a plugin name returns a list of commands in that argument.</td>
+          <td>$<span class="text-info">list</span> <span class="text-warning">powder</span></td></tr>
+          <tr><td>$<span class="text-info">ping</span></td>
+          <td>Responds with a pong. Useful for checking if the bot is connected or to check if you are disconnected.</td>
+          <td>$<span class="text-info">ping</span></td></tr>
+          <tr><td>$<span class="text-info">profile</span> <span class="text-warning">&lt;Username&gt;</span></td>
+          <td>Returns information on the given Powder Toy account.</td>
+          <td>$<span class="text-info">profile</span> <span class="text-warning">Simon</span></td></tr>
+          <tr><td>$<span class="text-info">seen</span> <span class="text-warning">&lt;Nickname&gt;</span></td>
+          <td>Displays the last time that person talked and what their last message was.</td>
+          <td>$<span class="text-info">seen</span> <span class="text-warning">Ximon</span></td></tr>
+          <tr><td>$<span class="text-info">wolf</span> <span class="text-warning">&lt;Query&gt;</span></td>
+          <td>Sends the query to WolframAlpha and returns the output from there.</td>
+          <td>$<span class="text-info">wolf</span> <span class="text-warning">12 mile to feet</span></td></tr>
+        </tbody>
+      </table> 
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="../pages-script.js"></script>
+  </body>
+</html>
