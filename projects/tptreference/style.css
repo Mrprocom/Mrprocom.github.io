@@ -202,6 +202,11 @@ pre {
 }
 
 
+#welcome-carousel .carousel-control.left {
+  display: none;
+}
+
+
 #wiki-iframe {
   background-image: url(iframe-loader.svg);
   background-position: center;
@@ -346,6 +351,11 @@ pre {
 
 .list-group {
   margin: 0;
+}
+
+
+.modal-body {
+  background-color: #202020;
 }
 
 
@@ -521,6 +531,13 @@ pre {
 
 .table thead {
   background-color: #464545;
+}
+
+
+.welcome-dialog .bootstrap-dialog-body {
+  margin-left: 1px;
+  max-width: 100%;
+  width: 556px;
 }
 
 

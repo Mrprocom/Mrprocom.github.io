@@ -58,4 +58,9 @@ $(document).ready(function(){
       }
     });
   });
+
+  // Clear local storage when startup-guide is clicked
+  $("#startup-guide").click(function(){
+    $.localStorage.removeAll();
+  });
 });
