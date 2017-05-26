@@ -62,6 +62,16 @@
       <p>For tags that do not show any text, this is how they look like:</p>
       <pre>&lt;<span class="text-danger">tag</span> <span class="text-success">attribute</span>=<span class="text-warning">"value"</span>&gt;</pre>
 
+      <h3 id="entity" class="sub-topic"><a href="#forum#entity" target="_top">HTML Entities</a></h3>
+      <hr>
+      <p>Some special characters (like letters from some languages) cannot be used in posts, instead, they automatically get replaced with question marks <kbd>?</kbd>. To solve this problem, you have to use HTML entities of those special characters. HTML entities can be in three different forms:</p>
+      <ul>
+        <li><kbd>&amp;NAME;</kbd> Example: <kbd>&amp;ohm;</kbd> for the omega sign (&ohm;).</li>
+        <li><kbd>&amp;#DEC;</kbd> Example: <kbd>&amp;#937;</kbd> for the omega sign (&ohm;).</li>
+        <li><kbd>&amp;#xHEX;</kbd> Example: <kbd>&amp;#x3A9;</kbd> for the omega sign (&ohm;).</li>
+      </ul>
+      <p>The first type is case-sensitive, for example, <kbd>&amp;sigma;</kbd> is the HTML entity for small letter sigma (&sigma;) while <kbd>&amp;Sigma;</kbd> is the HTML entity for capital letter sigma (&Sigma;). You can use online tools to easy convert special characters to their HTML entities, an example of a good one is this <a href="https://mothereff.in/html-entities" target="_top" class="shift-click">HTML entity encoder/decoder</a>.</p>
+
       <h3 id="tags" class="sub-topic"><a href="#forum#tags" target="_top">Useful HTML Tags</a></h3>
       <hr>
       <div class="well">
@@ -81,7 +91,7 @@
       </div>
       <div class="well">
         <b class="bold-title">Colours:</b>
-        <pre>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">red</span>"&gt;This text is in red.&lt;/<span class="text-danger">font</span>&gt;<br>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">#00ff00</span>"&gt;This text is in green.&lt;/<span class="text-danger">font</span>&gt;</pre>
+        <pre>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">"red"</span>&gt;This text is in red.&lt;/<span class="text-danger">font</span>&gt;<br>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">"#00ff00"</span>&gt;This text is in green.&lt;/<span class="text-danger">font</span>&gt;</pre>
         <p><font color="red">This text is in red.</font><br><font color="#00ff00">This text is in green.</font></p>
       </div>
       <div class="well">
@@ -120,7 +130,19 @@ greet("Jone")</pre></p>
       <div class="well">
         <b class="bold-title">Image:</b>
         <pre>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span>&gt;&lt;<span class="text-danger">br</span>&gt;<br>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span> <span class="text-success">width</span>=<span class="text-warning">"50"</span> <span class="text-success">height</span>=<span class="text-warning">"50"</span>&gt;</pre>
-        <p><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"><br><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" width="50" height="50"></p>
+        <p><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" class="timg-shadow"><br><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" width="50" height="50" class="timg-shadow"></p>
+      </div>
+      <div class="well">
+        <b class="bold-title">Table:</b>
+        <pre>&lt;<span class="text-danger">table</span> <span class="text-success">border</span>=<span class="text-warning">"1"</span> <span class="text-success">cellpadding</span>=<span class="text-warning">"10"</span> <span class="text-success">width</span>=<span class="text-warning">"250"</span>&gt;<br>&lt;<span class="text-danger">tr</span> <span class="text-success">bgcolor</span>=<span class="text-warning">"#428bca"</span>&gt;&lt;<span class="text-danger">th</span>&gt;Year&lt;/<span class="text-danger">th</span>&gt;&lt;<span class="text-danger">th</span>&gt;Population&lt;/<span class="text-danger">th</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;<span class="text-danger">tr</span>&gt;&lt;<span class="text-danger">td</span>&gt;1980&lt;/<span class="text-danger">td</span>&gt;&lt;<span class="text-danger">td</span>&gt;4,453,831,714&lt;/<span class="text-danger">td</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;<span class="text-danger">tr</span>&gt;&lt;<span class="text-danger">td</span>&gt;1990&lt;/<span class="text-danger">td</span>&gt;&lt;<span class="text-danger">td</span>&gt;5,278,639,789&lt;/<span class="text-danger">td</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;<span class="text-danger">tr</span>&gt;&lt;<span class="text-danger">td</span>&gt;2000&lt;/<span class="text-danger">td</span>&gt;&lt;<span class="text-danger">td</span>&gt;6,082,966,429&lt;/<span class="text-danger">td</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;/<span class="text-danger">table</span>&gt;</pre>
+        <p>
+          <table id="example-table">
+            <tr><th>Year</th><th>Population</th></tr>
+            <tr><td>1980</td><td>4,453,831,714</td></tr>
+            <tr><td>1990</td><td>5,278,639,789</td></tr>
+            <tr><td>2000</td><td>6,082,966,429</td></tr>
+          </table>
+        </p>
       </div>
     </div>
 

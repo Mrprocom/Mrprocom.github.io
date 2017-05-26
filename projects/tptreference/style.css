@@ -50,18 +50,20 @@ body.page {
 
 a {
   color: #00bc8c;
-  transition: color 300ms
+  cursor: pointer;
+  text-decoration: none !important;
+  transition: color 300ms;
 }
 
 
 a:focus {
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 
 a:hover {
   color: #0ce3ac;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 
 
@@ -119,6 +121,25 @@ pre {
 }
 
 
+#example-table {
+  background-color: #464545;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  width: 250px;
+}
+
+
+#example-table tr:first-child {
+ background-color: #428bca;
+}
+
+
+#example-table th,
+#example-table td {
+  border: 1px solid #000000;
+  padding: 10px;
+}
+
+
 #hud-interface b {
   color: #3498db;
 }
@@ -131,6 +152,7 @@ pre {
 
 
 #irc-iframe {
+  background-color: #ffffff;
   height: 550px;
 }
 
@@ -142,6 +164,12 @@ pre {
 
 #page-content {
   padding: 15px;
+}
+
+
+#search-results {
+  max-height: 250px;
+  overflow: auto;
 }
 
 
@@ -264,11 +292,14 @@ pre {
 
 
 .clickable-panel .panel-body {
+  background-color: #353535;
   display: none;
 }
 
 
-.clickable-panel .panel-body p:last-child {
+.clickable-panel .panel-body p:last-child,
+.clickable-panel .panel-body ul:last-child,
+.clickable-panel .panel-body ul:last-child li:last-child {
   margin: 0;
 }
 
@@ -312,6 +343,12 @@ pre {
 
 .fa {
   margin-right: 8px;
+}
+
+
+.form-control[type=text] {
+  border-radius: 0;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -377,7 +414,7 @@ pre {
 
 .nav-pills>li>a {
   border-radius: 0;
-  background-color: #303030;
+  background-color: #353535;
   padding: 6px 15px;
   transition: background-color 300ms;
 }
@@ -440,7 +477,7 @@ pre {
 
 
 .profile {
-  background-color: #464545;
+  background-color: #464545 !important;
   padding: 10px;
 }
 
@@ -483,7 +520,7 @@ pre {
 
 
 .save {
-  background-color: #464545;
+  background-color: #464545 !important;
   padding: 10px;
 }
 
@@ -534,6 +571,11 @@ pre {
 }
 
 
+.timg-shadow {
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.3));
+}
+
+
 .welcome-dialog .bootstrap-dialog-body {
   margin-left: 1px;
   max-width: 100%;
@@ -542,6 +584,7 @@ pre {
 
 
 .well {
+  background-color: #353535;
   border-radius: 0;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
 }

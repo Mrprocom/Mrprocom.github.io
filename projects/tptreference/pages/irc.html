@@ -17,7 +17,7 @@
       <h2>Internet Relay Chat (IRC)</h2>
       <hr>
       <iframe src="http://webchat.freenode.net?channels=%23powder" id="irc-iframe" class="inside-iframe"></iframe>
-      <a href="http://webchat.freenode.net?channels=%23powder" target="_top" class="btn btn-primary btn-block shift-click">QwebIRC</a>
+      <a href="http://webchat.freenode.net?channels=%23powder" target="_top" id="irc-button" class="btn btn-primary btn-block shift-click">QwebIRC</a>
 
       <h3 id="connect" class="sub-topic"><a href="#irc#connect" target="_top">How to Connect</a></h3>
       <hr>
@@ -34,19 +34,19 @@
       <table class="table table-bordered table-condensed table-hover">
         <thead><tr><td class="col-md-2 col-sm-3 col-xs-4">Channel</td><td>Description</td></tr></thead>
         <tbody>
-          <tr><td>#powder</td>
+          <tr><td><a href="#irc-iframe" class="channel-switch" data-channel="%23powder">#powder</a></td>
           <td>The main channel. Discussions about random topics, rarely about Powder Toy.</td></tr>
-          <tr><td>##powder-bots</td>
+          <tr><td><a href="#irc-iframe" class="channel-switch" data-channel="%23powder-bots">#powder-bots</a></td>
           <td>A bot testing channel. There are many IRC bots there, you can add your own if you have one. Almost all PowderBot commands are enabled there.</td></tr>
-          <tr><td>#powder-dev</td>
+          <tr><td><a href="#irc-iframe" class="channel-switch" data-channel="%23powder-dev">#powder-dev</a></td>
           <td>Discussions about the development of the game. Very inactive.</td></tr>
-          <tr><td>#powder-forum</td>
+          <tr><td><a href="#irc-iframe" class="channel-switch" data-channel="%23powder-forum">#powder-forum</a></td>
           <td>A channel where PowderBot automatically announces new forum threads and posts.</td></tr>
-          <tr><td>##powder-mc</td>
+          <tr><td><a href="#irc-iframe" class="channel-switch" data-channel="%23%23powder-mc">##powder-mc</a></td>
           <td>The main channel for the Powder Toy Minecraft server. Messages get relied between IRC and the Minecraft server.</td></tr>
-          <tr><td>##powder-moo</td>
+          <tr><td><a href="#irc-iframe" class="channel-switch" data-channel="%23powder-moo">#powder-moo</a></td>
           <td>A spam channel for running Crackbot commands.</td></tr>
-          <tr><td>#powder-social</td>
+          <tr><td><a href="#irc-iframe" class="channel-switch" data-channel="%23powder-social">#powder-social</a></td>
           <td>An off-topic channel. Users banned from the main channel can get redirected to this one.</td></tr>
         </tbody>
       </table>

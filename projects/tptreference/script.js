@@ -33,7 +33,7 @@ $(document).ready(function(){
     "console",
     "saves",
     "forum",
-    "tutorials",
+    "savetutorials",
     "irc",
     "mods",
     "wiki",
@@ -46,14 +46,20 @@ $(document).ready(function(){
   var welcomeDialog =
     "<div id='welcome-carousel' class='carousel slide' data-interval='false'>" +
       "<div class='carousel-inner' role='listbox'>" +
-        "<div class='item active'><img src='gif/welcome/welcome1.gif' alt='Animation' class='element-gif'>" +
+        "<div class='item active'><img src='images/welcome.png' alt='Image'>" +
+        "<div class='carousel-caption'>Welcome to The Ultimate Powder Toy Reference, a huge reference containing a lot of useful information to learn and come back to. It even includes the whole wiki page, which makes it more useful.</div></div>" +
+        "<div class='item'><img src='gif/welcome/welcome1.gif' alt='Animation'>" +
         "<div class='carousel-caption'>Click on a title from the column on the left to read more about it. It is recommended to view them in order for beginners. Some topics like the ones related to coding are optional to read about.</div></div>" +
-        "<div class='item'><img src='gif/welcome/welcome2.gif' alt='Animation' class='element-gif'>" +
+        "<div class='item'><img src='gif/welcome/welcome2.gif' alt='Animation'>" +
         "<div class='carousel-caption'>Clicking a title or a subtitle within a topic will change the URL of the page, this is useful for giving direct links to specific parts and topics of the reference to someone else to read more about it.</div></div>" +
-        "<div class='item'><img src='gif/welcome/welcome3.gif' alt='Animation' class='element-gif'>" +
+        "<div class='item'><img src='gif/welcome/welcome3.gif' alt='Animation'>" +
         "<div class='carousel-caption'>Holding <kbd>Shift</kbd> and clicking on any link changes this area of the page to view the page the link directs to, this is useful for opening links without leaving this page. Not all links can be viewed this way.</div></div>" +
-        "<div class='item'><img src='gif/welcome/welcome4.gif' alt='Animation' class='element-gif'>" +
+        "<div class='item'><img src='gif/welcome/welcome4.gif' alt='Animation'>" +
         "<div class='carousel-caption'>Holding <kbd>Ctrl+Shift</kbd> and clicking on any link opens up the link as a dialog box, this also allows viewing links without leaving this page, and not all links can be viewed this way as well.</div></div>" +
+        "<div class='item'><img src='gif/welcome/welcome5.gif' alt='Animation'>" +
+        "<div class='carousel-caption'>Press the Quick Search button in the Welcome page to quickly navigate to a specific topic. Enter keywords to search using them or press <kbd>Esc</kbd> to exit. Click on any of the search results to navigate to it.</div></div>" +
+        "<div class='item'><img src='images/responsive.png' alt='Image'>" +
+        "<div class='carousel-caption'>The design used to make this reference is simple and comfortable for the eyes, especially at night. The design used in the reference is also responsive, meaning that it can be viewed in smaller devices.</div></div>" +
       "</div>" +
       "<a class='left carousel-control' href='#welcome-carousel' role='button' data-slide='prev'>" +
       "<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span></a>" +
@@ -137,12 +143,12 @@ $(document).ready(function(){
   });
 
   // View a welcome dialog box
-  if(!$.localStorage.get("welcome")){
+  if(!$.localStorage.get("tptreference")){
     BootstrapDialog.show({
-      title: "",
+      title: "Startup Guide",
       message: welcomeDialog,
       cssClass: "welcome-dialog"
     });
-    $.localStorage.set("welcome", true);
+    $.localStorage.set("tptreference", true);
   }
 });
