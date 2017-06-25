@@ -1,0 +1,293 @@
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d9d9d9;
+}
+
+
+::-webkit-scrollbar-thumb:active {
+  background-color: #ffffff;
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+
+html, body {
+  height: 100%;
+}
+
+
+kbd {
+  border-radius: 0;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+#table-btn {
+  background-color: #454545;
+  border-radius: 0;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  left: 10px;
+  padding: 10px 13px 9px 12px;
+  position: absolute;
+  top: 110px;
+  transition: background-color 300ms;
+}
+
+
+#table-btn:hover {
+  background-color: #2c2c2c;
+}
+
+
+#title {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  background-color: #303030;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+
+#title h2 {
+  margin: 0;
+  text-align: center;
+  transition: opacity 300ms;
+}
+
+
+#map-selector {
+  box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.3);
+  background-color: #393939;
+  height: 140px;
+  overflow: auto;
+  overflow-y: hidden;
+  padding: 15px;
+  position: relative;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+
+#vmap {
+  height: calc(100% - 215px);
+  transition: opacity 300ms;
+  width: 100%;
+}
+
+
+#vmap:active {
+  cursor: move;
+}
+
+
+.countries-table {
+  height: 445px;
+  padding-right: 5px;
+  overflow: auto;
+}
+
+
+.countries-table table {
+  margin: 0;
+}
+
+
+.countries-table tbody tr:not(.spacer) {
+  background-color: #393939;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+
+.countries-table tbody tr:not(.spacer):hover {
+  background-color: #2c2c2c;
+}
+
+
+.countries-table td {
+  font-size: 18px;
+  padding: 10px !important;
+}
+
+
+.countries-table th {
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px !important;
+  transition: background-color 300ms;
+}
+
+
+.countries-table th:hover {
+  background-color: #2c2c2c;
+}
+
+
+.countries-table thead tr {
+  background-color: #454545;
+}
+
+
+.countries-table tr {
+  margin-bottom: 15px;
+}
+
+
+.flag {
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  height: 30px;
+  margin-right: 5px;
+}
+
+
+.hidden-set {
+  display: none;
+}
+
+
+.instructions-panel {
+  height: 445px;
+  padding-right: 15px;
+  overflow: auto;
+}
+
+
+.instructions-panel h2:first-child {
+  margin-top: 0;
+}
+
+
+.item-icon {
+  display: block;
+  margin: auto;
+  width: 50px;
+}
+
+
+.item-title {
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.jqvmap-label {
+  background-color: #454545;
+  border-radius: 0;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  padding: 7px;
+}
+
+
+.jqvmap-label b {
+  color: #f39c12;
+}
+
+
+.jqvmap-label hr {
+  border-top: 1px solid #5a5a5a;
+  margin: 10px 0;
+}
+
+
+.jqvmap-zoomin, .jqvmap-zoomout {
+  background-color: #454545;
+  border-radius: 0;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  font-weight: bold;
+  height: auto;
+  padding: 15px 14px;
+  transition: background-color 300ms;
+  width: auto;
+}
+
+
+.jqvmap-zoomin:hover,
+.jqvmap-zoomout:hover {
+  background-color: #2c2c2c;
+}
+
+
+.jqvmap-zoomout {
+  top: 60px;
+}
+
+
+.modal-body {
+  background-color: #202020;
+}
+
+
+.modal-content {
+  border-radius: 0;
+}
+
+
+.modal-header {
+  border-bottom: none;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+
+.selector-item {
+  background-color: #454545;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: inline-block;
+  height: 100%;
+  margin-right: 10px;
+  padding: 15px;
+  transition: background-color 300ms;
+  width: 170px;
+}
+
+
+.selector-item:hover {
+  background-color: #2c2c2c;
+}
+
+
+.selector-item:last-child {
+  margin-right: 0;
+}
+
+
+.selector-item a:focus,
+.selector-item a:hover {
+  text-decoration: none;
+}
+
+
+.selector-set {
+  height: 100%;
+}
+
+
+.spacer {
+  height: 5px;
+}

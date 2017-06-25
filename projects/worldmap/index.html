@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="main">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mrprocom's World Map">
+    <meta name="keywords" content="interface, mrprocom, mrprocom website, online tools, powder toy, powder toy reference, project, tools, tpt, tpt reference">
+    <meta name="author" content="Mrprocom">
+    <link rel="icon" href="favicon.ico">
+
+    <title>World Map</title>
+
+    <!-- Bootstrap and CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="jqvmap/jqvmap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+
+  <body class="main">
+    <div class="jumbotron" id="title">
+      <h2>World Map</h2>
+    </div>
+    <div id="vmap">
+      <div id="table-btn"><span class="glyphicon glyphicon-th-list"></span></div>
+    </div>
+    <div id="map-selector">
+      <div id="categories-set" class="selector-set">
+        <div class="selector-item category" data-go="economy">
+          <img src="icons/economy.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Economy</h4>
+        </div>
+        <div class="selector-item category" data-go="climate">
+          <img src="icons/climate.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Climate</h4>
+        </div>
+        <div class="selector-item category" data-go="population">
+          <img src="icons/population.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Population</h4>
+        </div>
+        <div class="selector-item category" data-go="safety">
+          <img src="icons/safety.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Safety</h4>
+        </div>
+        <div class="selector-item category" data-go="miscellaneous">
+          <img src="icons/miscellaneous.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Miscellaneous</h4>
+        </div>
+        <div id="instructions" class="selector-item">
+          <img src="icons/instructions.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Instructions</h4>
+        </div>
+        <div class="selector-item">
+          <a href="http://www.flaticon.com">
+            <img src="icons/flaticon.svg" alt="Icon" class="item-icon">
+            <h4 class="item-title">Flaticon</h4>
+          </a>
+        </div>
+      </div>
+
+      <div id="economy" class="selector-set hidden-set">
+        <div class="selector-item back">
+          <img src="icons/back.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Back</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="gdp">
+          <img src="icons/gdp.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">GDP</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="gdp-per-capita">
+          <img src="icons/gdp-per-capita.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">GDP Per Capita</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="ppp">
+          <img src="icons/ppp.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">PPP</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="unemployment">
+          <img src="icons/unemployment.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Unemployment</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="sector">
+          <img src="icons/sector.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Sector</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="industry">
+          <img src="icons/industry.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Industry</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="energy">
+          <img src="icons/energy.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Energy</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="crude-oil">
+          <img src="icons/crude-oil.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Crude Oil</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="natural-gas">
+          <img src="icons/natural-gas.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Natural Gas</h4>
+        </div>
+      </div>
+
+      <div id="climate" class="selector-set hidden-set">
+        <div class="selector-item back">
+          <img src="icons/back.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Back</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="temperature">
+          <img src="icons/temperature.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Temperature</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="precipitation">
+          <img src="icons/precipitation.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Precipitation</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="disasters">
+          <img src="icons/disasters.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Disasters</h4>
+        </div>
+      </div>
+
+      <div id="population" class="selector-set hidden-set">
+        <div class="selector-item back">
+          <img src="icons/back.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Back</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="population">
+          <img src="icons/population-alt.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Population</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="density">
+          <img src="icons/density.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Density</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="birth-rate">
+          <img src="icons/birth-rate.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Birth Rate</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="death-rate">
+          <img src="icons/death-rate.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Death Rate</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="life-expectancy">
+          <img src="icons/life-expectancy.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Life Expectancy</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="immigrants">
+          <img src="icons/immigrants.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Immigrants</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="emigrants">
+          <img src="icons/emigrants.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Emigrants</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="refugees">
+          <img src="icons/refugees.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Refugees</h4>
+        </div>
+      </div>
+
+      <div id="safety" class="selector-set hidden-set">
+        <div class="selector-item back">
+          <img src="icons/back.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Back</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="army-size">
+          <img src="icons/army-size.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Army Size</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="guns">
+          <img src="icons/guns.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Guns</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="road-fatalities">
+          <img src="icons/road-fatalities.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Road Fatalities</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="crime-index">
+          <img src="icons/crime-index.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Crime Index</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="murder-rate">
+          <img src="icons/murder-rate.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Murder Rate</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="incarceration">
+          <img src="icons/incarceration.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Incarceration</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="terrorism">
+          <img src="icons/terrorism.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Terrorism</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="suicide-rate">
+          <img src="icons/suicide-rate.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Suicide Rate</h4>
+        </div>
+      </div>
+
+      <div id="miscellaneous" class="selector-set hidden-set">
+        <div class="selector-item back">
+          <img src="icons/back.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Back</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="language">
+          <img src="icons/language.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Language</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="religion">
+          <img src="icons/religion.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Religion</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="education">
+          <img src="icons/education.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Education</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="internet">
+          <img src="icons/internet.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Internet</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="homosexuality">
+          <img src="icons/homosexuality.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Homosexuality</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="dst">
+          <img src="icons/dst.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">DST</h4>
+        </div>
+        <div class="selector-item map-type" data-vmap="driving-on">
+          <img src="icons/driving-on.svg" alt="Icon" class="item-icon">
+          <h4 class="item-title">Driving On</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- JavaScripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="jqvmap/jquery.vmap.min.js"></script>
+    <script src="jqvmap/maps/jquery.vmap.world.js"></script>
+    <script src="jqvmap/jquery.vmap.sampledata.js"></script>
+    <script src="maps.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
