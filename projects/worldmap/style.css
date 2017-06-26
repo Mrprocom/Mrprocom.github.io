@@ -103,7 +103,7 @@ kbd {
 
 
 .countries-table {
-  height: 445px;
+  max-height: 445px;
   padding-right: 5px;
   overflow: auto;
 }

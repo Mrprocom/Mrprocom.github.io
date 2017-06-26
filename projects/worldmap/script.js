@@ -1,3 +1,5 @@
+selectedCountries = [];
+lastTimestamp = 0;
 var tableHtml1 =
   "<div class='countries-table'>" +
     "<table class='table table-hover countries-table'>" +
@@ -57,13 +59,13 @@ function getRankList(currentMap, reverse){
 
 // This function takes a list of values and modifies it for proper sorting by value
 function modifyValues(currentMap, values){
-    if(currentMap == "language"){
-      return $.map(values, function(i){return i.split(",")[0] + "," + i.split(",")[1].replace(/^0$/, "15")});
-    }
-    if(currentMap == "religion"){
-      return $.map(values, function(i){return i.split(",")[0] + "," + i.split(",")[1].replace(/^0$/, "7")});
-    }
-    return values
+  if(currentMap == "language"){
+    return $.map(values, function(i){return i.split(",")[0] + "," + i.split(",")[1].replace(/^0$/, "15")});
+  }
+  if(currentMap == "religion"){
+    return $.map(values, function(i){return i.split(",")[0] + "," + i.split(",")[1].replace(/^0$/, "7")});
+  }
+  return values
 }
 
 
@@ -125,6 +127,9 @@ function constructTable(currentMap, countryList){
     var tableHtml = tableHtml2;
   } else {
     var tableHtml = tableHtml3;
+  }
+  if(selectedCountries.length > 0){
+    countryList = $.map(countryList, function(i){if(selectedCountries.indexOf(i.split(",")[1]) != -1){return i}});
   }
   if(currentMap && mapsList[currentMap]["unit"]){
     tableHtml = tableHtml.replace("Value", "Value (" + mapsList[currentMap]["unit"].replace(/^ /, "") + ")");
@@ -216,6 +221,23 @@ function showLabel(event, label, code){
 }
 
 
+// Region click function
+function addRegion(event, code, region){
+  // This is useful for dealing with two region click calls at the same time
+  if(lastTimestamp == event.timeStamp){
+    return 0
+  }
+  lastTimestamp = event.timeStamp;
+  if(selectedCountries.indexOf(code) === -1){
+    selectedCountries.push(code);
+  } else {
+    selectedCountries.splice(selectedCountries.indexOf(code), 1);
+  }
+  console.log(selectedCountries);
+  console.log(region);
+  console.log(event);
+}
+
 
 $(document).ready(function(){
 
@@ -236,6 +258,7 @@ $(document).ready(function(){
         "<li>Hover over a country to view information about it, including information related to the currently-viewed map.</li>" +
         "<li>Click on a country to highlight it, you can highlight one country at a time. Click it again to remove the highlight or click on a different country to highlight it instead.</li>" +
         "<li>Click on the <span class='glyphicon glyphicon-th-list'></span> button at the top left corner to view a table of countries, ranks and values depending on what the currently-viewed map is.</li>" +
+        "<li>If you have some countries selected on the map, only those countries will appear on the table. This is useful for easy comparisons. Deselect all countries for all countries to appear on the table.</li>" +
         "<li>Click on a title from the table header to sort the table by whatever was clicked. Click it again to reverse the sorting.</li>" +
         "<li>Use the search feature on your web browser to quickly find a specific country, it can be accessed with the <kbd>Ctrl+F</kbd> keyboard shortcut on most web browsers.</li>" +
       "</ul>" +
@@ -256,8 +279,10 @@ $(document).ready(function(){
     selectedColor: "#666666",
     scaleColors: ["#c8eeff", "#006491"],
     values: sample_data,
+    multiSelectRegion: true,
     normalizeFunction: "polynomial",
-    onLabelShow: function(event, label, code){showLabel(event, label, code)}
+    onLabelShow: function(event, label, code){showLabel(event, label, code)},
+    onRegionClick: function(event, code, region){addRegion(event, code, region)}
   });
 
   // Change height of #vmap depending on the size of the title
@@ -344,6 +369,8 @@ $(document).ready(function(){
     $("#vmap").css("opacity", "0");
     $("#title h2").css("opacity", "0");
     setTimeout(function(){
+      // Reset selectedCountries
+      selectedCountries = [];
       // Make the map blank first and then change it to the new map
       $("#vmap").html("<div id='table-btn'><span class='glyphicon glyphicon-th-list'></span></div>").vectorMap({
         map: "world_en",
@@ -353,8 +380,10 @@ $(document).ready(function(){
         selectedColor: "#666666",
         scaleColors: newScales,
         values: newValues,
+        multiSelectRegion: true,
         normalizeFunction: "linear",
-        onLabelShow: function(event, label, code){showLabel(event, label, code)}
+        onLabelShow: function(event, label, code){showLabel(event, label, code)},
+        onRegionClick: function(event, code, region){addRegion(event, code, region)}
       });
       if(!mapsList[currentMap]["linear"]){
         $("#vmap").vectorMap("set", "normalizeFunction", "polynomial");
