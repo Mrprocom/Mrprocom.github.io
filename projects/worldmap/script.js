@@ -172,6 +172,50 @@ function constructTable(currentMap, countryList){
 }
 
 
+// Show label function
+function showLabel(event, label, code){
+  if(currentMap){
+    countryName = label.text();
+    keyName = mapsList[currentMap]["key"];
+    keyValue = mapsList[currentMap]["values"][code];
+    // Replace is to replace values with strings to use
+    if(mapsList[currentMap]["replace"] && keyValue in mapsList[currentMap]["replace"]){
+      keyValue = mapsList[currentMap]["replace"][keyValue];
+    } else {
+      keyValue = parseFloat(keyValue).toLocaleString();
+    }
+    // Append a unit at the end if it is not false
+    if(mapsList[currentMap]["unit"]){
+      keyValue = keyValue + mapsList[currentMap]["unit"];
+    }
+    // use N/A as the value if it starts with NaN
+    if(keyValue.match(/^NaN/)){
+      keyValue = "N/A";
+    }
+    var newLabel = "<b>Country:</b> " + countryName + " (" + code.toUpperCase() + ")<br><b>" + keyName + ":</b> " + keyValue
+    // Add a rank if it is true
+    if(mapsList[currentMap]["rank"] && code in mapsList[currentMap]["values"]){
+      rankList = getRankList(currentMap);
+      rank = rankList.indexOf(code + "," + mapsList[currentMap]["values"][code]) + 1;
+      // Find the real rank of Israel if the map is showing refugees
+      // Israel and Palestinian Territory have their values swapped
+      if(currentMap == "refugees"){
+        var israelRank = (rankList.indexOf("ps," + mapsList[currentMap]["values"]["ps"]) + 1) + ("/" + rankList.length);
+      }
+      newLabel += "<br><b>Rank:</b> " + rank + "/" + rankList.length;
+    }
+    // Mention both Israel and Palestinian Territory in the refugees map when Israel is hovered over
+    if(currentMap == "refugees" && code == "il"){
+      newLabel = newLabel.replace("Israel (IL)", "Palestinian Territory (PS)");
+      newLabel += "<hr><b>Country:</b> Israel (IL)<br><b>Refugees:</b> " + mapsList[currentMap]["values"]["ps"] + "<br><b>Rank:</b> " + israelRank;
+    }
+    label.html(newLabel);
+  } else {
+    label.text(label.text() + " (" + code.toUpperCase() + ")");
+  }
+}
+
+
 
 $(document).ready(function(){
 
@@ -213,47 +257,7 @@ $(document).ready(function(){
     scaleColors: ["#c8eeff", "#006491"],
     values: sample_data,
     normalizeFunction: "polynomial",
-    onLabelShow: function(event, label, code){
-      if(currentMap){
-        countryName = label.text();
-        keyName = mapsList[currentMap]["key"];
-        keyValue = mapsList[currentMap]["values"][code];
-        // Replace is to replace values with strings to use
-        if(mapsList[currentMap]["replace"] && keyValue in mapsList[currentMap]["replace"]){
-          keyValue = mapsList[currentMap]["replace"][keyValue];
-        } else {
-          keyValue = parseFloat(keyValue).toLocaleString();
-        }
-        // Append a unit at the end if it is not false
-        if(mapsList[currentMap]["unit"]){
-          keyValue = keyValue + mapsList[currentMap]["unit"];
-        }
-        // use N/A as the value if it starts with NaN
-        if(keyValue.match(/^NaN/)){
-          keyValue = "N/A";
-        }
-        var newLabel = "<b>Country:</b> " + countryName + " (" + code.toUpperCase() + ")<br><b>" + keyName + ":</b> " + keyValue
-        // Add a rank if it is true
-        if(mapsList[currentMap]["rank"] && code in mapsList[currentMap]["values"]){
-          rankList = getRankList(currentMap);
-          rank = rankList.indexOf(code + "," + mapsList[currentMap]["values"][code]) + 1;
-          // Find the real rank of Israel if the map is showing refugees
-          // Israel and Palestinian Territory have their values swapped
-          if(currentMap == "refugees"){
-            var israelRank = (rankList.indexOf("ps," + mapsList[currentMap]["values"]["ps"]) + 1) + ("/" + rankList.length);
-          }
-          newLabel += "<br><b>Rank:</b> " + rank + "/" + rankList.length;
-        }
-        // Mention both Israel and Palestinian Territory in the refugees map when Israel is hovered over
-        if(currentMap == "refugees" && code == "il"){
-          newLabel = newLabel.replace("Israel (IL)", "Palestinian Territory (PS)");
-          newLabel += "<hr><b>Country:</b> Israel (IL)<br><b>Refugees:</b> " + mapsList[currentMap]["values"]["ps"] + "<br><b>Rank:</b> " + israelRank;
-        }
-        label.html(newLabel);
-      } else {
-        label.text(label.text() + " (" + code.toUpperCase() + ")");
-      }
-    }
+    onLabelShow: function(event, label, code){showLabel(event, label, code)}
   });
 
   // Change height of #vmap depending on the size of the title
@@ -341,11 +345,17 @@ $(document).ready(function(){
     $("#title h2").css("opacity", "0");
     setTimeout(function(){
       // Make the map blank first and then change it to the new map
-      $("#vmap").vectorMap("set", "values", $.extend({}, mapsList["blank"]));
-      $("#vmap").vectorMap("set", "scaleColors", ["#ffffff"]);
-      $("#vmap").vectorMap("set", "values", newValues);
-      $("#vmap").vectorMap("set", "scaleColors", newScales);
-      $("#vmap").vectorMap("set", "normalizeFunction", "linear");
+      $("#vmap").html("<div id='table-btn'><span class='glyphicon glyphicon-th-list'></span></div>").vectorMap({
+        map: "world_en",
+        backgroundColor: "#2c2c2c",
+        color: "#ffffff",
+        hoverOpacity: 0.7,
+        selectedColor: "#666666",
+        scaleColors: newScales,
+        values: newValues,
+        normalizeFunction: "linear",
+        onLabelShow: function(event, label, code){showLabel(event, label, code)}
+      });
       if(!mapsList[currentMap]["linear"]){
         $("#vmap").vectorMap("set", "normalizeFunction", "polynomial");
       }
@@ -373,7 +383,7 @@ $(document).ready(function(){
   });
 
   // View a table showing country names their ranks and their values when #table-btn is clicked
-  $("#table-btn").click(function(){
+  $(document).on("click", "#table-btn", function(){
     revRank = false;
     revAlphabet = false;
     revValue = false;
