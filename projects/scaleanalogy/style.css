@@ -1,0 +1,60 @@
+body {
+  color: #000000;
+}
+
+
+hr {
+  border-top: 1px solid #000000;
+}
+
+
+.big-title {
+  letter-spacing: 15px;
+  margin: 40px 0;
+  text-transform: uppercase;
+}
+
+
+.button {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  cursor: pointer;
+  margin-bottom: 30px;
+  padding: 25px;
+  transition: filter 400ms, border 400ms;
+}
+
+
+.button:hover {
+  border: 1px solid #ffffff;
+  filter: invert(100%);
+}
+
+
+.category-icon {
+  display: block;
+  margin: auto;
+  max-width: 100px;
+}
+
+
+.category-name {
+  margin-bottom: 0 !important;
+}
+
+
+.page {
+  padding: 0 50px;
+}
+
+
+.page-hidden {
+  display: none;
+}
+
+
+.title {
+  font-family: Helvetica;
+  margin: 20px 0;
+  text-align: center;
+}
