@@ -279,76 +279,79 @@ $(document).ready(function(){
     // This is to support both touch and mouse control
     var started = e.originalEvent.changedTouches || [e.originalEvent];
     if(!e.originalEvent.changedTouches) mouseDown = true;
-    for(var i = 0; i < started.length; i++){
-      // Modify pageY to not include the height of the top and bottom rows
-      var pageY = started[i].pageY > 69 ? started[i].pageY - 69 : 0;
-      pageY = started[i].pageY > $("#playground").height() ? $("#playground").height() : started[i].pageY;
-      var newNote = [audioCtx.createGain(), audioCtx.createOscillator(), started[i].pageX, started[i].pageY];
-      var thisFreq = started[i].pageX / $("#playground").width() * (maxFreq - minFreq) + minFreq;
-      // If the musical scale option is on, change the frequency to rely on that
-      if(mscScal){
-        var realMinFreq = Math.min(minFreq, maxFreq);
-        var realMaxFreq = Math.max(minFreq, maxFreq);
-        var maxFreqScale = Math.log10(realMaxFreq / realMinFreq) / Math.log10(2**(1/12));
-        thisFreq = realMinFreq * 2**(started[i].pageX / $("#playground").width() * maxFreqScale / 12);
-        if(minFreq > maxFreq) thisFreq = realMinFreq * 2**((1 - (started[i].pageX / $("#playground").width())) * maxFreqScale / 12);
-      }
-      // This is to find the closest music note to display at the bottom
-      var freqList = $.map(Object.keys(noteNames), function(i){return parseFloat(i)})
-      var closestNote = freqList.reduce(function(prev, curr){
-        return (Math.abs(curr - thisFreq) < Math.abs(prev - thisFreq) ? curr : prev);
-      });
-      // Change the frequency to the frequency of the closest grid if the grid snap option is turned on
-      if(grdShow && grdSnap){
-        var searchList = $.map(grdList, function(i){return parseFloat(i.replace(/^\*\*?/, ""))});
-        if(!grdCstm){
-          searchList = [];
-          for(var i = 0; i < Math.ceil(Math.max(minFreq, maxFreq) / grdEvry); i++){
-            searchList.push(grdEvry * (i + 1));
-          }
+    // Prevent double taps for touch devices
+    if((("ontouchstart" in window || navigator.maxTouchPoints) && e.type != "mousedown") || (!("ontouchstart" in window || navigator.maxTouchPoints) && e.type == "mousedown")){
+      for(var i = 0; i < started.length; i++){
+        // Modify pageY to not include the height of the top and bottom rows
+        var pageY = started[i].pageY > 69 ? started[i].pageY - 69 : 0;
+        pageY = started[i].pageY > $("#playground").height() ? $("#playground").height() : started[i].pageY;
+        var newNote = [audioCtx.createGain(), audioCtx.createOscillator(), started[i].pageX, started[i].pageY];
+        var thisFreq = started[i].pageX / $("#playground").width() * (maxFreq - minFreq) + minFreq;
+        // If the musical scale option is on, change the frequency to rely on that
+        if(mscScal){
+          var realMinFreq = Math.min(minFreq, maxFreq);
+          var realMaxFreq = Math.max(minFreq, maxFreq);
+          var maxFreqScale = Math.log10(realMaxFreq / realMinFreq) / Math.log10(2**(1/12));
+          thisFreq = realMinFreq * 2**(started[i].pageX / $("#playground").width() * maxFreqScale / 12);
+          if(minFreq > maxFreq) thisFreq = realMinFreq * 2**((1 - (started[i].pageX / $("#playground").width())) * maxFreqScale / 12);
         }
-        var thisFreq = searchList.reduce(function(prev, curr){
+        // This is to find the closest music note to display at the bottom
+        var freqList = $.map(Object.keys(noteNames), function(i){return parseFloat(i)})
+        var closestNote = freqList.reduce(function(prev, curr){
           return (Math.abs(curr - thisFreq) < Math.abs(prev - thisFreq) ? curr : prev);
         });
+        // Change the frequency to the frequency of the closest grid if the grid snap option is turned on
+        if(grdShow && grdSnap){
+          var searchList = $.map(grdList, function(i){return parseFloat(i.replace(/^\*\*?/, ""))});
+          if(!grdCstm){
+            searchList = [];
+            for(var i = 0; i < Math.ceil(Math.max(minFreq, maxFreq) / grdEvry); i++){
+              searchList.push(grdEvry * (i + 1));
+            }
+          }
+          var thisFreq = searchList.reduce(function(prev, curr){
+            return (Math.abs(curr - thisFreq) < Math.abs(prev - thisFreq) ? curr : prev);
+          });
+        }
+        // Make the frequency sound
+        newNote[0].connect(audioCtx.destination);
+        newNote[0].gain.value = (1 - (pageY / $("#playground").height())) * (maxVolm - minVolm) + minVolm;
+        switch(wavForm){
+          case "organ":
+            var real = new Float32Array([0,0,-0.042008,0.010474,-0.138038,0.002641,-0.001673,0.001039,-0.021054,0.000651,-0.000422,0.000334,-0.000236,0.000191,-0.000161,0.000145,-0.018478,0.000071,-0.000066,0.000047,-0.000044,0.000041,-0.000034,0.000031,-0.000030,0.000028,-0.000025,0.000024,-0.000022,0.000020,-0.000015,0.000013,-0.011570,0.000004,-0.000003,0.000003,-0.000003,0.000003,-0.000003,0.000002,-0.000002,0.000002,-0.000002,0.000002,-0.000002,0.000002,-0.000002,0.000002,-0.000001,0.000001,-0.000001,0.000001,0,0,0,0,0,0,0,0,0,0,0,0,-0.000898,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001]);
+            var imag = new Float32Array([0,0.196487,0,0,-0.000003,0,0,0,-0.000002,0,0,0,0,0,0,0,-0.000007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.000018,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.000006,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+            newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
+            break;    
+
+          case "custom 1":
+            var real = new Float32Array([0,0.4,0.4,1,1,1,0.3,0.7,0.6,0.5,0.9,0.8]);
+            var imag = new Float32Array(real.length);
+            newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
+            break;
+
+          case "custom 2":
+            var real = new Float32Array([1,-1,1]);
+            var imag = new Float32Array(real.length);
+            newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
+            break;
+
+          case "custom 3":
+            var real = new Float32Array([1,0,-1,-1,0.7,0,0,0,0.7,0,0.2]);
+            var imag = new Float32Array(real.length);
+            newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
+            break;
+
+          default:
+            newNote[1].type = wavForm;
+        }
+        newNote[1].frequency.value = thisFreq;
+        newNote[1].connect(newNote[0]);
+        newNote[1].start();
+        currentNotes.push(newNote);
+        // Display the frequency of the current note at the bottom with a leading .0 if there is no .n at the end
+        var newFreq = Math.round(thisFreq).toLocaleString();
+        $("#current-notes").prepend("<div id='note-" + (currentNotes.length - 1) + "' class='note'>" + newFreq + " Hz | " + noteNames[closestNote] + "</div>");
       }
-      // Make the frequency sound
-      newNote[0].connect(audioCtx.destination);
-      newNote[0].gain.value = (1 - (pageY / $("#playground").height())) * (maxVolm - minVolm) + minVolm;
-      switch(wavForm){
-        case "organ":
-          var real = new Float32Array([0,0,-0.042008,0.010474,-0.138038,0.002641,-0.001673,0.001039,-0.021054,0.000651,-0.000422,0.000334,-0.000236,0.000191,-0.000161,0.000145,-0.018478,0.000071,-0.000066,0.000047,-0.000044,0.000041,-0.000034,0.000031,-0.000030,0.000028,-0.000025,0.000024,-0.000022,0.000020,-0.000015,0.000013,-0.011570,0.000004,-0.000003,0.000003,-0.000003,0.000003,-0.000003,0.000002,-0.000002,0.000002,-0.000002,0.000002,-0.000002,0.000002,-0.000002,0.000002,-0.000001,0.000001,-0.000001,0.000001,0,0,0,0,0,0,0,0,0,0,0,0,-0.000898,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001,0.000001,-0.000001]);
-          var imag = new Float32Array([0,0.196487,0,0,-0.000003,0,0,0,-0.000002,0,0,0,0,0,0,0,-0.000007,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.000018,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.000006,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
-          newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
-          break;    
-
-        case "custom 1":
-          var real = new Float32Array([0,0.4,0.4,1,1,1,0.3,0.7,0.6,0.5,0.9,0.8]);
-          var imag = new Float32Array(real.length);
-          newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
-          break;
-
-        case "custom 2":
-          var real = new Float32Array([1,-1,1]);
-          var imag = new Float32Array(real.length);
-          newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
-          break;
-
-        case "custom 3":
-          var real = new Float32Array([1,0,-1,-1,0.7,0,0,0,0.7,0,0.2]);
-          var imag = new Float32Array(real.length);
-          newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
-          break;
-
-        default:
-          newNote[1].type = wavForm;
-      }
-      newNote[1].frequency.value = thisFreq;
-      newNote[1].connect(newNote[0]);
-      newNote[1].start();
-      currentNotes.push(newNote);
-      // Display the frequency of the current note at the bottom with a leading .0 if there is no .n at the end
-      var newFreq = Math.round(thisFreq).toLocaleString();
-      $("#current-notes").prepend("<div id='note-" + (currentNotes.length - 1) + "' class='note'>" + newFreq + " Hz | " + noteNames[closestNote] + "</div>");
     }
   });
 
@@ -358,7 +361,7 @@ $(document).ready(function(){
     // The way this works is very similar to how the previous function works
     // It only finds the closest note in the currentNotes array and changes its frequency
     var moved = e.originalEvent.changedTouches || [e.originalEvent];
-    if(e.originalEvent.changedTouches || mouseDown){
+    if((e.originalEvent.changedTouches || mouseDown) && ((("ontouchstart" in window || navigator.maxTouchPoints) && e.type != "mousemove") || (!("ontouchstart" in window || navigator.maxTouchPoints) && e.type == "mousemove"))){
       for(var i = 0; i < moved.length; i++){
         var targetIndex = locateNote(moved[i].pageX, moved[i].pageY);
         var pageY = moved[i].pageY > 69 ? moved[i].pageY - 69 : 0;
@@ -400,19 +403,21 @@ $(document).ready(function(){
     e.preventDefault();
     var ended = e.originalEvent.changedTouches || [e.originalEvent];
     if(!e.originalEvent.changedTouches) mouseDown = false;
-    for(var i = 0; i < ended.length; i++){
-      var targetIndex = locateNote(ended.pageX, ended.pageY);
-      var target = currentNotes[targetIndex];
-      delete currentNotes[targetIndex];
-      var decreaseBy = target[0].gain.value / (sustain || 1);
-      // Add the sustain effect
-      for(var i = 0; i < sustain; i++){
-        setTimeout(function(){
-          target[0].gain.value -= decreaseBy;
-        }, i);
+    if((("ontouchstart" in window || navigator.maxTouchPoints) && e.type != "mouseup") || (!("ontouchstart" in window || navigator.maxTouchPoints) && e.type == "mouseup")){
+      for(var i = 0; i < ended.length; i++){
+        var targetIndex = locateNote(ended.pageX, ended.pageY);
+        var target = currentNotes[targetIndex];
+        delete currentNotes[targetIndex];
+        var decreaseBy = target[0].gain.value / (sustain || 1);
+        // Add the sustain effect
+        for(var i = 0; i < sustain; i++){
+          setTimeout(function(){
+            target[0].gain.value -= decreaseBy;
+          }, i);
+        }
+        setTimeout(function(){target[1].stop(); $("#note-" + targetIndex).remove()}, sustain);
+        $("#note-" + targetIndex).fadeOut(sustain);
       }
-      setTimeout(function(){target[1].stop(); $("#note-" + targetIndex).remove()}, sustain);
-      $("#note-" + targetIndex).fadeOut(sustain);
     }
   });
 
