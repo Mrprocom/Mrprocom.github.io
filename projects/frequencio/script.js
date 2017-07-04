@@ -69,7 +69,7 @@ $(document).ready(function(){
   var minFreq = 20;
   var maxFreq = 20000;
   var sustain = 1000;
-  var mscScal = false;
+  var mscScal = true;
   var grdShow = false;
   var grdSnap = false;
   var grdEvry = 500;
