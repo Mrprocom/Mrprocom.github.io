@@ -275,7 +275,7 @@ $(document).ready(function(){
 
   // Make a new sound when touching #playground
   $("#playground").bind("touchstart mousedown", function(e){
-    e.preventDefault();
+    if(e.target == $("#playground")[0]) e.preventDefault();
     // This is to support both touch and mouse control
     var started = e.originalEvent.changedTouches || [e.originalEvent];
     if(!e.originalEvent.changedTouches) mouseDown = true;
@@ -357,7 +357,7 @@ $(document).ready(function(){
 
   // Change the frequency and volume of the moved note on #playground
   $("#playground").bind("touchmove mousemove", function(e){
-    e.preventDefault();
+    if(e.target == $("#playground")[0]) e.preventDefault();
     // The way this works is very similar to how the previous function works
     // It only finds the closest note in the currentNotes array and changes its frequency
     var moved = e.originalEvent.changedTouches || [e.originalEvent];
@@ -400,7 +400,7 @@ $(document).ready(function(){
 
   // Make the sound fade away when the finger is lifted from #playground
   $(document).bind("touchend mouseup", function(e){
-    e.preventDefault();
+    if(e.target == $("#playground")[0]) e.preventDefault();
     var ended = e.originalEvent.changedTouches || [e.originalEvent];
     if(!e.originalEvent.changedTouches) mouseDown = false;
     if((("ontouchstart" in window || navigator.maxTouchPoints) && e.type != "mouseup") || (!("ontouchstart" in window || navigator.maxTouchPoints) && e.type == "mouseup")){
