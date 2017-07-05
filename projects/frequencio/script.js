@@ -70,6 +70,7 @@ $(document).ready(function(){
   var maxFreq = 20000;
   var sustain = 1000;
   var mscScal = true;
+  var rtroMod = false;
   var grdShow = false;
   var grdSnap = false;
   var grdEvry = 500;
@@ -100,6 +101,7 @@ $(document).ready(function(){
         "<p data-toggle='tooltip' data-original-title='The highest frequency you could make in hertz. You can make it lower than the min frequency for right to left frequency control.'>Max Frequency:</p>" +
         "<p data-toggle='tooltip' data-original-title='How much time it takes for the tone to fade out in milliseconds.'>Sustain Duration:</p>" +
         "<p data-toggle='tooltip' data-original-title='Turning this option on will equalise the distance between each musical note.'>Musical Scale:</p>" +
+        "<p data-toggle='tooltip' data-original-title='This will always set the volume to highest given value and make moving from top to bottom change the duty cycle.'>Retro Mode:</p>" +
       "</div>" +
       "<div class='col-sm-6 col-xs-4'>" +
         "<select class='form-control' id='wav-form'>" +
@@ -117,7 +119,8 @@ $(document).ready(function(){
         "<input class='form-control' type='number' value='20' id='min-freq' placeholder='The lowest a human could hear is 20Hz'><span class='text-muted unit'>Hz</span>" +
         "<input class='form-control' type='number' value='20000' id='max-freq' placeholder='The highest a human could hear is 20,000Hz'><span class='text-muted unit'>Hz</span>" +
         "<input class='form-control' type='number' value='1000' id='sustain' placeholder='Example: 1500'><span class='text-muted unit'>ms</span>" +
-        "<input type='checkbox' id='msc-scal'>" +
+        "<input type='checkbox' id='msc-scal'><br>" +
+        "<input type='checkbox' id='rtro-mod'>" +
       "</div>" +
     "</div>" +
     "<h3 class='setting-title'>Grids</h3>" +
@@ -344,6 +347,14 @@ $(document).ready(function(){
           default:
             newNote[1].type = wavForm;
         }
+        // Retro mode, moving from top to bottom changes the duty cycle
+        if(rtroMod){
+          newNote[0].gain.value = Math.max(minVolm, maxVolm);
+          var real = new Float32Array(1024);
+          var imag = new Float32Array(1024);
+          real = real.fill(-1).fill(1, 0, Math.round((1 - (pageY / $("#playground").height())) * 1024));
+          newNote[1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
+        }
         newNote[1].frequency.value = thisFreq;
         newNote[1].connect(newNote[0]);
         newNote[1].start();
@@ -392,6 +403,13 @@ $(document).ready(function(){
         }
         currentNotes[targetIndex][0].gain.value = (1 - (pageY / $("#playground").height())) * (maxVolm - minVolm) + minVolm;
         currentNotes[targetIndex][1].frequency.value = thisFreq;
+        if(rtroMod){
+          currentNotes[targetIndex][0].gain.value = Math.max(minVolm, maxVolm);
+          var real = new Float32Array(1024);
+          var imag = new Float32Array(1024);
+          real = real.fill(-1).fill(1, 0, Math.round((1 - (pageY / $("#playground").height())) * 1024));
+          currentNotes[targetIndex][1].setPeriodicWave(audioCtx.createPeriodicWave(real, imag));
+        }
         var newFreq = Math.round(thisFreq).toLocaleString();
         $("#note-" + targetIndex).html(newFreq + " Hz | " + noteNames[closestNote]);
       }
@@ -447,6 +465,7 @@ $(document).ready(function(){
       $("#max-freq").val(maxFreq);
       $("#sustain").val(sustain);
       if(mscScal) $("#msc-scal").parent().addClass("checked");
+      if(rtroMod) $("#rtro-mod").parent().addClass("checked");
       if(grdShow) $("#grd-show").parent().addClass("checked");
       if(grdSnap) $("#grd-snap").parent().addClass("checked");
       $("#grd-evry").val(grdEvry);
@@ -540,6 +559,7 @@ $(document).ready(function(){
     maxFreq = parseFloat($("#max-freq").val());
     sustain = parseFloat($("#sustain").val());
     mscScal = $("#msc-scal").parent().hasClass("checked");
+    rtroMod = $("#rtro-mod").parent().hasClass("checked");
     grdShow = $("#grd-show").parent().hasClass("checked");
     grdSnap = $("#grd-snap").parent().hasClass("checked");
     grdEvry = parseFloat($("#grd-evry").val());
