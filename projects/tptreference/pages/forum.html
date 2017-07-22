@@ -74,75 +74,88 @@
 
       <h3 id="tags" class="sub-topic"><a href="#forum#tags" target="_top">Useful HTML Tags</a></h3>
       <hr>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Paragraph:</b>
         <pre>&lt;<span class="text-danger">p</span>&gt;This is the first paragraph.&lt;/<span class="text-danger">p</span>&gt;<br>&lt;<span class="text-danger">p</span>&gt;This is the second paragraph, there will be a small space between this one and the first paragraph.&lt;/<span class="text-danger">p</span>&gt;</pre>
         <p>This is the first paragraph</p><p>This is the second paragraph, there will be a small space between this one and the first.</p>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Line Break:</b>
         <pre>This will be the first line.&lt;<span class="text-danger">br</span>&gt;This will be the second line, there will not be as much space between this one and the first line.</pre>
         <p>This will be the first line.<br>This will be the second line, there will not be as much space between this one and the first line.</p>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Bold, Italic, Underline and Strikethrough:</b>
         <pre>&lt;<span class="text-danger">b</span>&gt;This text is bold&lt;/<span class="text-danger">b</span>&gt;. &lt;<span class="text-danger">i</span>&gt;This text is italic&lt;/<span class="text-danger">i</span>&gt;. &lt;<span class="text-danger">ins</span>&gt;This text is underlined or inserted&lt;/<span class="text-danger">ins</span>&gt;. &lt;<span class="text-danger">del</span>&gt;This text is deleted&lt;/<span class="text-danger">del</span>&gt;.</pre>
         <p><b>This text is bold</b>. <i>This text is italic</i>. <ins>This text is underlined or inserted</ins>. <del>This text is deleted</del>.</p>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Colours:</b>
         <pre>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">"red"</span>&gt;This text is in red.&lt;/<span class="text-danger">font</span>&gt;<br>&lt;<span class="text-danger">font</span> <span class="text-success">color</span>=<span class="text-warning">"#00ff00"</span>&gt;This text is in green.&lt;/<span class="text-danger">font</span>&gt;</pre>
         <p><font color="red">This text is in red.</font><br><font color="#00ff00">This text is in green.</font></p>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Link:</b>
         <pre>&lt;<span class="text-danger">a</span> <span class="text-success">href</span>=<span class="text-warning">"https://google.com"</span>&gt;This is a link to the Google search engine&lt;/<span class="text-danger">a</span>&gt;.</pre>
         <p><a href="https://google.com" target="_top" rel="nofollow" class="shift-click">This is a link to the Google search engine</a>.</p>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Ordered List:</b>
         <pre>&lt;<span class="text-danger">ol</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;First item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Second Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Third Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;/<span class="text-danger">ol</span>&gt;</pre>
-        <p><ol><li>First item</li><li>Second Item</li><li>Third Item</li></ol></p>
+        <ol><li>First item</li><li>Second Item</li><li>Third Item</li></ol>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Unordered List:</b>
         <pre>&lt;<span class="text-danger">ul</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;First item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Second Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;<span class="text-danger">li</span>&gt;Third Item&lt;/<span class="text-danger">li</span>&gt;<br>&lt;/<span class="text-danger">ul</span>&gt;</pre>
-        <p><ul><li>First item</li><li>Second Item</li><li>Third Item</li></ul></p>
+        <ul><li>First item</li><li>Second Item</li><li>Third Item</li></ul>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Quote:</b>
         <pre>&lt;<span class="text-danger">cite</span>&gt;Author:&lt;/<span class="text-danger">cite</span>&gt;<br>&lt;<span class="text-danger">blockquote</span>&gt;The quote message taken from the author&lt;/<span class="text-danger">blockquote</span>&gt;</pre>
-        <p><cite>Author:</cite><blockquote>The quote message taken from the author</blockquote></p>
+        <cite>Author:</cite><blockquote>The quote message taken from the author</blockquote>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Code:</b>
         <pre>&lt;<span class="text-danger">code</span>&gt;<br>def greet(name)<br>&nbsp;&nbsp;&nbsp;&nbsp;message = "Hello " + name.title() + "!"<br>&nbsp;&nbsp;&nbsp;&nbsp;print(message)<br>greet("Jone")<br>&lt;/<span class="text-danger">code</span>&gt;</pre>
-        <p><pre class="code text-danger">def greet(name)
+        <pre class="code text-danger">def greet(name)
     message = "Hello " + name.title() + "!"
     print(message)
-greet("Jone")</pre></p>
+greet("Jone")</pre>
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Header:</b>
         <pre>&lt;<span class="text-danger">h1</span>&gt;Header 1&lt;/<span class="text-danger">h1</span>&gt;<br>&lt;<span class="text-danger">h2</span>&gt;Header 2&lt;/<span class="text-danger">h2</span>&gt;<br>&lt;<span class="text-danger">h3</span>&gt;Header 3&lt;/<span class="text-danger">h3</span>&gt;<br>&lt;<span class="text-danger">h4</span>&gt;Header 4&lt;/<span class="text-danger">h4</span>&gt;<br>&lt;<span class="text-danger">h5</span>&gt;Header 5&lt;/<span class="text-danger">h5</span>&gt;<br>&lt;<span class="text-danger">h6</span>&gt;Header 6&lt;/<span class="text-danger">h6</span>&gt;</pre>
-        <p><h1 class="example-header">Header 1</h1><h2 class="example-header">Header 2</h2><h3 class="example-header">Header 3</h3><h4 class="example-header">Header 4</h4><h5 class="example-header">Header 5</h5><h6 class="example-header">Header 6</h6></p>
+        <h1 class="example-header">Header 1</h1><h2 class="example-header">Header 2</h2><h3 class="example-header">Header 3</h3><h4 class="example-header">Header 4</h4><h5 class="example-header">Header 5</h5><h6 class="example-header">Header 6</h6>
       </div>
-      <div class="well">
+      <div class="well tag-example">
+        <b class="bold-title">Subscript and Superscript:</b>
+        <pre>&lt;<span class="text-danger">sub</span>&gt;&lt;<span class="text-danger">sub</span>&gt;Smaller Subscript&lt;/<span class="text-danger">sub</span>&gt;&lt;/<span class="text-danger">sub</span>&gt; &lt;<span class="text-danger">sub</span>&gt;Subscript&lt;/<span class="text-danger">sub</span>&gt; Normal &lt;<span class="text-danger">sup</span>&gt;Superscript&lt;/<span class="text-danger">sup</span>&gt; &lt;<span class="text-danger">sup</span>&gt;&lt;<span class="text-danger">sup</span>&gt;Smaller Superscript&lt;/<span class="text-danger">sup</span>&gt;&lt;/<span class="text-danger">sup</span>&gt;</pre>
+        <p><sub><sub>Smaller Subscript</sub></sub> <sub>Subscript</sub> Normal <sup>Superscript</sup> <sup><sup>Smaller Superscript</sup></sup></p>
+      </div>
+      <div class="well tag-example">
+        <b class="bold-title">Big:</b>
+        <pre>Normal &lt;<span class="text-danger">big</span>&gt;Big&lt;/<span class="text-danger">big</span>&gt; &lt;<span class="text-danger">big</span>&gt;&lt;<span class="text-danger">big</span>&gt;Bigger&lt;/<span class="text-danger">big</span>&gt;&lt;/<span class="text-danger">big</span>&gt;</pre>
+        <p>Normal <big>Big</big> <big><big>Bigger</big></big></p>
+      </div>
+      <div class="well tag-example">
+        <b class="bold-title">Small:</b>
+        <pre>&lt;<span class="text-danger">small</span>&gt;Small muted text. It is required to have the tag inside a paragraph tag.&lt;/<span class="text-danger">small</span>&gt;</pre>
+        <p><small class="text-muted">Small muted text. It is required to have the tag inside a paragraph tag.</small></p>
+      </div>
+      <div class="well tag-example">
         <b class="bold-title">Image:</b>
-        <pre>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span>&gt;&lt;<span class="text-danger">br</span>&gt;<br>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span> <span class="text-success">width</span>=<span class="text-warning">"50"</span> <span class="text-success">height</span>=<span class="text-warning">"50"</span>&gt;</pre>
-        <p><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" class="timg-shadow"><br><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" width="50" height="50" class="timg-shadow"></p>
+        <pre>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span>&gt;<br>&lt;<span class="text-danger">img</span> <span class="text-success">src</span>=<span class="text-warning">"https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png"</span> <span class="text-success">width</span>=<span class="text-warning">"50"</span> <span class="text-success">height</span>=<span class="text-warning">"50"</span>&gt;</pre>
+        <img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" id="timg-big" class="timg"><br><img src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/calendar-128.png" width="50" height="50" class="timg">
       </div>
-      <div class="well">
+      <div class="well tag-example">
         <b class="bold-title">Table:</b>
         <pre>&lt;<span class="text-danger">table</span> <span class="text-success">border</span>=<span class="text-warning">"1"</span> <span class="text-success">cellpadding</span>=<span class="text-warning">"10"</span> <span class="text-success">width</span>=<span class="text-warning">"250"</span>&gt;<br>&lt;<span class="text-danger">tr</span> <span class="text-success">bgcolor</span>=<span class="text-warning">"#428bca"</span>&gt;&lt;<span class="text-danger">th</span>&gt;Year&lt;/<span class="text-danger">th</span>&gt;&lt;<span class="text-danger">th</span>&gt;Population&lt;/<span class="text-danger">th</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;<span class="text-danger">tr</span>&gt;&lt;<span class="text-danger">td</span>&gt;1980&lt;/<span class="text-danger">td</span>&gt;&lt;<span class="text-danger">td</span>&gt;4,453,831,714&lt;/<span class="text-danger">td</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;<span class="text-danger">tr</span>&gt;&lt;<span class="text-danger">td</span>&gt;1990&lt;/<span class="text-danger">td</span>&gt;&lt;<span class="text-danger">td</span>&gt;5,278,639,789&lt;/<span class="text-danger">td</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;<span class="text-danger">tr</span>&gt;&lt;<span class="text-danger">td</span>&gt;2000&lt;/<span class="text-danger">td</span>&gt;&lt;<span class="text-danger">td</span>&gt;6,082,966,429&lt;/<span class="text-danger">td</span>&gt;&lt;/<span class="text-danger">tr</span>&gt;<br>&lt;/<span class="text-danger">table</span>&gt;</pre>
-        <p>
-          <table id="example-table">
-            <tr><th>Year</th><th>Population</th></tr>
-            <tr><td>1980</td><td>4,453,831,714</td></tr>
-            <tr><td>1990</td><td>5,278,639,789</td></tr>
-            <tr><td>2000</td><td>6,082,966,429</td></tr>
-          </table>
-        </p>
+        <table id="example-table">
+          <tr><th>Year</th><th>Population</th></tr>
+          <tr><td>1980</td><td>4,453,831,714</td></tr>
+          <tr><td>1990</td><td>5,278,639,789</td></tr>
+          <tr><td>2000</td><td>6,082,966,429</td></tr>
+        </table>
       </div>
     </div>
 

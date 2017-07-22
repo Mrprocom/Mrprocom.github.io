@@ -178,6 +178,12 @@ pre {
 }
 
 
+#timg-big {
+  left: -17px;
+  position: relative;
+}
+
+
 #title {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
   margin: 0;
@@ -396,6 +402,19 @@ pre {
 }
 
 
+.modal-content {
+  border-radius: 0;
+}
+
+
+.modal-header {
+  border-bottom: none;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+}
+
+
 .muted-list b {
   color: #ffffff;
 }
@@ -571,8 +590,15 @@ pre {
 }
 
 
-.timg-shadow {
+.tag-example *:last-child {
+  margin-bottom: 0;
+}
+
+
+.timg {
   filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.3));
+  left: -7px;
+  position: relative;
 }
 
 
