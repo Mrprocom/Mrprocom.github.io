@@ -269,7 +269,7 @@ $(document).ready(function(){
     17739.7: "C#10",
     18794.56: "D10",
     19912.14: "D#10",
-  }
+  };
 
   // Make the welcome screen fade away
   setTimeout(function(){
@@ -299,7 +299,7 @@ $(document).ready(function(){
           if(minFreq > maxFreq) thisFreq = realMinFreq * 2**((1 - (started[i].pageX / $("#playground").width())) * maxFreqScale / 12);
         }
         // This is to find the closest music note to display at the bottom
-        var freqList = $.map(Object.keys(noteNames), function(i){return parseFloat(i)})
+        var freqList = $.map(Object.keys(noteNames), function(i){return parseFloat(i)});
         var closestNote = freqList.reduce(function(prev, curr){
           return (Math.abs(curr - thisFreq) < Math.abs(prev - thisFreq) ? curr : prev);
         });
@@ -385,7 +385,7 @@ $(document).ready(function(){
           thisFreq = realMinFreq * 2**(moved[i].pageX / $("#playground").width() * maxFreqScale / 12);
           if(minFreq > maxFreq) thisFreq = realMinFreq * 2**((1 - (moved[i].pageX / $("#playground").width())) * maxFreqScale / 12);
         }
-        var freqList = $.map(Object.keys(noteNames), function(i){return parseFloat(i)})
+        var freqList = $.map(Object.keys(noteNames), function(i){return parseFloat(i)});
         var closestNote = freqList.reduce(function(prev, curr){
           return (Math.abs(curr - thisFreq) < Math.abs(prev - thisFreq) ? curr : prev);
         });
