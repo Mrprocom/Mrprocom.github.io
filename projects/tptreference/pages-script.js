@@ -20,18 +20,44 @@ function brightness(hex){
 // This is a sort function for sorting the element properties table
 function comparer(index, reverse) {
   return function(a, b){
+    var idA = $(a).children("td").eq(1).html();
+    var idB = $(b).children("td").eq(1).html();
     if(index == 0){
-      var valA = $(a).children("td").eq(index).find("a").html();
-      var valB = $(b).children("td").eq(index).find("a").html();
+      var valA = $(a).children("td").eq(0).find("a").html();
+      var valB = $(b).children("td").eq(0).find("a").html();
     } else if(index == 2){
-      var valA = brightness($(a).children("td").eq(index).html());
-      var valB = brightness($(b).children("td").eq(index).html());
+      var valA = brightness($(a).children("td").eq(2).html());
+      var valB = brightness($(b).children("td").eq(2).html());
+    } else if(index == 7){
+      var valA = [];
+      var valB = [];
+      var prpA = $(a).children("td").eq(7).children(".property");
+      var prpB = $(b).children("td").eq(7).children(".property");
+      for(var i = 0; i < prpA.length; i++){
+        var newProp = prpA.eq(i).attr("src").split("/")[2].split(".")[0];
+        if(reverse){
+          valB.push(newProp);
+        } else {
+          valA.push(newProp);
+        }
+      }
+      for(var i = 0; i < prpB.length; i++){
+        var newProp = prpB.eq(i).attr("src").split("/")[2].split(".")[0];
+        if(reverse){
+          valA.push(newProp);
+        } else {
+          valB.push(newProp);
+        }
+      }
+      for(var i = 0; i < Math.max(valA.length, valB.length); i++){
+        if(i > 0 && valA.length != valB.length) return valA.length - valB.length;
+        if(valA[i] != valB[i]) return (valA[i] || "").localeCompare(valB[i] || "");
+      }
+      return idA - idB;
     } else {
       var valA = $(a).children("td").eq(index).html();
       var valB = $(b).children("td").eq(index).html();
     }
-    var idA = $(a).children("td").eq(1).html();
-    var idB = $(b).children("td").eq(1).html();
     if(valA == valB) return idA - idB;
     if(reverse) return $.isNumeric(valA) && $.isNumeric(valB) ? valB - valA : valA.localeCompare(valB) * -1;
     return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB);
@@ -39,8 +65,32 @@ function comparer(index, reverse) {
 }
 
 
+// This function prioritises selected properties when sorting the table
+function propertyFilter(selectedProp){
+  return function(a, b){
+    var valA = [];
+    var valB = [];
+    var prpA = $(a).children("td").eq(7).children(".property");
+    var prpB = $(b).children("td").eq(7).children(".property");
+    var idA = $(a).children("td").eq(1).html();
+    var idB = $(b).children("td").eq(1).html();
+    for(var i = 0; i < prpA.length; i++){
+      valA.push(prpA.eq(i).attr("data-prop"));
+    }
+    for(var i = 0; i < prpB.length; i++){
+      valB.push(prpB.eq(i).attr("data-prop"));
+    }
+    validA = selectedProp.every(function(i){return valA.indexOf(i) != -1}) ? 1 : 0;
+    validB = selectedProp.every(function(i){return valB.indexOf(i) != -1}) ? 1 : 0;
+    if(validA == validB) return idA - idB;
+    return validB - validA;
+  }
+}
+
+
 $(document).ready(function(){
 
+  var selectedProp = [];
   var searchMenu =
     "<input class='form-control' type='text' id='quick-search-bar' placeholder='Enter keywords to search'>" +
     "<hr>" +
@@ -247,6 +297,31 @@ $(document).ready(function(){
     if(!this.asc) rows = rows.sort(comparer($(this).index(), true));
     for(var i = 0; i < rows.length; i++){
       table.append(rows[i]);
+    }
+  });
+
+  // Prioritise selected properties and sort table when .property is clicked
+  $(document).on("click", ".property", function(){
+    if($(this).hasClass("pactive")){
+      selectedProp = selectedProp.filter(e => e !== $(this).attr("data-prop"));
+    } else {
+      selectedProp.push($(this).attr("data-prop"));
+    }
+    $(".pactive").removeClass("pactive");
+    var table = $(this).parents("table").eq(0);
+    var rows = table.find("tbody tr").toArray().sort(propertyFilter(selectedProp));
+    for(var i = 0; i < rows.length; i++){
+      table.append(rows[i]);
+      var val = [];
+      var prp = $(rows).eq(i).children("td").eq(7).children(".property");
+      for(var j = 0; j < prp.length; j++){
+        val.push(prp.eq(j).attr("data-prop"));
+      }
+      if(selectedProp.every(function(j){return val.indexOf(j) != -1})){
+        for(var j = 0; j < val.length; j++){
+          if(selectedProp.indexOf(val[j]) != -1) prp.eq(j).addClass("pactive");
+        }
+      }
     }
   });
 

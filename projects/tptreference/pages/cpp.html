@@ -223,8 +223,8 @@
         <b>Arguments:</b>
         <ul class="muted-list">
           <li class="text-muted"><b><span class="text-warning">int</span> p:</b> How the particle is created. -1 will create a particle if the space is empty. -2 will create the particle from brush. -3 will ignore particles in the space and create it anyway. Any positive number will override the particle at that index.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the particle.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinate of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinate of the particle.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
         </ul>
       </div>
@@ -241,8 +241,8 @@
         <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">delete_part</span>(x, y, flags)</pre>
         <b>Arguments:</b>
         <ul class="muted-list">
-          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the particle.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinate of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinate of the particle.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> flags:</b> Not used a lot, leave it as 0.</li>
         </ul>
       </div>
@@ -252,8 +252,8 @@
         <b>Arguments:</b>
         <ul class="muted-list">
           <li class="text-muted"><b><span class="text-warning">int</span> i:</b> Index of the particle to change.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the particle to change.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the particle to change.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinate of the particle to change.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinate of the particle to change.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
         </ul>
       </div>
@@ -262,8 +262,8 @@
         <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">clear_area</span>(x, y, w, h)</pre>
         <b>Arguments:</b>
         <ul class="muted-list">
-          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the top-left corner of the rectangle.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinate of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinate of the top-left corner of the rectangle.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> w:</b> The width of the rectangle.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> h:</b> The height of the rectangle.</li>
         </ul>
@@ -273,10 +273,10 @@
         <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">CreateBox</span>(x1, y1, x2, y2, t, flags)</pre>
         <b>Arguments:</b>
         <ul class="muted-list">
-          <li class="text-muted"><b><span class="text-warning">int</span> x1:</b> The x coordinates of the top-left corner of the rectangle.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y1:</b> The y coordinates of the top-left corner of the rectangle.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> x2:</b> The x coordinates of the bottom-right corner of the rectangle.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y2:</b> The y coordinates of the bottom-right corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x1:</b> The x coordinate of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y1:</b> The y coordinate of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x2:</b> The x coordinate of the bottom-right corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y2:</b> The y coordinate of the bottom-right corner of the rectangle.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> flags:</b> Not used a lot, leave it as 0.</li>
         </ul>
@@ -286,10 +286,10 @@
         <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">CreateLine</span>(x1, y1, x2, y2, c)</pre>
         <b>Arguments:</b>
         <ul class="muted-list">
-          <li class="text-muted"><b><span class="text-warning">int</span> x1:</b> The x coordinates of the starting point of the line.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y1:</b> The y coordinates of the starting point of the line.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> x2:</b> The x coordinates of the ending point of the line.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y2:</b> The y coordinates of the ending point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x1:</b> The x coordinate of the starting point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y1:</b> The y coordinate of the starting point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x2:</b> The x coordinate of the ending point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y2:</b> The y coordinate of the ending point of the line.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> c:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
         </ul>
       </div>
@@ -298,8 +298,8 @@
         <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">FloodParts</span>(x, y, t, cm, bm, flags)</pre>
         <b>Arguments:</b>
         <ul class="muted-list">
-          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of any point in the enclosed area.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the same point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinate of any point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinate of the same point in the enclosed area.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> cm:</b> A value used in the code. Leave it as -1.</li>
           <li class="text-muted"><b><span class="text-warning">int</span> bm:</b> A value used in the code. Leave it as -1.</li>
@@ -311,8 +311,8 @@
         <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">flood_prop</span>(x, y, propoffset, propvalue, proptype)</pre>
         <b>Arguments:</b>
         <ul class="muted-list">
-          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of any point in the enclosed area.</li>
-          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the same point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinate of any point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinate of the same point in the enclosed area.</li>
           <li class="text-muted"><b><span class="text-warning">size_t</span> propoffset:</b> Use the return value of <kbd>offsetof(Particle, property)</kbd>, replace <kbd>property</kbd> with the property you want to set such as <kbd>ctype</kbd>.</li>
           <li class="text-muted"><b><span class="text-warning">PropertyValue</span> propvalue:</b> The property value you want to set to. For this, declare <kbd>PropertyValue value</kbd> then assign the property value to <kbd>value.Integer</kbd> for integers, or <kbd>value.Float</kbd> for temperatures or velocities, or <kbd>value.UInteger</kbd> for dcolour.</li>
           <li class="text-muted"><b><span class="text-warning">StructProperty::PropertyType</span> proptype:</b> The value type you provided in the previous argument. Possible values: <kbd>StructProperty::Integer</kbd> <kbd>StructProperty::Float</kbd> <kbd>StructProperty::Uinteger</kbd></li>
