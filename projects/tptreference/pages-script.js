@@ -8,6 +8,37 @@ function isVisible(elem){
 }
 
 
+// This function converts Hex colours to RGB and returns the brightness
+function brightness(hex){
+  var r = parseInt(hex.slice(1, 3), 16);
+  var g = parseInt(hex.slice(3, 5), 16);
+  var b = parseInt(hex.slice(5, 7), 16);
+  return Math.sqrt(0.299 * r**2 + 0.587 * g**2 + 0.114 * b**2);
+}
+
+
+// This is a sort function for sorting the element properties table
+function comparer(index, reverse) {
+  return function(a, b){
+    if(index == 0){
+      var valA = $(a).children("td").eq(index).find("a").html();
+      var valB = $(b).children("td").eq(index).find("a").html();
+    } else if(index == 2){
+      var valA = brightness($(a).children("td").eq(index).html());
+      var valB = brightness($(b).children("td").eq(index).html());
+    } else {
+      var valA = $(a).children("td").eq(index).html();
+      var valB = $(b).children("td").eq(index).html();
+    }
+    var idA = $(a).children("td").eq(1).html();
+    var idB = $(b).children("td").eq(1).html();
+    if(valA == valB) return idA - idB;
+    if(reverse) return $.isNumeric(valA) && $.isNumeric(valB) ? valB - valA : valA.localeCompare(valB) * -1;
+    return $.isNumeric(valA) && $.isNumeric(valB) ? valA - valB : valA.localeCompare(valB);
+  }
+}
+
+
 $(document).ready(function(){
 
   var searchMenu =
@@ -45,6 +76,7 @@ $(document).ready(function(){
       "<li><a href='../#elements#life' target='_top'></span><span class='text-danger'><b>#elements#life:</b></span> Life</a></li>" +
       "<li><a href='../#elements#tools' target='_top'></span><span class='text-danger'><b>#elements#tools:</b></span> Tools</a></li>" +
       "<li><a href='../#elements#hidden' target='_top'></span><span class='text-danger'><b>#elements#hidden:</b></span> Hidden</a></li>" +
+      "<li><a href='../#elementprop' target='_top'></span><span class='text-danger'><b>#elementprop:</b></span> Element Properties</a></li>" +
       "<li><a href='../#console' target='_top'></span><span class='text-danger'><b>#console:</b></span> Console</a></li>" +
       "<li><a href='../#console#set' target='_top'></span><span class='text-danger'><b>#console#set:</b></span> The Set Command</a></li>" +
       "<li><a href='../#console#create' target='_top'></span><span class='text-danger'><b>#console#create:</b></span> The Create Command</a></li>" +
@@ -82,6 +114,13 @@ $(document).ready(function(){
       "<li><a href='../#mods#below' target='_top'></span><span class='text-danger'><b>#mods#below:</b></span> Mods List Below v75.0</a></li>" +
       "<li><a href='../#wiki' target='_top'></span><span class='text-danger'><b>#wiki:</b></span> Official Wiki</a></li>" +
       "<li><a href='../#lua' target='_top'></span><span class='text-danger'><b>#lua:</b></span> Lua Reference</a></li>" +
+      "<li><a href='../#cpp' target='_top'></span><span class='text-danger'><b>#cpp:</b></span> C++ Reference</a></li>" +
+      "<li><a href='../#cpp#properties' target='_top'></span><span class='text-danger'><b>#cpp#properties:</b></span> Element Properties</a></li>" +
+      "<li><a href='../#cpp#propconstants' target='_top'></span><span class='text-danger'><b>#cpp#propconstants:</b></span> Property Constants</a></li>" +
+      "<li><a href='../#cpp#menusections' target='_top'></span><span class='text-danger'><b>#cpp#menusections:</b></span> Menu Sections</a></li>" +
+      "<li><a href='../#cpp#variables' target='_top'></span><span class='text-danger'><b>#cpp#variables:</b></span> Variables</a></li>" +
+      "<li><a href='../#cpp#functions' target='_top'></span><span class='text-danger'><b>#cpp#functions:</b></span> Functions</a></li>" +
+      "<li><a href='../#cpp#scons' target='_top'></span><span class='text-danger'><b>#cpp#scons:</b></span> SCons Command Line Flags</a></li>" +
       "<li><a href='../#rules' target='_top'></span><span class='text-danger'><b>#rules:</b></span> Rules</a></li>" +
       "<li><a href='../#rules#forum' target='_top'></span><span class='text-danger'><b>#rules#forum:</b></span> Forum Posting Rules</a></li>" +
       "<li><a href='../#rules#save' target='_top'></span><span class='text-danger'><b>#rules#save:</b></span> Save Uploading Rules</a></li>" +
@@ -101,6 +140,9 @@ $(document).ready(function(){
       "<li><a href='../#faq#modding' target='_top'></span><span class='text-danger'><b>#faq#modding:</b></span> Modding FAQ</a></li>" +
       "<li><a href='../#faq#rejected' target='_top'></span><span class='text-danger'><b>#faq#rejected:</b></span> Rejected Suggestions List</a></li>" +
     "</ul>";
+
+  // Enable tooltips
+  $("[data-toggle=tooltip]").tooltip();
 
   // Edit the href attribute of all .sub-topic a to redirect to the correct page
   $(".sub-topic a").each(function(){
@@ -159,7 +201,22 @@ $(document).ready(function(){
       message: searchMenu,
       size: BootstrapDialog.SIZE_WIDE
     });
-    setInterval(function(){$("#quick-search-bar").focus()}, 0);
+    setTimeout(function(){$("#quick-search-bar").focus()}, 500);
+  });
+
+  // Open the search dialog with the hash of the current page typed out when the E key is pressed
+  $(document).keydown(function(e){
+    if(e.which == 69 && !$("#quick-search-bar").length){
+      var searchFor = location.href.split("/").splice(-1)[0].split(".")[0];
+      searchFor = searchFor == "welcome" ? "" : "#" + searchFor + "# ";
+      BootstrapDialog.show({
+        title: "Quick Search",
+        message: searchMenu,
+        size: BootstrapDialog.SIZE_WIDE
+      });
+      setTimeout(function(){$("#quick-search-bar").val(searchFor).trigger("input")}, 200);
+      setTimeout(function(){$("#quick-search-bar").focus()}, 500);
+    }
   });
 
   // Search through all topics whenever the input of #quick-search-bar is changed
@@ -180,6 +237,17 @@ $(document).ready(function(){
   // Clear local storage when #startup-guide is clicked
   $("#startup-guide").click(function(){
     $.localStorage.remove("tptreference");
+  });
+
+  // Sort table when .sortable is clicked
+  $(".sortable").click(function(){
+    var table = $(this).parents("table").eq(0);
+    var rows = table.find("tbody tr").toArray().sort(comparer($(this).index(), false));
+    this.asc = !this.asc;
+    if(!this.asc) rows = rows.sort(comparer($(this).index(), true));
+    for(var i = 0; i < rows.length; i++){
+      table.append(rows[i]);
+    }
   });
 
   // Change channel of IRC client when .channel-switch is clicked

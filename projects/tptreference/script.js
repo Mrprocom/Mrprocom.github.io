@@ -9,6 +9,7 @@ $(document).ready(function(){
       {text: "Game Interface"},
       {text: "Game Shortcuts"},
       {text: "Elements List"},
+      {text: "Element Properties"},
       {text: "Console"},
       {text: "Saves"},
       {text: "Forum"},
@@ -17,6 +18,7 @@ $(document).ready(function(){
       {text: "Mods and Lua Scripts"},
       {text: "Official Wiki"},
       {text: "Lua Reference"},
+      {text: "C++ Reference"},
       {text: "Rules"},
       {text: "Notable Users"},
       {text: "Tips and FAQ"}
@@ -30,6 +32,7 @@ $(document).ready(function(){
     "interface",
     "shortcuts",
     "elements",
+    "elementprop",
     "console",
     "saves",
     "forum",
@@ -38,6 +41,7 @@ $(document).ready(function(){
     "mods",
     "wiki",
     "lua",
+    "cpp",
     "rules",
     "notable",
     "faq"
@@ -57,9 +61,9 @@ $(document).ready(function(){
         "<div class='item'><img src='gif/welcome/welcome4.gif' alt='Animation'>" +
         "<div class='carousel-caption'>Holding <kbd>Ctrl+Shift</kbd> and clicking on any link opens up the link as a dialog box, this also allows viewing links without leaving this page, and not all links can be viewed this way as well.</div></div>" +
         "<div class='item'><img src='gif/welcome/welcome5.gif' alt='Animation'>" +
-        "<div class='carousel-caption'>Press the Quick Search button in the Welcome page to quickly navigate to a specific topic. Enter keywords to search using them or press <kbd>Esc</kbd> to exit. Click on any of the search results to navigate to it.</div></div>" +
+        "<div class='carousel-caption'>Press the Quick Search button in the Welcome page to quickly navigate to a specific topic, or press <kbd>E</kbd> while viewing any topic to bring up Quick Search with a search query that views all subtopics of the current topic.</div></div>" +
         "<div class='item'><img src='images/responsive.png' alt='Image'>" +
-        "<div class='carousel-caption'>The design used to make this reference is simple and comfortable for the eyes, especially at night. The design used in the reference is also responsive, meaning that it can be viewed in smaller devices.</div></div>" +
+        "<div class='carousel-caption'>The design used to make this reference is simple and comfortable for the eyes, especially at night. The design used in the reference is also responsive, meaning that it can be viewed on smaller devices.</div></div>" +
       "</div>" +
       "<a class='left carousel-control' href='#welcome-carousel' role='button' data-slide='prev'>" +
       "<span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span></a>" +
@@ -151,4 +155,14 @@ $(document).ready(function(){
     });
     $.localStorage.set("tptreference", true);
   }
+
+  // Make sure #viewer-frame stays focused
+  $(document).click(function(){
+    $("#viewer-frame").focus();
+  });
+
+  // Reload page when hash changes, fixes problem with parent page not changing when a link is clicked within the iframe
+  $(window).on("hashchange", function(){
+    location.reload();
+  });
 });

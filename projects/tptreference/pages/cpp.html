@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap and CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="../style.css" rel="stylesheet">
+  </head>
+
+  <body class="page">
+    
+    <div id="page-content">
+      <h2>C++ Reference</h2>
+      <hr>
+      <p>This page contains useful information to come back to in Powder Toy modding. Click <a href="https://github.com/ThePowderToy/The-Powder-Toy">here</a> to go to the where the source code is on GitHub.</p>
+
+      <h3 id="properties" class="sub-topic"><a href="#cpp#properties" target="_top">Element Properties</a></h3>
+      <hr>
+      <p>For an element template, check out <a href="https://www.boxmein.net/tpt/tptelements/editor.html#c++">TPTElements</a>.</p>
+      <table class="table table-bordered table-condensed table-hover table-margin-top">
+        <thead><tr><td>Property</td><td>Description</td></tr></thead>
+        <tbody>
+          <tr><td class="text-warning monospace"><b>Identifier</b></td>
+          <td>Identifier string in the form of <kbd>Namespace_PT_ElementName</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>Name</b></td>
+          <td>The name of the element in-game. It is recommended not to exceed 4 characters.</td></tr>
+          <tr><td class="text-warning monospace"><b>Colour</b></td>
+          <td>Colour of the element in hexadecimal <kbd>0xRRGGBB</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>MenuVisible</b></td>
+          <td>Whether the element is visible in any menu section. 0 for hidden, 1 for visible.</td></tr>
+          <tr><td class="text-warning monospace"><b>MenuSection</b></td>
+          <td>The menu section where the element is placed in. Check out <a href="../#cpp#menusections" target="_top">Menu Sections</a> for possible values.</tr>
+          <tr><td class="text-warning monospace"><b>Enabled</b></td>
+          <td>Whether the element can be used or created in any way. 0 for disabled, 1 for enabled. You should leave it as 1.</td></tr>
+          <tr><td class="text-warning monospace"><b>Advection</b></td>
+          <td>How much the particle is affected by air. 0 for solids and up to 1 for other elements, negative used in ANAR and DEST.</td></tr>
+          <tr><td class="text-warning monospace"><b>AirDrag</b></td>
+          <td>How much air the particle generates in the direction of travel. Negative values are used for negative pressure.</td></tr>
+          <tr><td class="text-warning monospace"><b>AirLoss</b></td>
+          <td>How much the particle slows down moving air. Values are from 0 (maximum effect) to 1 (no effect).</td></tr>
+          <tr><td class="text-warning monospace"><b>Loss</b></td>
+          <td>How much velocity the particle loses each frame. Values are from 0 (used in energy particles) to 1 (used in solids).</td></tr>
+          <tr><td class="text-warning monospace"><b>Collision</b></td>
+          <td>Used to calculate the new velocity when the particle collides with another.</td></tr>
+          <tr><td class="text-warning monospace"><b>Gravity</b></td>
+          <td>How fast the particle falls down. Negative numbers are used to make the particle float just like in gases.</td></tr>
+          <tr><td class="text-warning monospace"><b>Diffusion</b></td>
+          <td>How much the particle wiggles. Gases have it above 0 so that they wiggle.</td></tr>
+          <tr><td class="text-warning monospace"><b>HotAir</b></td>
+          <td>How much the particle increases pressure. Mostly used in gases and VENT/VACU.</td></tr>
+          <tr><td class="text-warning monospace"><b>Falldown</b></td>
+          <td>How the particle moves. 0 for solids, gases and energy particles, 1 for powders and 2 for liquids.</td></tr>
+          <tr><td class="text-warning monospace"><b>Flammable</b></td>
+          <td>How much the particle can burn. 0 to make it unflammable. The higher the number, the more flammable the particle is.</td></tr>
+          <tr><td class="text-warning monospace"><b>Explosive</b></td>
+          <td>Possible values are 0 for non-explosive, 1 for explosive by fire. 2 for explosive by fire or pressure above 2.5.</td></tr>
+          <tr><td class="text-warning monospace"><b>Meltable</b></td>
+          <td>Whether the element is meltable (1) or not (0).</td></tr>
+          <tr><td class="text-warning monospace"><b>Hardness</b></td>
+          <td>How much the element is affected by acid. 0 for no effect, anything higher for more effect.</td></tr>
+          <tr><td class="text-warning monospace"><b>PhotonReflectWavelengths</b></td>
+          <td>The colour photons change to when they reflect off of this element in hexadecimal <kbd>0xAARRGGBB</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>Weight</b></td>
+          <td>How the particle sinks. -1 for energy particles, 1 for gases, 2 for light, 0-49 for liquids, 50-99 for powders and 100 for solids.</td></tr>
+          <tr><td class="text-warning monospace"><b>Temperature</b></td>
+          <td>The spawn temperature of the element in Kelvin. <kbd>R_TEMP + 273.15</kbd> for room temperature (22&deg; C).</td></tr>
+          <tr><td class="text-warning monospace"><b>HeatConduct</b></td>
+          <td>How fast the particle conducts heat. 0 for no transfer, 255 for maximum transfer.</td></tr>
+          <tr><td class="text-warning monospace"><b>Description</b></td>
+          <td>Description of the element. Shows up when you hover over the element in-game.</td></tr>
+          <tr><td class="text-warning monospace"><b>Properties</b></td>
+          <td>The special properties of the element, each separated by a binary OR <kbd>|</kbd>. Check out <a href="../#cpp#propconstants" target="_top">Property Constants</a> for possible values.</td></tr>
+          <tr><td class="text-warning monospace"><b>LowPressure</b></td>
+          <td>Change the type of the element when its pressure is lower than this value. Default is <kbd>IPL</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>LowPressureTransition</b></td>
+          <td>The type of the element to change to when it is lower than LowPressure. Default is <kbd>NT</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>HighPressure</b></td>
+          <td>Change the type of the element when its pressure is higher than this value. Default is <kbd>IPH</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>HighPressureTransition</b></td>
+          <td>The type of the element to change to when it is higher than HighPressure. Default is <kbd>NT</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>LowTemperature</b></td>
+          <td>Change the type of the element when its temperature is lower than this value. Default is <kbd>ITL</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>LowTemperatureTransition</b></td>
+          <td>The type of the element to change to when it is lower than LowTemperature. Default is <kbd>NT</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>HighTemperature</b></td>
+          <td>Change the type of the element when its temperature is higher than this value. Default is <kbd>ITH</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>HighTemperatureTransition</b></td>
+          <td>The type of the element to change to when it is higher than HighTemperature. Default is <kbd>NT</kbd>.</td></tr>
+          <tr><td class="text-warning monospace"><b>Update</b></td>
+          <td>Address of the update function, which gets executed each frame, it is where reactions and behaviours are coded.</td></tr>
+          <tr><td class="text-warning monospace"><b>Graphics</b></td>
+          <td>Address of the grahpics function. This is where special visual effects are coded.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="propconstants" class="sub-topic"><a href="#cpp#propconstants" target="_top">Property Constants</a></h3>
+      <hr>
+      <p>These are the possible values used in <kbd>Properties</kbd>, you can have multiple properties, but they must be joined together with a binary OR <kbd>|</kbd>.</p>
+      <table class="table table-bordered table-condensed table-hover table-margin-top">
+        <thead><tr><td>Constant</td><td>Description</td></tr></thead>
+        <tbody>
+          <tr><td class="text-success monospace"><b>TYPE_PART</b></td>
+          <td>Used in powders.</td></tr>
+          <tr><td class="text-success monospace"><b>TYPE_LIQUID</b></td>
+          <td>Used in liquids.</td></tr>
+          <tr><td class="text-success monospace"><b>TYPE_SOLID</b></td>
+          <td>Used in solids and other types of elements.</td></tr>
+          <tr><td class="text-success monospace"><b>TYPE_GAS</b></td>
+          <td>Used in gases.</td></tr>
+          <tr><td class="text-success monospace"><b>TYPE_ENERGY</b></td>
+          <td>Used in energy particles.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_CONDUCTS</b></td>
+          <td>Allows the element to conduct electricity. Requires <kbd>PROP_LIFE_DEC</kbd></td></tr>
+          <tr><td class="text-success monospace"><b>PROP_BLACK</b></td>
+          <td>Makes the element absorb photons of any colour.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_NEUTPENETRATE</b></td>
+          <td>Allows neutrons to pass through the element.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_NEUTABSORB</b></td>
+          <td>Makes the element absorb neutrons</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_NEUTPASS</b></td>
+          <td>Makes the particles of that element get scattered when neutrons touch it.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_DEADLY</b></td>
+          <td>Makes the element deadly towards stickmen and fighters.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_HOT_GLOW</b></td>
+          <td>Makes the element gradually glow in red when it approaches its max temperature before melting.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_RADIOACTIVE</b></td>
+          <td>Makes the element have a radioactive glow like URAN and PLUT. Also makes it deadly towards stickmen and fighters.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_LIFE_DEC</b></td>
+          <td>Makes the life value of that element get decreased by 1 each frame.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_LIFE_KILL</b></td>
+          <td>Kills the element when its life value is less than or equal to 0.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_LIFE_KILL_DEC</b></td>
+          <td>Makes the life value if that element get decreased by 1 each frame until it reaches 0 and dies. If it starts with 0, it will not.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_SPARKSETTLE</b></td>
+          <td>Allows EMBR to touch it without disappearing.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_NOAMBHEAT</b></td>
+          <td>Prevents particles from that element to transfer ambient heat.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_DRAWONCTYPE</b></td>
+          <td>Allows the ctype of that element to be changed when drawn on, like CLNE.</td></tr>
+          <tr><td class="text-success monospace"><b>PROP_NOCTYPEDRAW</b></td>
+          <td>Prevents elements with <kbd>PROP_DRAWONCTYPE</kbd> to have their ctype changed when drawn on with this element.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="menusections" class="sub-topic"><a href="#cpp#menusections" target="_top">Menu Sections</a></h3>
+      <hr>
+      <p>These are the possible values used in <kbd>MenuSection</kbd>.</p>
+      <table class="table table-bordered table-condensed table-hover table-margin-top">
+        <thead><tr><td class="col-xs-2">Constant</td><td>Description</td></tr></thead>
+        <tbody>
+          <tr><td class="text-info monospace"><b>SC_WALL</b></td>
+          <td>Walls</td></tr>
+          <tr><td class="text-info monospace"><b>SC_ELEC</b></td>
+          <td>Electronics</td></tr>
+          <tr><td class="text-info monospace"><b>SC_POWERED</b></td>
+          <td>Powdered Materials</td></tr>
+          <tr><td class="text-info monospace"><b>SC_SENSOR</b></td>
+          <td>Sensors</td></tr>
+          <tr><td class="text-info monospace"><b>SC_FORCE</b></td>
+          <td>Force</td></tr>
+          <tr><td class="text-info monospace"><b>SC_EXPLOSIVE</b></td>
+          <td>Explosives</td></tr>
+          <tr><td class="text-info monospace"><b>SC_GAS</b></td>
+          <td>Gases</td></tr>
+          <tr><td class="text-info monospace"><b>SC_LIQUID</b></td>
+          <td>Liquids</td></tr>
+          <tr><td class="text-info monospace"><b>SC_POWDERS</b></td>
+          <td>Powders</td></tr>
+          <tr><td class="text-info monospace"><b>SC_SOLIDS</b></td>
+          <td>Solids</td></tr>
+          <tr><td class="text-info monospace"><b>SC_NUCLEAR</b></td>
+          <td>Radioactive</td></tr>
+          <tr><td class="text-info monospace"><b>SC_SPECIAL</b></td>
+          <td>Special</td></tr>
+          <tr><td class="text-info monospace"><b>SC_LIFE</b></td>
+          <td>Game of Life</td></tr>
+          <tr><td class="text-info monospace"><b>SC_TOOL</b></td>
+          <td>Tools</td></tr>
+          <tr><td class="text-info monospace"><b>SC_DECO</b></td>
+          <td>Decoration Tools</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="variables" class="sub-topic"><a href="#cpp#variables" target="_top">Variables</a></h3>
+      <hr>
+      <table class="table table-bordered table-condensed table-hover table-margin-top">
+        <thead><tr><td>Variable</td><td>Description</td></tr></thead>
+        <tbody>
+          <tr><td class="monospace"><b><span class="text-info">pmap</span>[y][x]</b></td>
+          <td>Particle Map. <kbd>pmap[y][x]&amp;0xFF</kbd> returns particle type at (x, y). <kbd>pmap[y][x]&gt;&gt;8</kbd> returns the index.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">sim</span><span class="text-danger">-&gt;</span><span class="text-success">photons</span>[y][x]</b></td>
+          <td>Photon Map. Works exactly like Particle Map, but it is only used for energy particles.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">sim</span><span class="text-danger">-&gt;</span><span class="text-success">bmap</span>[y<span class="text-danger">/</span>CELL][x<span class="text-danger">/</span>CELL]</b></td>
+          <td>Block Map. Returns wall at (x, y). Walls are in 4x4 grides, which is why cooCELL/tr>
+          <tr><td class="monospace"><b><span class="text-info">sim</span><span class="text-danger">-&gt;</span><span class="text-success">emap</span>[y<span class="text-danger">/</span>CELL][x<span class="text-danger">/</span>CELL]</b></td>
+          <td>Electronics Map. Returns 1 if the conductive wall at (x, y) is conducting electricity. Walls are in 4x4 grides.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">sim</span><span class="text-danger">-&gt;</span><span class="text-success">pv</span>[y<span class="text-danger">/</span>CELL][x<span class="text-danger">/</span>CELL]</b></td>
+          <td>Returns the pressure at (x, y). Pressure is in 4x4 grides.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">sim</span><span class="text-danger">-&gt;</span><span class="text-success">hv</span>[y<span class="text-danger">/</span>CELL][x<span class="text-danger">/</span>CELL]</b></td>
+          <td>Returns the ambient heat at (x, y). Ambient Heat is in 4x4 grides.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">sim</span><span class="text-danger">-&gt;</span><span class="text-success">vx</span>[y<span class="text-danger">/</span>CELL][x<span class="text-danger">/</span>CELL]</b></td>
+          <td>Returns the velocity in the x direction at (x, y). Velocity is in 4x4 grides.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">sim</span><span class="text-danger">-&gt;</span><span class="text-success">vy</span>[y<span class="text-danger">/</span>CELL][x<span class="text-danger">/</span>CELL]</b></td>
+          <td>Returns the velocity in the y direction at (x, y). Velocity is in 4x4 grides.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">parts</span>[i]</b></td>
+          <td>Returns the particle with the index of i. Property examples: <kbd>parts[i].ctype</kbd> <kbd>parts[i].dcolour</kbd> <kbd>parts[i].pavg[1]</kbd></td></tr>
+          <tr><td class="monospace"><b><span class="text-info">r</span></b></td>
+          <td>Generally used to store <kbd>pmap[y][x]</kbd>.</td></tr>
+          <tr><td class="monospace"><b><span class="text-info">t</span></b></td>
+          <td>Generally used to store the current particle type.</td></tr>
+        </tbody>
+      </table>
+
+      <h3 id="functions" class="sub-topic"><a href="#cpp#functions" target="_top">Functions</a></h3>
+      <hr>
+      <div class="well">
+        <p>Create a particle at the given coordinates:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">create_part</span>(p, x, y, t)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> p:</b> How the particle is created. -1 will create a particle if the space is empty. -2 will create the particle from brush. -3 will ignore particles in the space and create it anyway. Any positive number will override the particle at that index.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Delete a particle with the given index:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">kill_part</span>(i)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> i:</b> Index of the particle to delete.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Delete a particle at the given coordinates:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">delete_part</span>(x, y, flags)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> flags:</b> Not used a lot, leave it as 0.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Change the type of a particle:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">part_change_type</span>(i, x, y, t)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> i:</b> Index of the particle to change.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the particle to change.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the particle to change.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Clear a rectangular area:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">clear_area</span>(x, y, w, h)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> w:</b> The width of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> h:</b> The height of the rectangle.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Create a rectangular area with the given element:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">CreateBox</span>(x1, y1, x2, y2, t, flags)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> x1:</b> The x coordinates of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y1:</b> The y coordinates of the top-left corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x2:</b> The x coordinates of the bottom-right corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y2:</b> The y coordinates of the bottom-right corner of the rectangle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> flags:</b> Not used a lot, leave it as 0.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Create a line with the given element:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">CreateLine</span>(x1, y1, x2, y2, c)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> x1:</b> The x coordinates of the starting point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y1:</b> The y coordinates of the starting point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> x2:</b> The x coordinates of the ending point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y2:</b> The y coordinates of the ending point of the line.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> c:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Flood-fill an enclosed area with the given element (works like <kbd>Ctrl+Shift+Click</kbd> in-game):</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">FloodParts</span>(x, y, t, cm, bm, flags)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of any point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the same point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to create. Use a pre-defined value such as PT_DUST.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> cm:</b> A value used in the code. Leave it as -1.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> bm:</b> A value used in the code. Leave it as -1.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> flags:</b> Not used a lot, leave it as 0.</li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Sets a property via flood-fill (works like the PROP tool):</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">flood_prop</span>(x, y, propoffset, propvalue, proptype)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> x:</b> The x coordinates of any point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> y:</b> The y coordinates of the same point in the enclosed area.</li>
+          <li class="text-muted"><b><span class="text-warning">size_t</span> propoffset:</b> Use the return value of <kbd>offsetof(Particle, property)</kbd>, replace <kbd>property</kbd> with the property you want to set such as <kbd>ctype</kbd>.</li>
+          <li class="text-muted"><b><span class="text-warning">PropertyValue</span> propvalue:</b> The property value you want to set to. For this, declare <kbd>PropertyValue value</kbd> then assign the property value to <kbd>value.Integer</kbd> for integers, or <kbd>value.Float</kbd> for temperatures or velocities, or <kbd>value.UInteger</kbd> for dcolour.</li>
+          <li class="text-muted"><b><span class="text-warning">StructProperty::PropertyType</span> proptype:</b> The value type you provided in the previous argument. Possible values: <kbd>StructProperty::Integer</kbd> <kbd>StructProperty::Float</kbd> <kbd>StructProperty::Uinteger</kbd></li>
+        </ul>
+      </div>
+      <div class="well">
+        <p>Check a particle with the given type is inbetween two particles with the given indexes. Return 1 if it is, otherwhise return 0:</p>
+        <pre><span class="text-info"><b>sim</b></span><span class="text-danger">-&gt;</span><span class="text-success">parts_avg</span>(i, ni, t)</pre>
+        <b>Arguments:</b>
+        <ul class="muted-list">
+          <li class="text-muted"><b><span class="text-warning">int</span> i:</b> Index of the first particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> ni:</b> Index of the second particle.</li>
+          <li class="text-muted"><b><span class="text-warning">int</span> t:</b> The type of the particle to check if it is in-between. Use a pre-defined value such as PT_DUST.</li>
+        </ul>
+      </div>
+
+      <h3 id="scons" class="sub-topic"><a href="#cpp#scons" target="_top">SCons Command Line Flags</a></h3>
+      <hr>
+      <p>Note that <kbd>--release</kbd> <kbd>--sse</kbd> <kbd>--sse2</kbd> <kbd>--no-warnings</kbd> are all enabled by default. Use <kbd>--debugging</kbd> <kbd>--no-sse</kbd> <kbd>--wall</kbd> to disable them.</p>
+      <p>Some of these options are also auto-detected. Your platform is detected so <kbd>--win</kbd> <kbd>--lin</kbd> <kbd>--mac</kbd> are not needed unless you are cross compiling. Some cross compilers are also auto-detected on Linux, so <kbd>--tool</kbd> may not be needed. <kbd>--64bit</kbd> and <kbd>--32bit</kbd> should not be necessary either.</p>
+      <table class="table table-bordered table-condensed table-hover table-margin-top">
+        <thead><tr><td>Flag Example</td><td>Description</td></tr></thead>
+        <tbody>
+          <tr><td class="text-danger monospace"><b>-j4</b></td>
+          <td>Parallel Compilation: Compiles in multiple threads, speeds up compiling if you have the same number of threads and cores.</td>
+          <tr><td class="text-danger monospace"><b>--build-dir build/powder64</b></td>
+          <td>Build: Sets the build directory.</td>
+          <tr><td class="text-danger monospace"><b>--win</b></td>
+          <td>Windows: Targets the Windows platform.</td>
+          <tr><td class="text-danger monospace"><b>--lin</b></td>
+          <td>Linux: Targets the Linux platform.</td>
+          <tr><td class="text-danger monospace"><b>--mac</b></td>
+          <td>Mac OS X: Targets the Mac OS X platform.</td>
+          <tr><td class="text-danger monospace"><b>--msvc</b></td>
+          <td>MSVC: Compiles using the Microsoft Visual Studio Compiler.</td>
+          <tr><td class="text-danger monospace"><b>--tool i586-ming32msvc-</b></td>
+          <td>Tool: Prefix for toolchain executables used for cross compiling.</td>
+          <tr><td class="text-danger monospace"><b>--beta</b></td>
+          <td>Beta: Makes a beta build.</td>
+          <tr><td class="text-danger monospace"><b>--save-version 89</b></td>
+          <td>Save Version: Defines save version.</td>
+          <tr><td class="text-danger monospace"><b>--minor-version 1</b></td>
+          <td>Minor Version: Defines the minor version.</td>
+          <tr><td class="text-danger monospace"><b>--build-number 281</b></td>
+          <td>Build Number: Defines the build number.</td>
+          <tr><td class="text-danger monospace"><b>--snapshot</b></td>
+          <td>Snapshot: Makes a snapshot build.</td>
+          <tr><td class="text-danger monospace"><b>--snapshot-id 12345</b></td>
+          <td>Snapshot ID: Defines the snapshot ID.</td>
+          <tr><td class="text-danger monospace"><b>--64bit</b></td>
+          <td>64-bit: Compiles a 64-bit (AMD64) version.</td>
+          <tr><td class="text-danger monospace"><b>--32bit</b></td>
+          <td>32-bit: Compiles a 32-bit (i386) version.</td>
+          <tr><td class="text-danger monospace"><b>--universal</b></td>
+          <td>Universal: Compiles a universal (32 and 64 bit) binary. OS X only.</td>
+          <tr><td class="text-danger monospace"><b>--no-sse</b></td>
+          <td>No SSE: Compiles a legacy version for older computers.</td>
+          <tr><td class="text-danger monospace"><b>--sse</b></td>
+          <td>SSE: Compiles an SSE-enabled, and thus, non-legacy binary.</td>
+          <tr><td class="text-danger monospace"><b>--sse2</b></td>
+          <td>SSE2: Enables SSE2 optimisations.</td>
+          <tr><td class="text-danger monospace"><b>--sse3</b></td>
+          <td>SSE3: Enables SSE3 optimisations.</td>
+          <tr><td class="text-danger monospace"><b>--native</b></td>
+          <td>Native: Compiles with <kbd>--march=native</kbd>.</td>
+          <tr><td class="text-danger monospace"><b>--release</b></td>
+          <td>Release: Enables compiler optimization and makes a release build, but it slows down compiling.</td>
+          <tr><td class="text-danger monospace"><b>--debugging</b></td>
+          <td>Debugging: Enables Debug Options.</td>
+          <tr><td class="text-danger monospace"><b>--static</b></td>
+          <td>Static Linking: Reduces external library dependencies.</td>
+          <tr><td class="text-danger monospace"><b>--opengl</b></td>
+          <td>OpenGL: Uses OpenGL to render the interface.</td>
+          <tr><td class="text-danger monospace"><b>--opengl-renderer</b></td>
+          <td>OpenGL Particles: Uses OpenGL to render particles. It also turns on <kbd>--opengl</kbd>.</td>
+          <tr><td class="text-danger monospace"><b>--renderer</b></td>
+          <td>Renderer: Compiles the save renderer.</td>
+          <tr><td class="text-danger monospace"><b>--wall</b></td>
+          <td>Error on Warnings: Any compiler errors turn into warnings.</td>
+          <tr><td class="text-danger monospace"><b>--no-warnings</b></td>
+          <td>No Warnings: Ignore all compiler warnings.</td>
+          <tr><td class="text-danger monospace"><b>--nofft</b></td>
+          <td>No FFT: Do not use fftw3f for gravity.</td>
+          <tr><td class="text-danger monospace"><b>--nolua</b></td>
+          <td>No Lua: Disables all Lua scripting features.</td>
+          <tr><td class="text-danger monospace"><b>--output MyMod.exe</b></td>
+          <td>Executable Name: Create an executable with a different name.</td>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="../pages-script.js"></script>
+  </body>
+</html>
