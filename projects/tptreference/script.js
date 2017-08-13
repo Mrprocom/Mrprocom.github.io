@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var smallScreen = false;
+  var hashChangeTree = false;
   var tree = [{
     text: "Reference",
     selectable: false,
@@ -127,6 +128,7 @@ $(document).ready(function(){
 
   // Listen for nodeSelected
   $("#tree").on("nodeSelected", function(event, data){
+    hashChangeTree = true;
     location.hash = "#" + treeId[data.nodeId];
     $("#viewer-frame").attr("src", "pages/" + treeId[data.nodeId] + ".html");
     if(smallScreen){
@@ -163,6 +165,10 @@ $(document).ready(function(){
 
   // Reload page when hash changes, fixes problem with parent page not changing when a link is clicked within the iframe
   $(window).on("hashchange", function(){
-    location.reload();
+    if(hashChangeTree){
+      hashChangeTree = false;
+    } else {
+      location.reload();
+    }
   });
 });
