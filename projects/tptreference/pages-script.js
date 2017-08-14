@@ -299,7 +299,8 @@ $(document).ready(function(){
 
   // Sort table when .sortable is clicked
   $(".sortable").click(function(){
-    $(".pactive").removeClass("pactive pactive0 pactive1 pactive2 pactive3 pactive4");
+    $(".pactive").removeClass("pactive pactive-0 pactive-1 pactive-2 pactive-3 pactive-4 pactive-white");
+    selectedProp = [];
     var table = $(this).parents("table").eq(0);
     var rows = table.find("tbody tr").toArray().sort(comparer($(this).index(), false));
     this.asc = !this.asc;
@@ -311,12 +312,13 @@ $(document).ready(function(){
 
   // Prioritise selected properties and sort table when .property is clicked
   $(document).on("click", ".property", function(){
+    $(".tooltip").remove();
     if($(this).hasClass("pactive")){
       selectedProp = selectedProp.filter(e => e !== $(this).attr("data-prop"));
     } else {
       selectedProp.push($(this).attr("data-prop"));
     }
-    $(".pactive").removeClass("pactive pactive0 pactive1 pactive2 pactive3 pactive4");
+    $(".pactive").removeClass("pactive pactive-0 pactive-1 pactive-2 pactive-3 pactive-4 pactive-white");
     var table = $(this).parents("table").eq(0);
     var rows = table.find("tbody tr").toArray().sort(propertyFilter(selectedProp));
     for(var i = 0; i < rows.length; i++){
@@ -324,7 +326,9 @@ $(document).ready(function(){
       var prp = $(rows).eq(i).children("td").eq(7).children(".property");
       for(var j = 0; j < prp.length; j++){
         if(selectedProp.indexOf(prp.eq(j).attr("data-prop")) != -1){
-          prp.eq(j).addClass("pactive pactive" + selectedProp.indexOf(prp.eq(j).attr("data-prop")));
+          var index = selectedProp.indexOf(prp.eq(j).attr("data-prop"));
+          index = index > 4 ? "white" : index;
+          prp.eq(j).addClass("pactive pactive-" + index);
         }
       }
     }
