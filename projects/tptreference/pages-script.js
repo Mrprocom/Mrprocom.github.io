@@ -80,10 +80,18 @@ function propertyFilter(selectedProp){
     for(var i = 0; i < prpB.length; i++){
       valB.push(prpB.eq(i).attr("data-prop"));
     }
-    validA = selectedProp.every(function(i){return valA.indexOf(i) != -1}) ? 1 : 0;
-    validB = selectedProp.every(function(i){return valB.indexOf(i) != -1}) ? 1 : 0;
-    if(validA == validB) return idA - idB;
-    return validB - validA;
+    totalA = selectedProp.every(function(i){return valA.indexOf(i) != -1}) ? 1 : 0;
+    totalB = selectedProp.every(function(i){return valB.indexOf(i) != -1}) ? 1 : 0;
+    valA.forEach(function(i){
+      value = selectedProp.indexOf(i);
+      if(value != -1) totalA += 10**(4 - value);
+    });
+    valB.forEach(function(i){
+      value = selectedProp.indexOf(i);
+      if(value != -1) totalB += 10**(4 - value);
+    });
+    if(totalA == totalB) return idA - idB;
+    return totalB - totalA;
   }
 }
 
@@ -291,6 +299,7 @@ $(document).ready(function(){
 
   // Sort table when .sortable is clicked
   $(".sortable").click(function(){
+    $(".pactive").removeClass("pactive pactive0 pactive1 pactive2 pactive3 pactive4");
     var table = $(this).parents("table").eq(0);
     var rows = table.find("tbody tr").toArray().sort(comparer($(this).index(), false));
     this.asc = !this.asc;
@@ -307,19 +316,15 @@ $(document).ready(function(){
     } else {
       selectedProp.push($(this).attr("data-prop"));
     }
-    $(".pactive").removeClass("pactive");
+    $(".pactive").removeClass("pactive pactive0 pactive1 pactive2 pactive3 pactive4");
     var table = $(this).parents("table").eq(0);
     var rows = table.find("tbody tr").toArray().sort(propertyFilter(selectedProp));
     for(var i = 0; i < rows.length; i++){
       table.append(rows[i]);
-      var val = [];
       var prp = $(rows).eq(i).children("td").eq(7).children(".property");
       for(var j = 0; j < prp.length; j++){
-        val.push(prp.eq(j).attr("data-prop"));
-      }
-      if(selectedProp.every(function(j){return val.indexOf(j) != -1})){
-        for(var j = 0; j < val.length; j++){
-          if(selectedProp.indexOf(val[j]) != -1) prp.eq(j).addClass("pactive");
+        if(selectedProp.indexOf(prp.eq(j).attr("data-prop")) != -1){
+          prp.eq(j).addClass("pactive pactive" + selectedProp.indexOf(prp.eq(j).attr("data-prop")));
         }
       }
     }

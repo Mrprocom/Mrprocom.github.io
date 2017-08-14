@@ -501,8 +501,28 @@ pre {
 }
 
 
-.pactive {
-  filter: drop-shadow(0 0 3px #00ff00);
+.pactive0 {
+  filter: drop-shadow(0 0 5px #00ffff);
+}
+
+
+.pactive1 {
+  filter: drop-shadow(0 0 5px #00ff00);
+}
+
+
+.pactive2 {
+  filter: drop-shadow(0 0 5px #ffff00);
+}
+
+
+.pactive3 {
+  filter: drop-shadow(0 0 5px #ff00ff);
+}
+
+
+.pactive4 {
+  filter: drop-shadow(0 0 5px #ff0000);
 }
 
 
