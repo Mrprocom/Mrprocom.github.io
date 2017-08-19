@@ -338,7 +338,7 @@ pre {
 
 
 .elements-list li a {
-  font-family: monospace;
+  font-family: Consolas, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
 }
 
 
@@ -433,7 +433,7 @@ pre {
 
 
 .monospace {
-  font-family: monospace;
+  font-family: Consolas, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
 }
 
 
@@ -676,6 +676,13 @@ pre {
   filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.3));
   left: -7px;
   position: relative;
+}
+
+
+.version {
+  font-family: Consolas, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
+  font-weight: bold;
+  margin-right: 3px;
 }
 
 

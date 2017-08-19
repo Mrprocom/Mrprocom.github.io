@@ -166,10 +166,7 @@ $(document).ready(function(){
       "<li><a href='../#irc#channels' target='_top'></span><span class='text-danger'><b>#irc#channels:</b></span> Powder Toy Channels</a></li>" +
       "<li><a href='../#irc#commands' target='_top'></span><span class='text-danger'><b>#irc#commands:</b></span> Important PowderBot Commands</a></li>" +
       "<li><a href='../#mods' target='_top'></span><span class='text-danger'><b>#mods:</b></span> Powder Toy Mods and Lua Scripts</a></li>" +
-      "<li><a href='../#mods#v90' target='_top'></span><span class='text-danger'><b>#mods#v90:</b></span> Mods List v90.0+</a></li>" +
-      "<li><a href='../#mods#v85' target='_top'></span><span class='text-danger'><b>#mods#v85:</b></span> Mods List v85.0+</a></li>" +
-      "<li><a href='../#mods#v75' target='_top'></span><span class='text-danger'><b>#mods#v75:</b></span> Mods List v75.0+</a></li>" +
-      "<li><a href='../#mods#below' target='_top'></span><span class='text-danger'><b>#mods#below:</b></span> Mods List Below v75.0</a></li>" +
+      "<li><a href='../#mods#modslist' target='_top'></span><span class='text-danger'><b>#mods#modslist:</b></span> Mods List</a></li>" +
       "<li><a href='../#wiki' target='_top'></span><span class='text-danger'><b>#wiki:</b></span> Official Wiki</a></li>" +
       "<li><a href='../#lua' target='_top'></span><span class='text-danger'><b>#lua:</b></span> Lua Reference</a></li>" +
       "<li><a href='../#cpp' target='_top'></span><span class='text-danger'><b>#cpp:</b></span> C++ Reference</a></li>" +
