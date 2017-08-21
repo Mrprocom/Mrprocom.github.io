@@ -336,4 +336,10 @@ $(document).ready(function(){
     $("#irc-iframe").attr("src", "http://webchat.freenode.net?channels=" + $(this).attr("data-channel"));
     $("#irc-button").attr("href", "http://webchat.freenode.net?channels=" + $(this).attr("data-channel"));
   });
+
+  // Make .os-icon links clickable
+  $(".os-icon").click(function(e){
+    e.preventDefault();
+    window.open($(this).attr("data-link"), "_parent");
+  });
 });
