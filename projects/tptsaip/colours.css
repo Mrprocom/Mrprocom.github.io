@@ -1,0 +1,59 @@
+.link-red {border-left-color: #e53935}
+.link-red:hover {border-left-color: #ef5350}
+.link-red .link-avatar {background-color: #e53935}
+.link-red .link-title h4 {color: #e53935 !important}
+.link-red .link-title h4:hover {color: #ef5350 !important}
+
+.link-purple {border-left-color: #9c27b0}
+.link-purple:hover {border-left-color: #ba68c8}
+.link-purple .link-avatar {background-color: #9c27b0}
+.link-purple .link-title h4 {color: #9c27b0 !important}
+.link-purple .link-title h4:hover {color: #ba68c8 !important}
+
+.link-indigo {border-left-color: #3f51b5}
+.link-indigo:hover {border-left-color: #5c6bc0}
+.link-indigo .link-avatar {background-color: #3f51b5}
+.link-indigo .link-title h4 {color: #3f51b5 !important}
+.link-indigo .link-title h4:hover {color: #5c6bc0 !important}
+
+.link-blue {border-left-color: #1e88e5}
+.link-blue:hover {border-left-color: #42a5f5}
+.link-blue .link-avatar {background-color: #1e88e5}
+.link-blue .link-title h4 {color: #1e88e5 !important}
+.link-blue .link-title h4:hover {color: #42a5f5 !important}
+
+.link-cyan {border-left-color: #00acc1}
+.link-cyan:hover {border-left-color: #26c6da}
+.link-cyan .link-avatar {background-color: #00acc1}
+.link-cyan .link-title h4 {color: #00acc1 !important}
+.link-cyan .link-title h4:hover {color: #26c6da !important}
+
+.link-teal {border-left-color: #00897b}
+.link-teal:hover {border-left-color: #26a69a}
+.link-teal .link-avatar {background-color: #00897b}
+.link-teal .link-title h4 {color: #00897b !important}
+.link-teal .link-title h4:hover {color: #26a69a !important}
+
+.link-green {border-left-color: #43a047}
+.link-green:hover {border-left-color: #66bb6a}
+.link-green .link-avatar {background-color: #43a047}
+.link-green .link-title h4 {color: #43a047 !important}
+.link-green .link-title h4:hover {color: #66bb6a !important}
+
+.link-yello {border-left-color: #fdd835}
+.link-yello:hover {border-left-color: #ffeb3b}
+.link-yello .link-avatar {background-color: #fdd835}
+.link-yello .link-title h4 {color: #fdd835 !important}
+.link-yello .link-title h4:hover {color: #ffeb3b !important}
+
+.link-orange {border-left-color: #fb8c00}
+.link-orange:hover {border-left-color: #ffa726}
+.link-orange .link-avatar {background-color: #fb8c00}
+.link-orange .link-title h4 {color: #fb8c00 !important}
+.link-orange .link-title h4:hover {color: #ffa726 !important}
+
+.link-brown {border-left-color:#795548}
+.link-brown:hover {border-left-color: #8d6e63}
+.link-brown .link-avatar {background-color:#795548}
+.link-brown .link-title h4 {color:#795548 !important}
+.link-brown .link-title h4:hover {color: #8d6e63 !important}

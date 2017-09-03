@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Save Authorship</title>
+
+    <!-- Bootstrap and CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="json-viewer/jquery.json-viewer.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="colours.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div id="title">
+      <h1>Save Authorship Info Prettifier</h1>
+    </div>
+    <div id="json-input">
+      <textarea id="paste-area"></textarea>
+      <a class="btn btn-default btn-block" id="prettify">Prettify</a>
+    </div>
+    <div class="col-md-8 col-sm-7" id="links"></div>
+    <div class="col-md-4 col-sm-5" id="viewer">
+      <img src="" id="thumbnail" class="img-responsive">
+      <div id="save-options" class="save-buttons">
+        <a id="save-view" class="save-btn" data-toggle="tooltip" data-original-title="View Save"><img src="icons/view.svg"></a>
+        <a id="save-open" class="save-btn" data-toggle="tooltip" data-original-title="Open Save"><img src="icons/open.svg"></a>
+        <a id="save-search" class="save-btn" data-toggle="tooltip" data-original-title="Search Similar"><img src="icons/search.svg"></a>
+      </div>
+      <div id="search-options" class="save-buttons">
+        <a id="save-title" class="save-btn" data-toggle="tooltip" data-original-title="Exact Title"><img src="icons/title.svg"></a>
+        <a id="save-similar" class="save-btn" data-toggle="tooltip" data-original-title="Similar Title"><img src="icons/similar.svg"></a>
+        <a id="save-description" class="save-btn" data-toggle="tooltip" data-original-title="Description"><img src="icons/description.svg"></a>
+      </div>
+      <div id="viewer-info">
+        <div class="link-avatar"></div>
+        <div class="link-title">
+          <a href="" id="viewer-title"><h4></h4></a>
+          <a href="" id="viewer-author"><p></p></a>
+        </div>
+        <div id="date-time">
+          <span id="date"></span>
+          <br>
+          <span id="time"></span>
+        </div>
+      </div>
+      <div id="description" data-toggle="popover" data-content="asdf" data-placement="left"></div>
+    </div>
+    <div class="btn-group btn-group-justified" id="bottom-buttons">
+      <a class="btn btn-default" id="expand-all">Expand All</a>
+      <a class="btn btn-default" id="h-duplicates">Show Duplicates</a>
+      <a class="btn btn-default" id="h-author">Show Author Links</a>
+      <a class="btn btn-default" id="h-external">Hide External Content</a>
+      <a class="btn btn-default" id="view-json">View JSON</a>
+    </div>
+
+    <!-- JavaScripts -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap-dialog/bootstrap-dialog.min.js"></script>
+    <script src="json-viewer/jquery.json-viewer.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
