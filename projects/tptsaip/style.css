@@ -114,10 +114,17 @@ html, body {
 #title {
   background-color: #1e262b;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
   padding: 25px;
   position: relative;
   text-align: center;
+  transition: background-color 400ms;
   z-index: 3;
+}
+
+
+#title:hover {
+  background-color: #333c42;
 }
 
 

@@ -1,7 +1,7 @@
 var nodeCount = 0
 var listed = [];
 var cIndex = 0;
-var userClr = {};
+var userClr = {"Unknown User": "link-grey"};
 var colours = ["link-red", "link-purple", "link-indigo", "link-blue", "link-cyan", "link-teal", "link-green", "link-yello", "link-orange", "link-brown"];
 var oAuthor = "";
 
@@ -31,19 +31,22 @@ function createNode(json, linked, indent, hDuplicates, hAuthor, hExternal){
     }
     return;
   }
-  var linkColour = getColour(json["username"]);
+  var username = json["username"] || "Unknown User";
+  var userLink = json["username"] ? "http://tpt.io/@" + username : "#";
+  var linkColour = getColour(username);
   var id = json["id"] || json["type"];
   var description = json["description"] || "";
   var padding = "padding-left: calc(15px + " + (3.5 * indent) + "%)";
-  var nameAbbr = json["username"].slice(0, 2).toUpperCase();
+  var nameAbbr = username.slice(0, 2).toUpperCase();
   var saveLink = json["id"] ? "http://tpt.io/~" + id : "#";
-  var saveTitle = json["title"] || json["name"].replace("stamps\\\\", "").replace("Saves\\\\", "") || "[Clipboard]";
+  var saveTitle = json["title"] || (json["name"] || "").replace(/(stamps|Saves)(\\\\|\/)/, "") || "[Clipboard]";
+  if(json["num"]) saveTitle = "[Tab " + json["num"] + "]";
   var newNode =
     "<div class='link " + linkColour + "' data-node='" + nodeCount + "' data-id='" + id + "' data-date='" + json["date"] + "' data-description='" + description + "' data-linked='" + linked.join(" ") + "' style='" + padding +"'>" +
       "<div class='link-avatar'>" + nameAbbr + "</div>" +
       "<div class='link-title'>" +
         "<a href='" + saveLink + "'><h4>" + saveTitle + "</h4></a>" +
-        "<a href='http://tpt.io/@" + json["username"] + "'><p>By " + json["username"] + "</p></a>" +
+        "<a href='" + userLink + "'><p>By " + username + "</p></a>" +
       "</div>" +
       "<div class='link-arrow link-expand'><img src='icons/expand.svg'></div>" +
     "</div>";
@@ -108,6 +111,8 @@ function displayItem(item){
     $("#thumbnail").attr("src", "icons/clipboard.svg");
   } else if(id == "localsave"){
     $("#thumbnail").attr("src", "icons/localsave.svg");
+  } else if(id == "tab"){
+    $("#thumbnail").attr("src", "icons/tab.svg");
   } else {
     $("#thumbnail").attr("src", "http://static.powdertoy.co.uk/" + id + ".png");
   }
@@ -151,7 +156,11 @@ $(document).ready(function(){
       filterArrows();
       displayItem($(".link").eq(0));
       $("#json-input").fadeOut(500);
+      setTimeout(function(){
+        $("#json-input").remove();
+      }, 500);
     } catch(e) {
+      console.log(e);
       BootstrapDialog.show({
         title: "Error",
         message: "Error: Invalid JSON input."
@@ -191,6 +200,11 @@ $(document).ready(function(){
       $("#h-external").html($("#h-external").html().replace("Sh. Ext", "Show External Content").replace("Hd. Ext", "Hide External Content"));
       $("#view-json").html("View JSON");
     }
+  });
+
+  // Reload page when #title is clicked
+  $("#title").click(function(){
+    location.reload();
   });
 
   // Use a custom thumbnail for 404 saves

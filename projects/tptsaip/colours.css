@@ -57,3 +57,9 @@
 .link-brown .link-avatar {background-color:#795548}
 .link-brown .link-title h4 {color:#795548 !important}
 .link-brown .link-title h4:hover {color: #8d6e63 !important}
+
+.link-grey {border-left-color: #757575}
+.link-grey:hover {border-left-color: #9e9e9e}
+.link-grey .link-avatar {background-color: #757575}
+.link-grey .link-title h4 {color: #757575 !important}
+.link-grey .link-title h4:hover {color: #9e9e9e !important}
