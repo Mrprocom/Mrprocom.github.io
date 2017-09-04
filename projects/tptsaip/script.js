@@ -35,7 +35,7 @@ function createNode(json, linked, indent, hDuplicates, hAuthor, hExternal){
   var userLink = json["username"] ? "http://tpt.io/@" + username : "#";
   var linkColour = getColour(username);
   var id = json["id"] || json["type"];
-  var description = json["description"] || "";
+  var description = (json["description"] || "").replace("'", "&apos;").replace("\"", "&quot;");
   var padding = "padding-left: calc(15px + " + (3.5 * indent) + "%)";
   var nameAbbr = username.slice(0, 2).toUpperCase();
   var saveLink = json["id"] ? "http://tpt.io/~" + id : "#";
@@ -96,7 +96,7 @@ function displayItem(item){
   var linkColour = $(item).attr("class").split(" ")[1];
   var id = $(item).attr("data-id");
   var description = $(item).attr("data-description");
-  var shortDescription = description.length > 250 ? description.slice(0, 250).replace(/ +^/, "") + "..." : description;
+  var shortDescription = description.length > 250 ? description.slice(0, 250).replace(/ +$/, "") + "..." : description;
   var title = $(item).find("h4").html();
   var titleLink = $(item).find("h4").parent().attr("href");
   var author = $(item).find("p").html();
@@ -140,6 +140,7 @@ $(document).ready(function(){
   var hAuthor = true;
   var hExternal = false;
   var json;
+  var timer;
 
   // Enable tooltips and popovers
   $("[data-toggle='tooltip']").tooltip();
@@ -213,18 +214,17 @@ $(document).ready(function(){
   });
 
   // Show save options and darken #thumbnail on hover
-  $("#thumbnail").mouseover(function(){
-    if($(this).css("filter") == "none" && $("#viewer-title").attr("href")){
-      $(this).css("filter", "brightness(50%)");
-      $("#save-options").fadeIn(400);
+  $("#thumbnail, .save-buttons").mouseout(function(){
+    if($("#viewer-title").attr("href") != "#"){
+      timer = setTimeout(function(){
+        $(this).css("filter", "");
+        $(".save-buttons").fadeOut(400);
+      }, 10);
     }
-  });
-
-  $("#thumbnail").mouseout(function(){
-    if(!$(".save-buttons:hover").length){
-      $(this).css("filter", "");
-      $(".save-buttons").fadeOut(400);
-    }
+  }).mouseover(function(){
+    $("#thumbnail").css("filter", "brightness(50%)");
+    $("#save-options").fadeIn(400);
+    clearTimeout(timer);
   });
 
   // Show search-by options when #save-options is clicked

@@ -94,6 +94,7 @@ html, body {
   background-color: #272822;
   border: 1px solid #1d1f21;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
   height: calc(100% - 67px);
   margin-bottom: 10px;
   outline: none !important;
