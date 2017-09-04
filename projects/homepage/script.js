@@ -1,32 +1,46 @@
 $(document).ready(function(){
 
+  var defaultCustom = [
+    ["Main", "1", "website", "https://google.com/", "wide", "orange", "icon", "icons/google.svg", "Google"],
+    ["Main", "1", "website", "http://www.bbc.com/", "wide", "green", "icon", "icons/bbc.svg", "BBC"],
+    ["Main", "1", "website", "https://www.facebook.com/", "small", "blue", "icon", "icons/facebook.svg", "Facebook"],
+    ["Main", "1", "website", "https://twitter.com/", "small", "purple", "icon", "icons/twitter.svg", "Twitter"],
+    ["Main", "2", "website", "https://www.wunderground.com/", "wide", "blue", "icon", "icons/weather.svg", "Weather"],
+    ["Main", "2", "website", "https://youtube.com/", "small", "red", "icon", "icons/youtube.svg", "YouTube"],
+    ["Main", "2", "website", "https://mail.google.com/", "small", "purple", "icon", "icons/gmail.svg", "Gmail"],
+    ["Main", "2", "website", "https://www.amazon.com/", "wide", "orange", "icon", "icons/amazon.svg", "Amazon"],
+    ["Main", "3", "website", "https://www.hulu.com/", "wide", "green", "icon", "icons/hulu.svg", "Hulu"],
+    ["Main", "3", "website", "http://www.kongregate.com/", "wide", "red", "icon", "icons/kongregate.svg", "Kongregate"],
+    ["Main", "3", "website", "http://www.rapidtables.com/tools/notes.htm", "wide", "blue", "icon", "icons/notes.svg", "Notes"],
+    ["Main", "4", "website", "http://www.crunchyroll.com/", "small", "orange", "icon", "icons/crunchyroll.svg", "Crunchyroll"],
+    ["Main", "4", "website", "https://www.netflix.com/", "small", "red", "icon", "icons/netflix.svg", "Netflix"],
+    ["Main", "4", "website", "https://www.twitch.tv/", "wide", "purple", "icon", "icons/twitch.svg", "Twitch"],
+    ["Main", "4", "section", "Online_Tools", "wide", "green", "icon", "icons/tools.svg"],
+    ["Online_Tools", "1", "website", "https://www.wolframalpha.com/", "wide", "red", "icon", "icons/wolframalpha.svg", "WolframAlpha"],
+    ["Online_Tools", "1", "website", "https://translate.google.com/", "small", "green", "icon", "icons/googletranslate.svg", "Google Translate"],
+    ["Online_Tools", "1", "website", "https://maps.google.com/", "small", "orange", "icon", "icons/googlemaps.svg", "Google Maps"],
+    ["Online_Tools", "1", "website", "https://www.virustotal.com/", "wide", "blue", "icon", "icons/virustotal.svg", "VirusTotal"],
+    ["Online_Tools", "2", "website", "http://www.online-convert.com/", "wide", "green", "icon", "icons/onlineconverter.svg", "Online Converter"],
+    ["Online_Tools", "2", "website", "https://pixlr.com/", "wide", "purple", "icon", "icons/pixlr.svg", "Pixlr"],
+    ["Online_Tools", "2", "website", "http://pastebin.com/", "wide", "red", "icon", "icons/pastebin.svg", "Paste Bin"],
+    ["Online_Tools", "3", "website", "http://web2.0calc.com/widgets/horizontal/?options=…ions%22%3A%22hide%22%2C%22menu%22%3A%22show%22%7D", "wide", "blue", "icon",  "icons/calculator.svg", "Calculator"],
+    ["Online_Tools", "3", "website", "https://mdn.mozillademos.org/en-US/docs/Web/CSS/CS…Colors/Color_picker_tool$samples/ColorPicker_Tool", "wide", "orange", "icon",  "icons/colourpicker.svg", "Colour Picker"],
+    ["Online_Tools", "3", "website", "http://textmechanic.com/", "small", "green", "icon", "icons/textmechanic.svg", "Text Mechanic"],
+    ["Online_Tools", "3", "website", "http://www.speedtest.net/", "small", "purple", "icon", "icons/speedtest.svg", "Speed Test"],
+    ["Online_Tools", "4", "website", "https://bitly.com/", "wide", "orange", "icon", "icons/bitly.svg", "Bit.ly"],
+    ["Online_Tools", "4", "website", "https://www.draw.io/", "wide", "green", "icon", "icons/drawio.svg", "Draw.io"],
+    ["Online_Tools", "4", "website", "https://repl.it/", "wide", "blue", "icon", "icons/replit.svg", "Repl.it"]
+  ]
+
   // Store settings
   var storage = $.localStorage;
   var defaultSettings = {
+    version: 2,
     dim: "0",
     quickAccess: [],
-    customPages0: [],
-    customPages1: [],
-    customPages2: [],
-    customPages3: [],
+    customPages: defaultCustom.slice(0),
     background: 0,
-    gradient: false,
-    customFirst: false
-  }
-  var sections = {
-    access: ["icons/access.svg", "Quick Access"],
-    communication: ["icons/communication.svg", "Communication"],
-    entertainment: ["icons/entertainment.svg", "Entertainment"],
-    games: ["icons/games.svg", "Games"],
-    knowledge: ["icons/knowledge.svg", "Knowledge"],
-    media: ["icons/media.svg", "Media Share"],
-    microsoft: ["icons/microsoft.svg", "Microsoft"],
-    miscellaneous: ["icons/miscellaneous.svg", "Miscellaneous"],
-    news: ["icons/news.svg", "News"],
-    search: ["icons/search.svg", "Search"],
-    social: ["icons/social.svg", "Social Media"],
-    store: ["icons/store.svg", "Store"],
-    tools: ["icons/tools.svg", "Online Tools"]
+    gradient: false
   }
   var message = 
     "<ul>" +
@@ -35,10 +49,10 @@ $(document).ready(function(){
       "<li><kbd>Shift</kbd> + <kbd>Click</kbd> to open tile in tab screen.</li>" +
       "<li><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Click</kbd> to open tile in new tab and move to it.</li>" +
       "<li>Input text in the search text field to search for that using different search engines</li>" +
-      "<li>Over 60% of all icons are from <a href='http://www.flaticon.com/'>Flaticon</a>.</li>" +
+      "<li>Most icons were taken from <a href='http://www.flaticon.com/'>Flaticon</a>.</li>" +
     "</ul>";
 
-  if(!storage.get("homepage")){
+  if(!storage.get("homepage") || !storage.get("homepage")["version"] || storage.get("homepage")["version"] != 2){
     storage.set("homepage", defaultSettings);
     var settings = storage.get("homepage");
     var dim = storage.get("homepage")["dim"];
@@ -46,130 +60,104 @@ $(document).ready(function(){
     var settings = storage.get("homepage");
     var dim = storage.get("homepage")["dim"];
     var newQuickAccess = "";
-    var newCustomPages0 = "";
-    var newCustomPages1 = "";
-    var newCustomPages2 = "";
-    var newCustomPages3 = "";
+    var newCustomPages = "";
     for(var i = 0; i < settings["quickAccess"].length; i++){
       newQuickAccess += settings["quickAccess"][i].join(" ") + "\n";
     }
-    for(var i = 0; i < settings["customPages0"].length; i++){
-      newCustomPages0 += settings["customPages0"][i].join(" ") + "\n";
-    }
-    for(var i = 0; i < settings["customPages1"].length; i++){
-      newCustomPages1 += settings["customPages1"][i].join(" ") + "\n";
-    }
-    for(var i = 0; i < settings["customPages2"].length; i++){
-      newCustomPages2 += settings["customPages2"][i].join(" ") + "\n";
-    }
-    for(var i = 0; i < settings["customPages3"].length; i++){
-      newCustomPages3 += settings["customPages3"][i].join(" ") + "\n";
+    for(var i = 0; i < settings["customPages"].length; i++){
+      newCustomPages += settings["customPages"][i].join(" ") + "\n";
     }
     $("#dimmer").css("opacity", dim);
     $("#quick-access-input").val(newQuickAccess.slice(0, -1));
-    $("#custom-pages0-input").val(newCustomPages0.slice(0, -1));
-    $("#custom-pages1-input").val(newCustomPages1.slice(0, -1));
-    $("#custom-pages2-input").val(newCustomPages2.slice(0, -1));
-    $("#custom-pages3-input").val(newCustomPages3.slice(0, -1));
+    $("#custom-pages-input").val(newCustomPages.slice(0, -1));
     $($("#background-select").children()[settings["background"]]).prop("selected", true);
     $("#gradient-checkbox").prop("checked", settings["gradient"]);
-    $("#custom-first-checkbox").prop("checked", settings["customFirst"]);
   }
 
 
   // Save new settings
   $("#save").click(function(){
     var currentQuickAccess = $("#quick-access-input").val();
-    var currentCustom = [
-      $("#custom-pages0-input").val(),
-      $("#custom-pages1-input").val(),
-      $("#custom-pages2-input").val(),
-      $("#custom-pages3-input").val()
-    ];
+    var currentCustom = $("#custom-pages-input").val();
     var currentBackground = $("#background-select *:selected").index();
     var currentGradient = $("#gradient-checkbox").prop("checked");
-    var currentCustomFirst = $("#custom-first-checkbox").prop("checked");
     var newQuickAccess = [];
     var newCustom = [];
     if((!/^(\S+ .+(\n+)?)+$/g.test(currentQuickAccess)) && (currentQuickAccess != "")){
       alert("There is something wrong with your quick access list. Please follow the syntax and try again.");
       return false
     }
-    if((!/^((section (access|communication|entertainment|games|knowledge|media|microsoft|miscellaneous|news|search|social|store|tools) (small|wide) (blue|green|orange|purple|red) (icon|text)|website \S+ (small|wide) (blue|green|orange|purple|red) (icon \S+ .+|text .+))(\n+)?)+$/g.test(currentCustom[0])) && (currentCustom[0] != "")){
-      alert("There is something wrong with your custom pages list (column 1). Please follow the syntax and try again.");
-      return false;
-    }
-    if((!/^((section (access|communication|entertainment|games|knowledge|media|microsoft|miscellaneous|news|search|social|store|tools) (small|wide) (blue|green|orange|purple|red) (icon|text)|website \S+ (small|wide) (blue|green|orange|purple|red) (icon \S+ .+|text .+))(\n+)?)+$/g.test(currentCustom[1])) && (currentCustom[1] != "")){
-      alert("There is something wrong with your custom pages list (column 2). Please follow the syntax and try again.");
-      return false;
-    }
-    if((!/^((section (access|communication|entertainment|games|knowledge|media|microsoft|miscellaneous|news|search|social|store|tools) (small|wide) (blue|green|orange|purple|red) (icon|text)|website \S+ (small|wide) (blue|green|orange|purple|red) (icon \S+ .+|text .+))(\n+)?)+$/g.test(currentCustom[2])) && (currentCustom[2] != "")){
-      alert("There is something wrong with your custom pages list (column 3). Please follow the syntax and try again.");
-      return false;
-    }
-    if((!/^((section (access|communication|entertainment|games|knowledge|media|microsoft|miscellaneous|news|search|social|store|tools) (small|wide) (blue|green|orange|purple|red) (icon|text)|website \S+ (small|wide) (blue|green|orange|purple|red) (icon \S+ .+|text .+))(\n+)?)+$/g.test(currentCustom[3])) && (currentCustom[3] != "")){
-      alert("There is something wrong with your custom pages list (column 4). Please follow the syntax and try again.");
+    if((!/^((\S+ [1-4] section \S+ (small|wide) (blue|green|orange|purple|red) (icon \S+|text)|\S+ [1-4] website \S+ (small|wide) (blue|green|orange|purple|red) (icon \S+ .+|text .+))(\n+)?)+$/g.test(currentCustom)) && (currentCustom != "")){
+      alert("There is something wrong with your custom pages list. Please follow the syntax and try again.");
       return false;
     }
     currentQuickAccess = currentQuickAccess.split("\n").filter(function(x){return x !== ""});
     for(var i = 0; i < currentQuickAccess.length; i++){
       newQuickAccess.push([currentQuickAccess[i].split(" ")[0], currentQuickAccess[i].split(" ").splice(1).join(" ")]);
     }
-    for(var i = 0; i < 4; i++){
-      var newCustomSet = [];
-      currentCustom[i] = currentCustom[i].split("\n").filter(function(x){return x !== ""});
-      if(currentCustom[i] == []){
-        currentCustom[i] = "empty";
-      }
-      for(var j = 0; j < currentCustom[i].length; j++){
-        if(currentCustom[i][j].split(" ")[0] == "section"){
+    var newCustom = [];
+    currentCustom = currentCustom.split("\n").filter(function(x){return x !== ""});
+    if(currentCustom == []){
+      currentCustom = "empty";
+    }
+    for(var i = 0; i < currentCustom.length; i++){
+      if(currentCustom[i].split(" ")[2] == "section"){
+        var newCustomItem = [
+          currentCustom[i].split(" ")[0],
+          currentCustom[i].split(" ")[1],
+          "section",
+          currentCustom[i].split(" ")[3],
+          currentCustom[i].split(" ")[4],
+          currentCustom[i].split(" ")[5],
+          currentCustom[i].split(" ")[6],
+          currentCustom[i].split(" ").splice(7).join(" ")
+        ];
+        newCustom.push(newCustomItem);
+      } else {
+        if(currentCustom[i].split(" ")[6] == "icon"){
           var newCustomItem = [
-            "section",
-            currentCustom[i][j].split(" ")[1],
-            currentCustom[i][j].split(" ")[2],
-            currentCustom[i][j].split(" ")[3],
-            currentCustom[i][j].split(" ")[4]
+            currentCustom[i].split(" ")[0],
+            currentCustom[i].split(" ")[1],
+            "website",
+            currentCustom[i].split(" ")[3],
+            currentCustom[i].split(" ")[4],
+            currentCustom[i].split(" ")[5],
+            "icon",
+            currentCustom[i].split(" ")[7],
+            currentCustom[i].split(" ").splice(8).join(" ")
           ];
-          newCustomSet.push(newCustomItem);
+          newCustom.push(newCustomItem);
         } else {
-          if(currentCustom[i][j].split(" ")[4] == "icon"){
-            var newCustomItem = [
-              "website",
-              currentCustom[i][j].split(" ")[1],
-              currentCustom[i][j].split(" ")[2],
-              currentCustom[i][j].split(" ")[3],
-              "icon",
-              currentCustom[i][j].split(" ")[5],
-              currentCustom[i][j].split(" ").splice(6).join(" ")
-            ];
-            newCustomSet.push(newCustomItem);
-          } else {
-            var newCustomItem = [
-              "website",
-              currentCustom[i][j].split(" ")[1],
-              currentCustom[i][j].split(" ")[2],
-              currentCustom[i][j].split(" ")[3],
-              "text",
-              currentCustom[i][j].split(" ").splice(5).join(" ")
-            ]
-            newCustomSet.push(newCustomItem);
-          }
+          var newCustomItem = [
+            currentCustom[i].split(" ")[0],
+            currentCustom[i].split(" ")[1],
+            "website",
+            currentCustom[i].split(" ")[3],
+            currentCustom[i].split(" ")[4],
+            currentCustom[i].split(" ")[5],
+            "text",
+            currentCustom[i].split(" ").splice(7).join(" ")
+          ]
+          newCustom.push(newCustomItem);
         }
       }
-      newCustom.push(newCustomSet);
     }
     var newSettings = {
+      version: 2,
       dim: storage.get("homepage")["dim"],
       quickAccess: newQuickAccess,
-      customPages0: newCustom[0],
-      customPages1: newCustom[1],
-      customPages2: newCustom[2],
-      customPages3: newCustom[3],
+      customPages: newCustom,
       background: currentBackground,
       gradient: currentGradient,
-      customFirst: currentCustomFirst
     }
     storage.set("homepage", newSettings);
+    window.top.location.href = "index.html";
+  });
+
+
+  // Reset settings when #reset is clicked
+  $("#reset").click(function(){
+    storage.remove("homepage");
     window.top.location.href = "index.html";
   });
 
@@ -182,43 +170,65 @@ $(document).ready(function(){
 
 
   // Fill the custom pages list
-  var customPages = [settings["customPages0"], settings["customPages1"], settings["customPages2"], settings["customPages3"]];
-  for(var i = 0; i < 4; i++){
-    for(var j = 0; j < customPages[i].length; j++){
-      var currentItem = customPages[i][j];
-      if(currentItem[0] == "section"){
-        if(currentItem[4] == "icon"){
-          var newTile =
-            "<a class='tile " + currentItem[2] + " app bg-color-" + currentItem[3] + " goto' data-goto='section-" + currentItem[1] + "'>" +
-              "<div class='image-wrapper'>" +
-                "<img src='" + sections[currentItem[1]][0] + "'>" +
+  var customPages = settings["customPages"];
+  for(var i = 0; i < customPages.length; i++){
+    var currentItem = customPages[i];
+    if($("#section-" + currentItem[0]).length == 0){
+      var newSection =
+        "<div id='section-" + currentItem[0] + "' class='container tile-container display-none'>" +
+          "<div id='nav-bar'>" +
+            "<div class='row'>" +
+              "<div class='span9'>" +
+                "<div id='header-container'>" +
+                  "<a id='custom-back' class='win-backbutton win-commandicon win-commandring pointer'></a>" +
+                  "<div class='dropdown'>" +
+                    "<h1 class='header-dropdown'>" + currentItem[0].replace(/_/g, " ") + "</h1>" +
+                  "</div>" +
+                "</div>" +
               "</div>" +
-              "<div class='app-label'>" + sections[currentItem[1]][1] + "</div>" +
-            "</a>";
-        } else {
-          var newTile =
-            "<a class='tile " + currentItem[2] + " text bg-color-" + currentItem[3] + " goto' data-goto='section-" + currentItem[1] + "'>" +
-              "<div class='text'><h3>" + sections[currentItem[1]][1] + "</h3></div>" +
-            "</a>";
-        }
-      } else {
-        if(currentItem[4] == "icon"){
-          var newTile =
-            "<a class='tile " + currentItem[2] + " app bg-color-" + currentItem[3] + "' href='" + currentItem[1] + "'>" +
-              "<div class='image-wrapper'>" +
-                "<img src='" + currentItem[5] + "'>" +
-              "</div>" +
-              "<div class='app-label'>" + currentItem[6] + "</div>" +
-            "</a>";
-        } else {
-          var newTile =
-            "<a class='tile " + currentItem[2] + " text bg-color-" + currentItem[3] + "' href='" + currentItem[1] + "'>" +
-              "<div class='text'><h3>" + currentItem[5] + "</h3></div>" +
-            "</a>";
-        }
-      }
-      $("#column-" + (i + 1)).append(newTile);
+            "</div>" +
+          "</div>" +
+          "<div class='metro'>" +
+            "<div class='tile-column-span-2 column-1'></div>" +
+            "<div class='tile-column-span-2 column-2'></div>" +
+            "<div class='tile-column-span-2 column-3'></div>" +
+            "<div class='tile-column-span-2 column-4'></div>" +
+          "</div>" +
+        "</div>";
+      $("#main-html body").append(newSection);
     }
+    if(currentItem[2] == "section"){
+      if(currentItem[6] == "icon"){
+        var newTile =
+          "<a class='tile " + currentItem[4] + " app bg-color-" + currentItem[5] + " goto' data-goto='section-" + currentItem[3] + "'>" +
+            "<div class='image-wrapper'>" +
+              "<img src='" + currentItem[7] + "'>" +
+            "</div>" +
+            "<div class='app-label'>" + currentItem[3].replace(/_/g, " ") + "</div>" +
+          "</a>";
+      } else {
+        var newTile =
+          "<a class='tile " + currentItem[4] + " text bg-color-" + currentItem[5] + " goto' data-goto='section-" + currentItem[3] + "'>" +
+            "<div class='text'><h3>" + currentItem[3].replace(/_/g, " ") + "</h3></div>" +
+          "</a>";
+      }
+    } else {
+      if(currentItem[6] == "icon"){
+        var newTile =
+          "<a class='tile " + currentItem[4] + " app bg-color-" + currentItem[5] + "' href='" + currentItem[3] + "'>" +
+            "<div class='image-wrapper'>" +
+              "<img src='" + currentItem[7] + "'>" +
+            "</div>" +
+            "<div class='app-label'>" + currentItem[8] + "</div>" +
+          "</a>";
+      } else {
+        var newTile =
+          "<a class='tile " + currentItem[4] + " text bg-color-" + currentItem[5] + "' href='" + currentItem[3] + "'>" +
+            "<div class='text'><h3>" + currentItem[7] + "</h3></div>" +
+          "</a>";
+      }
+    }
+    $("#section-" + currentItem[0] + " .column-" + currentItem[1]).append(newTile);
   }
 
 
@@ -313,39 +323,6 @@ $(document).ready(function(){
   });
 
 
-  // Alert the IP address when #ip is clicked
-  $("#ip").click(function(){
-    $.get("https://api.ipify.org/", function(data){
-      BootstrapDialog.show({
-        size: BootstrapDialog.SIZE_SMALL,
-        closable: false,
-        title: "Your Visible IP Address",
-        message: "<input type='text' class='ip-input' value='" + data + "' readonly></input>",
-        buttons: [{
-          id: "copy",
-          label: "Copy",
-          cssClass: "btn-default no-radius"
-        }, {
-          label: "Close",
-          cssClass: "btn-default no-radius",
-          action: function(dialogItself){
-            dialogItself.close();
-          }
-        }]
-      });
-    });
-  });
-
-  $(document).on("click", "#copy", function(){
-    $(".ip-input").select();
-    document.execCommand("copy");
-  });
-
-  $(document).on("click", ".ip-input", function(){
-     $(this).select();
-  });
-
-
   // Show information when #info is clicked
   $("#info").click(function(){
     BootstrapDialog.show({
@@ -434,11 +411,7 @@ $(document).ready(function(){
 
   // Hide all containers then show the main container
   $(".tile-container").hide().addClass("tile-hidden");
-  if(settings["customFirst"]){
-    $("#section-custom").show().removeClass("tile-hidden");
-  } else {
-    $("#section-main").show().removeClass("tile-hidden");
-  }
+  $("#section-Main").show().removeClass("tile-hidden");
 
 
   // Remove display-none from all containers
@@ -457,27 +430,12 @@ $(document).ready(function(){
   });
 
 
-  // Return to main section when back arrow is clicked
-  $("#custom-back").click(function(){
+  $(".win-backbutton").click(function(){
     $(".tile-container").addClass("tile-hidden");
     setTimeout(function(){
       $(".tile-container").hide();
-      $("#section-main").show();
-      $("#section-main").removeClass("tile-hidden");
-    }, 230);
-  });
-
-  $(".win-backbutton:not(#custom-back)").click(function(){
-    $(".tile-container").addClass("tile-hidden");
-    setTimeout(function(){
-      $(".tile-container").hide();
-      if(settings["customFirst"]){
-        $("#section-custom").show();
-        $("#section-custom").removeClass("tile-hidden");
-      } else {
-        $("#section-main").show();
-        $("#section-main").removeClass("tile-hidden");
-      }
+      $("#section-Main").show();
+      $("#section-Main").removeClass("tile-hidden");
     }, 230);
   });
 

@@ -48,6 +48,11 @@ html#main-html body {
 }
 
 
+#bottom-settings {
+  margin-bottom: 15px;
+}
+
+
 #dimmer {
   background-color: #000000;
   height: calc(100% - 61px);
@@ -93,11 +98,6 @@ html#main-html body {
 #nav-bar .win-backbutton {
   margin-left: 5px;
   top: 0;
-}
-
-
-#save {
-  margin-bottom: 15px;
 }
 
 
@@ -262,6 +262,7 @@ html#main-html body {
 
 
 .textarea-input {
+  font-family: Consolas, Menlo, Monaco, "Liberation Mono", "Courier New", monospace;
   resize: none;
   white-space: nowrap;
 }
