@@ -223,19 +223,12 @@ function showLabel(event, label, code){
 
 // Region click function
 function addRegion(event, code, region){
-  // This is useful for dealing with two region click calls at the same time
-  if(lastTimestamp == event.timeStamp){
-    return 0
-  }
-  lastTimestamp = event.timeStamp;
-  if(selectedCountries.indexOf(code) === -1){
-    selectedCountries.push(code);
-  } else {
-    selectedCountries.splice(selectedCountries.indexOf(code), 1);
-  }
-  console.log(selectedCountries);
-  console.log(region);
-  console.log(event);
+  selectedCountries = [];
+  setTimeout(function(){
+    $(".jqvmap-region").each(function(i){
+      if($(".jqvmap-region").eq(i).attr("fill") == "#666666") selectedCountries.push($(".jqvmap-region").eq(i).attr("id").split("_")[1]);
+    });
+  });
 }
 
 
