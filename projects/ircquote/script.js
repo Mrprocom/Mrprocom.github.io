@@ -373,7 +373,7 @@ $(document).ready(function(){
 
   $("#prettify").click(function(){
     var result = getResult();
-    result = "<textarea id='result' class='form-control no-radius'>" + result + "</textarea>";
+    result = "<textarea id='result' class='form-control no-radius'>" + result.replace("\n", "&NewLine;") + "</textarea>";
     BootstrapDialog.show({
       title: "Result",
       message: result
