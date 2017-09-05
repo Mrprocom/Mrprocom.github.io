@@ -217,7 +217,7 @@ $(document).ready(function(){
   $("#thumbnail, .save-buttons").mouseout(function(){
     if($("#viewer-title").attr("href") != "#"){
       timer = setTimeout(function(){
-        $(this).css("filter", "");
+        $("#thumbnail").css("filter", "");
         $(".save-buttons").fadeOut(400);
       }, 10);
     }
