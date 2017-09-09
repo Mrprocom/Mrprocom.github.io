@@ -150,7 +150,6 @@ $(document).ready(function(){
   $("#prettify").click(function(){
     try {
       json = $("#paste-area").val();
-      json = json.replace(/\r?\n|\r/g, "").replace(/\\/g, "\\\\");
       json = JSON.parse(json);
       createNode(json, [], 0, hDuplicates, hAuthor, hExternal);
       updateTree();
