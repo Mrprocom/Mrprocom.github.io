@@ -176,11 +176,14 @@ html#main-html body {
 
 .metro .tile {
   border: none;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+  transition: outline-width 100ms;
 }
 
 
 .metro .tile:active {
   color: #ffffff;
+  outline-offset: 0;
 }
 
 
