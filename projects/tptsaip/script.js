@@ -133,6 +133,18 @@ function displayItem(item){
   $("#description").attr("data-content", description);
 }
 
+// This function parses the input JSON and uses it to create the nodes tree and the save viewer if it is valid
+function parseInp(json){
+  createNode(json, [], 0, true, true, false);
+  updateTree();
+  filterArrows();
+  displayItem($(".link").eq(0));
+  $("#json-input").fadeOut(500);
+  setTimeout(function(){
+    $("#json-input").remove();
+  }, 500);
+}
+
 
 $(document).ready(function(){
 
@@ -146,19 +158,28 @@ $(document).ready(function(){
   $("[data-toggle='tooltip']").tooltip();
   $("[data-toggle='popover']").popover();
 
+  // If the save ID is provided as a parameter, use that to retrieve JSON data and use it to create the nodes tree
+  if(url("?ID")){
+    try {
+      $.getJSON("https://new.starcatcher.us/jacobot/" + url("?ID") + ".json", function(data){
+        json = data;
+        parseInp(json);
+      });
+    } catch(e) {
+      console.log(e);
+      BootstrapDialog.show({
+        title: "Error",
+        message: "Error: Invalid JSON input."
+      });
+    }
+  }
+
   // Convert the JSON string into an object and use it to create the nodes tree and the save viewer if it is valid
   $("#prettify").click(function(){
     try {
       json = $("#paste-area").val();
       json = JSON.parse(json);
-      createNode(json, [], 0, hDuplicates, hAuthor, hExternal);
-      updateTree();
-      filterArrows();
-      displayItem($(".link").eq(0));
-      $("#json-input").fadeOut(500);
-      setTimeout(function(){
-        $("#json-input").remove();
-      }, 500);
+      parseInp(json);
     } catch(e) {
       console.log(e);
       BootstrapDialog.show({
