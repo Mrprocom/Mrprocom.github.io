@@ -97,13 +97,14 @@ function displayItem(item){
   var id = $(item).attr("data-id");
   var description = $(item).attr("data-description");
   var shortDescription = description.length > 250 ? description.slice(0, 250).replace(/ +$/, "") + "..." : description;
-  var title = $(item).find("h4").html();
+  var titleFull = $(item).find("h4").html();
+  var title = titleFull.length > 25 ? titleFull.slice(0, 22) + "..." : titleFull;
   var titleLink = $(item).find("h4").parent().attr("href");
   var author = $(item).find("p").html();
   var authorLink = $(item).find("p").parent().attr("href")
   var nameAbbr = $(item).find(".link-avatar").html();
   var datetime = new Date(parseInt($(item).attr("data-date") * 1000));
-  var date = zfill2(datetime.getDate()) + "/" + zfill2(datetime.getMonth() + 1) + "/" + datetime.getFullYear();
+  var date = datetime.getFullYear() + "-" + zfill2(datetime.getMonth() + 1) + "-" + zfill2(datetime.getDate());
   var time = zfill2(datetime.getHours()) + ":" + zfill2(datetime.getMinutes()) + ":" + zfill2(datetime.getSeconds());
   if(id == "stamp"){
     $("#thumbnail").attr("src", "icons/stamp.svg");
@@ -123,7 +124,7 @@ function displayItem(item){
   $("#save-description").attr("href", "http://powdertoythings.co.uk/Powder/Saves/Search.html?Search_Query=sort%3Aid%20search%3Adesc%20" + encodeURIComponent(description));
   $("#viewer-info").attr("class", "").addClass(linkColour);
   $("#viewer-info .link-avatar").html(nameAbbr);
-  $("#viewer-title").attr("href", titleLink);
+  $("#viewer-title").attr({"href": titleLink, "title": titleFull});
   $("#viewer-title h4").html(title);
   $("#viewer-author").attr("href", authorLink);
   $("#viewer-author p").html(author);
@@ -136,13 +137,18 @@ function displayItem(item){
 // This function parses the input JSON and uses it to create the nodes tree and the save viewer if it is valid
 function parseInp(json){
   createNode(json, [], 0, true, true, false);
-  updateTree();
-  filterArrows();
-  displayItem($(".link").eq(0));
   $("#json-input").fadeOut(500);
   setTimeout(function(){
     $("#json-input").remove();
   }, 500);
+  // Expand contents of the first node by default
+  $(".link").each(function(i){$(".link").eq(i).prop("node0", true)});
+  $(".link[data-node=0] .link-arrow").removeClass("link-expand").addClass("link-minimise");
+  $(".link[data-node=0] img").attr("src", "icons/minimise.svg");
+  // Make the list and show information about the current save (first node)
+  updateTree();
+  filterArrows();
+  displayItem($(".link").eq(0));
 }
 
 
