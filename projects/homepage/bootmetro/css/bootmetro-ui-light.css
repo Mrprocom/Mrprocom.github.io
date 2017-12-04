@@ -70,8 +70,7 @@ input[type=file] {
 }
 
 input[type]:invalid {
-  outline-color: #ff8033;
-  outline-width: 2px;
+    outline: #ff8033 2px;
 }
 
 select:focus option:hover {
@@ -156,11 +155,8 @@ button[aria-selected=true]:active .win-commandicon {
 .btn {
   color: #000;
   text-shadow: none;
-  background-color: rgba(182, 182, 182, 0.7);
-  background-image: none;
-  background-repeat: no-repeat;
-  border: 2px solid #cccccc;
-  border-color: rgba(0, 0, 0, 0.2);
+  background: rgba(182, 182, 182, 0.7) none no-repeat;
+  border: 2px solid rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
@@ -650,9 +646,7 @@ button.win-command:disabled {
 
 .btn-primary {
   color: #FFF;
-  background-color: #59008C;
-  background-image: none;
-  background-repeat: no-repeat;
+  background: #59008C none no-repeat;
   border-color: #59008C;
   filter: none;
 }
@@ -673,9 +667,7 @@ button.win-command:disabled {
 }
 
 .btn-success {
-  background-color: #5bb75b;
-  background-image: none;
-  background-repeat: no-repeat;
+  background: #5bb75b none no-repeat;
   border-color: #5bb75b;
   filter: none;
 }
@@ -696,9 +688,7 @@ button.win-command:disabled {
 }
 
 .btn-info {
-  background-color: #49afcd;
-  background-image: none;
-  background-repeat: no-repeat;
+  background: #49afcd none no-repeat;
   border-color: #49afcd;
   filter: none;
 }
@@ -719,9 +709,7 @@ button.win-command:disabled {
 }
 
 .btn-danger {
-  background-color: #da4f49;
-  background-image: none;
-  background-repeat: no-repeat;
+  background: #da4f49 none no-repeat;
   border-color: #da4f49;
   filter: none;
 }
@@ -742,9 +730,7 @@ button.win-command:disabled {
 }
 
 .btn-warning {
-  background-color: #faa732;
-  background-image: none;
-  background-repeat: no-repeat;
+  background: #faa732 none no-repeat;
   border-color: #faa732;
   filter: none;
 }
@@ -765,9 +751,7 @@ button.win-command:disabled {
 }
 
 .btn-inverse {
-  background-color: #414141;
-  background-image: none;
-  background-repeat: no-repeat;
+  background: #414141 none no-repeat;
   border-color: #414141;
   filter: none;
 }

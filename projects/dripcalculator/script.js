@@ -7,7 +7,7 @@ $(document).ready(function(){
     "Weeks": 604800,
     "Months": 2592000,
     "Years": 31536000
-  }
+  };
 
   $(".form-control").on("input", function(){
     var driples = $("#driples").val();
