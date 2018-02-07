@@ -139,13 +139,13 @@ html {
 }
 
 
-#midi {
+#changelog {
   height: 35vmin;
   width: 100%;
 }
 
 
-#midi:hover {
+#changelog:hover {
   border-top-color: #ffffff;
   height: 40vmin;
 }
@@ -220,24 +220,30 @@ html {
 }
 
 
-.midi {
+.changelog {
   background-color: #363f45;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-  font-size: 17px;
-  margin: 0 0 10px 0;
-  padding: 10px;
+  margin: 0 0 15px 0;
+  padding: 20px;
   transition: background-color 400ms;
 }
 
 
-.midi:hover {
+.changelog:hover {
   background-color: #455a64;
 }
 
 
-.midi a {
-  color: #ffffff;
+.changelog h3 {
+  margin-top: 0;
+}
+
+
+.changelog ul {
+  color: #d9d9d9;
+  font-size: 17px;
+  margin-bottom: 0;
+  padding: 0 0 0 20px;
 }
 
 

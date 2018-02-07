@@ -35,10 +35,10 @@ $(document).ready(function(){
     $("#scripts").removeClass("inactive").addClass("active");
   });
 
-  $(document).on("click", "#midi.inactive", function(){
-    showPanel("#midi-panel");
+  $(document).on("click", "#changelog.inactive", function(){
+    showPanel("#changelog-panel");
     $(".section").removeClass("active").addClass("inactive");
-    $("#midi").removeClass("inactive").addClass("active");
+    $("#changelog").removeClass("inactive").addClass("active");
   });
 
 
