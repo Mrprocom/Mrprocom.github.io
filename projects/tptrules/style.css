@@ -45,6 +45,7 @@ html, body {
   bottom: 60px;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
   cursor: default;
+  display: none;
   left: calc(50% - 100px);
   padding: 10px;
   position: absolute;

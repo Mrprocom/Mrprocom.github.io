@@ -1,6 +1,12 @@
 $(document).ready(function(){
 
-  $("#copy-message").hide().removeClass("hidden");
+  // Shorten the title when the window width is small
+  $(window).resize(function(){
+    $("#title h1").text("Powder Toy Rules Reference");
+    if($(window).width() <= 500){
+      $("#title h1").text("TPT Rules");
+    }
+  });
 
   // Search function
   $("#search").on("input", function(){
