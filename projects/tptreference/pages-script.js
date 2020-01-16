@@ -178,8 +178,9 @@ $(document).ready(function(){
       "<li><a href='../#cpp#functions' target='_top'></span><span class='text-danger'><b>#cpp#functions:</b></span> Functions</a></li>" +
       "<li><a href='../#cpp#scons' target='_top'></span><span class='text-danger'><b>#cpp#scons:</b></span> SCons Command Line Flags</a></li>" +
       "<li><a href='../#rules' target='_top'></span><span class='text-danger'><b>#rules:</b></span> Rules</a></li>" +
-      "<li><a href='../#rules#forum' target='_top'></span><span class='text-danger'><b>#rules#forum:</b></span> Forum Posting Rules</a></li>" +
-      "<li><a href='../#rules#save' target='_top'></span><span class='text-danger'><b>#rules#save:</b></span> Save Uploading Rules</a></li>" +
+      "<li><a href='../#rules#s' target='_top'></span><span class='text-danger'><b>#rules#s:</b></span> Section S: Social and Community Rules</a></li>" +
+      "<li><a href='../#rules#g' target='_top'></span><span class='text-danger'><b>#rules#g:</b></span> Section G: In-Game Rules</a></li>" +
+      "<li><a href='../#rules#r' target='_top'></span><span class='text-danger'><b>#rules#r:</b></span> Section R: Other</a></li>" +
       "<li><a href='../#rules#irc' target='_top'></span><span class='text-danger'><b>#rules#irc:</b></span> IRC Rules</a></li>" +
       "<li><a href='../#rules#reporting' target='_top'></span><span class='text-danger'><b>#rules#reporting:</b></span> Save Reporting Rules</a></li>" +
       "<li><a href='../#rules#modding' target='_top'></span><span class='text-danger'><b>#rules#modding:</b></span> Modding Rules</a></li>" +
