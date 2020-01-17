@@ -188,7 +188,7 @@ $(document).ready(function(){
       "<li><a href='../#notable' target='_top'></span><span class='text-danger'><b>#notable:</b></span> Notable Users</a></li>" +
       "<li><a href='../#notable#developers' target='_top'></span><span class='text-danger'><b>#notable#developers:</b></span> Developers</a></li>" +
       "<li><a href='../#notable#moderators' target='_top'></span><span class='text-danger'><b>#notable#moderators:</b></span> Moderators</a></li>" +
-      "<li><a href='../#notable#inactive' target='_top'></span><span class='text-danger'><b>#notable#inactive:</b></span> Inactive Moderators</a></li>" +
+      "<li><a href='../#notable#ex' target='_top'></span><span class='text-danger'><b>#notable#ex:</b></span> Ex-Moderators</a></li>" +
       "<li><a href='../#notable#irc' target='_top'></span><span class='text-danger'><b>#notable#irc:</b></span> IRC Channel Moderators</a></li>" +
       "<li><a href='../#notable#special' target='_top'></span><span class='text-danger'><b>#notable#special:</b></span> Special Roles</a></li>" +
       "<li><a href='../#faq' target='_top'></span><span class='text-danger'><b>#faq:</b></span> Tips and Frequently Asked Questions</a></li>" +
