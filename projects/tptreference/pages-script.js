@@ -335,7 +335,7 @@ $(document).ready(function(){
 
   // Change channel of IRC client when .channel-switch is clicked
   $(".channel-switch").click(function(){
-    $("#irc-iframe").attr("src", "http://webchat.freenode.net?channels=" + $(this).attr("data-channel"));
-    $("#irc-button").attr("href", "http://webchat.freenode.net?channels=" + $(this).attr("data-channel"));
+    $("#irc-iframe").attr("src", "https://kiwiirc.com/nextclient/irc.libera.chat/" + $(this).attr("data-channel"));
+    $("#irc-button").attr("href", "https://kiwiirc.com/nextclient/irc.libera.chat/" + $(this).attr("data-channel"));
   });
 });
