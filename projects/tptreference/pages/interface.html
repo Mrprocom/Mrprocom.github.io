@@ -23,61 +23,61 @@
       <h3 id="hud" class="sub-topic"><a href="#interface#hud" target="_top">Heads Up Display (HUD)</a></h3>
       <hr>
       <ol id="hud-interface">
-        <li class="text-muted"><b>Framerate:</b> FPS stands for Frames Per Second. It shows how many frames the game can show in one second. The maximum is 60 FPS.</li>
-        <li class="text-muted"><b>Particle Count:</b> It shows the number of particles currently in the simulation. It does not count WALLs. It only appears when Debug Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
-        <li class="text-muted"><b>Mode:</b> It shows the mode that is currently being used. It only appears when there is a mode activated, which could be Specific Delete, Replace Mode, Find, or a collection of them at the same time.</li>
-        <li class="text-muted"><b>Particle Type:</b> It shows the name of the particle your cursor is currently hovering over.</li>
-        <li class="text-muted"><b>Ctype:</b> It shows the secondary type or the ctype property of the particle your cursor is currently hovering over. It only appears when Debug Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
-        <li class="text-muted"><b>Temperature:</b> It shows the temperature of the particle your cursor is currently hovering over in Celsius.</li>
-        <li class="text-muted"><b>Life:</b> It shows the Life property of the particle your cursor is currently hovering over. This property is used for different things depending on the type of particle. It only appears when Debug Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
-        <li class="text-muted"><b>Tmp:</b> It shows the Tmp property of the particle your cursor is currently hovering over. This property is used for different things depending on the type of particle. It only appears when Debug Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
-        <li class="text-muted"><b>Pressure:</b> It shows the pressure of the spot under your cursor.</li>
-        <li class="text-muted"><b>Particle Index:</b> It shows the index or the ID of the particle your cursor is currently hovering over. It only appears when Debug Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
-        <li class="text-muted"><b>X Coordinate:</b> It shows the X coordinate (horizontal) of the cursor. It only appears when Debug Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
-        <li class="text-muted"><b>Y Coordinate:</b> It shows the Y coordinate (vertical) of the cursor. It only appears when Debug Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
-        <li class="text-muted"><b>Ambient Heat Temperature:</b> It shows the temperature of the air your cursor is currently hovering over. It only appears when Debug Mode is enabled and when Ambient Heat Mode is enabled. You can toggle Debug Mode by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>Framerate:</b> FPS stands for Frames Per Second. It shows the number of frames the game is displaying in one second. The maximum is 60 FPS unless specified otherwise.</li>
+        <li class="text-muted"><b>Particle Count:</b> The number of particles (except WALLs) currently on the simulation. It is only visible when debug mode is enabled, which can be toggled by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>Mode:</b> The mode that is currently being used. It is only visible when there is at least one mode activated. Available modes: Specific Delete, Replace Mode, and Find.</li>
+        <li class="text-muted"><b>Particle Type:</b> The type of the particle the cursor is currently hovering over.</li>
+        <li class="text-muted"><b>Ctype:</b> The secondary type (ctype) property of the particle the cursor is currently hovering over. It is only visible when debug mode is enabled, which can be toggled by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>Temperature:</b> The temperature of the particle the cursor is currently hovering over in Celsius.</li>
+        <li class="text-muted"><b>Life:</b> The Life property of the particle the cursor is currently hovering over. This property slightly modifies the behavior of certain elements when modified (check the wiki page for any element to see whether changing the Life value has an effect on the element). It is only visible when debug mode is enabled, which can be toggled by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>Tmp:</b> The Tmp property of the particle the cursor is currently hovering over. This property slightly modifies the behavior of certain elements when modified (check the wiki page for any element to see whether changing the Tmp value has an effect on the element). It is only visible when debug mode is enabled, which can be toggled by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>Pressure:</b> The pressure of the spot under the cursor.</li>
+        <li class="text-muted"><b>Particle Index:</b> The index or the ID of the particle (not the ID of the type of particle) the cursor is currently hovering over. It is only visible when debug mode is enabled, which can be toggled by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>X Coordinate:</b> The X (horizontal) coordinate of the cursor. It is only visible when debug mode is enabled, which can be toggled by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>Y Coordinate:</b> The Y (vertical) coordinate of the cursor. It is only visible when debug mode is enabled, which can be toggled by pressing the <kbd>D</kbd> key.</li>
+        <li class="text-muted"><b>Ambient Heat Temperature:</b> The temperature of the air the cursor is currently hovering over. It is only visible when both the debug mode (toggled with the <kbd>D</kbd> key) and the ambient heat quick option (toggled with the <kbd>U</kbd> key) are enabled.</li>
       </ol>
 
       <h3 id="side" class="sub-topic"><a href="#interface#side" target="_top">Quick Options and Categories</a></h3>
       <hr>
       <ol id="side-interface">
-        <li class="text-muted"><b>Sand Effect:</b> This quick option shows nice effects on sand.</li>
-        <li class="text-muted"><b>Draw Gravity Field:</b> This quick option makes the game display newtonian gravity field.</li>
-        <li class="text-muted"><b>Draw Decoration:</b> This quick option makes the game display decoration layer.</li>
-        <li class="text-muted"><b>Newtonian Gravity:</b> This quick option allows gravity generated by some particles and tools to work.</li>
-        <li class="text-muted"><b>Ambient Heat:</b> This quick option enables ambient heat mode, which allows heat to travel through air.</li>
-        <li class="text-muted"><b>Show Console:</b> This quick options opens up the console, which is where you can run commands to do various tasks in the game.</li>
+        <li class="text-muted"><b>Sand Effect:</b> When enabled, it makes sand look fancier.</li>
+        <li class="text-muted"><b>Draw Gravity Field:</b> When enabled, the game displays newtonian gravity fields (gravity fields generated by certain elements like BHOL and WHOL). Note that no gravity fields will be displayed if the newtonian gravity quick option is not enabled.</li>
+        <li class="text-muted"><b>Draw Decoration:</b> When enabled, the game displays the decoration layer.</li>
+        <li class="text-muted"><b>Newtonian Gravity:</b> When enabled, the game allows gravity generated by certain elements (like BHOL and WHOL) or certain tools (like PGRV and NGRV) to function.</li>
+        <li class="text-muted"><b>Ambient Heat:</b> Enables ambient heat mode, which allows heat to travel through air.</li>
+        <li class="text-muted"><b>Show Console:</b> Opens up the console, which allows you to run commands or Lua scripts that can perform various tasks in the game.</li>
         <li class="text-muted"><b>Categories:</b> Element categories contain a list of related elements.</li>
-        <li class="text-muted"><b>Favourites:</b> You can add your favourite elements to this category by holding <kbd>Ctrl + Shift</kbd> and then left clicking on the element. You can remove an element from the favourites category by holding <kbd>Ctrl + Shift</kbd> and then right clicking on the element.</li>
-        <li class="text-muted"><b>Decoration Tools:</b> This category contains tools that allow you to paint particles with any colour.</li>
-        <li class="text-muted"><b>Search:</b> Clicking this opens up a search menu to search for any element, including hidden elements not listed in any category.</li>
+        <li class="text-muted"><b>Favourites:</b> A category for your bookmarked elements. You can bookmark an element by holding <kbd>Ctrl + Shift</kbd> while left clicking on the element. This can be reversed by holding <kbd>Ctrl + Shift</kbd> while right clicking on the element.</li>
+        <li class="text-muted"><b>Decoration Tools:</b> A category of tools used for painting particles with any colour.</li>
+        <li class="text-muted"><b>Search:</b> Opens up a search menu to search for any element, including hidden elements not listed under any category.</li>
       </ol>
 
       <h3 id="toolbar" class="sub-topic"><a href="#interface#toolbar" target="_top">Toolbar</a></h3>
       <hr>
       <ol id="toolbar-interface">
-        <li class="text-muted"><b>Pause/Resume:</b> Toggles between pausing the simulation and resuming it.</li>
-        <li class="text-muted"><b>Render Options:</b> Opens up a dialog box with render options. This is where you can change the view mode or customise your own.</li>
-        <li class="text-muted"><b>Edit Profile/Sign In:</b> Signs in to the server with a Powder Toy account. Register a new account from the official <a href="http://powdertoy.co.uk/" target="_top" class="shift-click">Powder Toy website</a> if you do not have one. When you are signed in, this button becomes an Edit Profile button, clicking it opens up a dialog box with some account settings.</li>
-        <li class="text-muted"><b>Sign In: </b> When you are not signed in, this button becomes part of the previously button. When you are signed in, it becomes a separate button, clicking it opens up a dialog box where you can sign out or sign in to a different account.</li>
+        <li class="text-muted"><b>Pause/Resume:</b> Pauses/resumes the simulation.</li>
+        <li class="text-muted"><b>Render Options:</b> Opens up a menu with render options where you can change the view mode or customise your own.</li>
+        <li class="text-muted"><b>Edit Profile/Sign In:</b> Signs into the server with a Powder Toy account. Register a new account from the official <a href="https://powdertoy.co.uk/" target="_top" class="shift-click">Powder Toy website</a> if you do not have one. If signed in, this button becomes an Edit Profile button with some account settings.</li>
+        <li class="text-muted"><b>Sign In: </b> If not signed in, this button becomes part of the previously mentioned button. If signed in, the new button will open up a dialog box for signing out or signing into a different account.</li>
         <li class="text-muted"><b>Clear Simulation:</b> Resets the simulation.</li>
-        <li class="text-muted"><b>Tags:</b> Shows a list of tags placed on the current save. Click it to add tags to the current save (requires siging in). Tags are meant to improve search results.</li>
-        <li class="text-muted"><b>Vote Down:</b> Votes down the current save (requires siging in).</li>
-        <li class="text-muted"><b>Vote Up:</b> Votes up the current save (requires siging in).</li>
-        <li class="text-muted"><b>Save:</b> Uploads your simulation to the server if you are signed in. If you are not, it will save your simulation locally so that you can access them offline. You still save locally while being signed in by holding <kbd>Ctrl</kbd> and then clicking it.</li>
-        <li class="text-muted"><b>Re-Upload:</b> Updates the current simulation.</li>
-        <li class="text-muted"><b>Reload:</b> Reloads the current simulation. Right clicking the reload button will show information on the current save.</li>
-        <li class="text-muted"><b>Browse:</b> Opens up the save browser where you can find saves made by the community. You can also hold <kbd>Ctrl</kbd> and then right click the browse button to browse through your local saves.</li>
+        <li class="text-muted"><b>Tags:</b> Shows a list of tags placed on the current save. Click it to add tags to the current save (requires being signed in). Tags are used to help improve search results.</li>
+        <li class="text-muted"><b>Vote Down:</b> Votes down the current save (requires being signed in).</li>
+        <li class="text-muted"><b>Vote Up:</b> Votes up the current save (requires being signed in).</li>
+        <li class="text-muted"><b>Save:</b> Uploads your simulation to the server if you are signed in. If not, it will save your simulation locally so that you can access them offline. You still save locally while being signed in by holding <kbd>Ctrl</kbd> while clicking it.</li>
+        <li class="text-muted"><b>Re-upload:</b> Updates the current simulation.</li>
+        <li class="text-muted"><b>Reload:</b> Reloads the current simulation. Right clicking the reload button will show information about the current save.</li>
+        <li class="text-muted"><b>Browse:</b> Opens up the save browser where you can find saves made by the community. You can also hold <kbd>Ctrl</kbd> while right clicking the browse button to browse through your local saves.</li>
       </ol>
 
       <h3 id="element" class="sub-topic"><a href="#interface#element" target="_top">Element Selector</a></h3>
       <hr>
       <ol id="element-interface">
-        <li class="text-muted"><b>Left-Click Element:</b> The element you draw with when you are left-clicking. You can change it by left-clicking a different element. By default, it is the DUST element.</li>
-        <li class="text-muted"><b>Right-Click Element:</b> The element you draw with when you are right-clicking. You can change it by right-clicking a different element. By default, it is the erase particles element.</li>
-        <li class="text-muted"><b>Middle-Click Element:</b> The element you draw with when you are middle-clicking. You can change it by middle-clicking a different element. By default, it is the sample tool.</li>
-        <li class="text-muted"><b>Selected Element to be Replaced:</b> The element that is used to be replaced in Specific Replace mode, or deleted in Specific Delete mode. You can change it by holding <kbd>Ctrl+Alt</kbd> and then clicking an element. By default, it is the erase particles element.</li>
-        <li class="text-muted"><b>Elements:</b> Unselected elements you can select to draw with.</li>
+        <li class="text-muted"><b>Left-click Element:</b> The element that gets placed when drawing with left-click. It can be changed by left-clicking a different element. By default, it is the DUST element.</li>
+        <li class="text-muted"><b>Right-click Element:</b> The element that gets placed when drawing with right-click. It can be changed by right-clicking a different element. By default, it is the erase particles tool.</li>
+        <li class="text-muted"><b>Middle-click Element:</b> The element that gets placed when drawing with middle-mouse button. It can be changed by middle-clicking a different element. By default, it is the sample tool.</li>
+        <li class="text-muted"><b>Selected Element to be Replaced:</b> The element that is used to be replaced in Specific Replace mode, or deleted in Specific Delete mode. It can be changed by holding <kbd>Ctrl+Alt</kbd> while clicking an element. By default, it is the erase particles element.</li>
+        <li class="text-muted"><b>Elements:</b> Unselected elements that can be selected to draw with.</li>
       </ol>
 
       <h3 id="interactive" class="sub-topic"><a href="#interface#interactive" target="_top">Interactive Version</a></h3>
